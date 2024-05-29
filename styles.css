@@ -1,0 +1,466 @@
+/* Main Styling for header and navigation, beginning. */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.content-section {
+    padding: 20px;
+    margin: 10px;
+}
+
+footer {
+    padding-bottom: 20px;
+    margin: 10px;
+}
+header {
+    background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .logo {
+    height: 50px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+.section-title {
+    font-size: 1.5em;
+    border-bottom: 2px solid #333;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    flex: 1;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.flex-item {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+}
+.contact-info, .education, .skills, .experience {
+    margin-bottom: 20px;
+}
+.contact-info p, .education p, .skills p, .experience p {
+    margin: 5px 0;
+}
+footer {
+    background: linear-gradient(to top, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: left;
+        margin: 5px 0;
+    }
+}
+/* Main Styling for header and navigation, Ending. */
+
+
+
+/* Styling for Current Photos Page, beginning. Needs parsing of styling that impedes or conflicts with main header and navigation styling. */
+/*
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+*/
+/*
+header {
+    background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+*/
+/*
+header .logo {
+    height: 50px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+*/
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.slides {
+    display: none;
+    width: 100%;
+}
+.active {
+    display: block;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.dots {
+    text-align: center;
+    padding: 20px;
+}
+.dots span {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.dots .active {
+    background-color: #717171;
+}
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
+    background-color: white;
+    border-radius: 10px;
+}
+.lightbox img {
+    width: 100%;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.photo-info {
+    margin-top: 10px;
+}
+
+/* Styling for Current Photos Page, ending. */
+
+
+
+/* Styling for the catagories page. Beginning. */
+/*
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+*/
+
+.container_catagories {
+    text-align: center;
+}
+/*
+header {
+    background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+*/
+header .logo {
+    height: 50px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+*/
+.categories {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.category {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px 0;
+    text-transform: uppercase;
+    color: #333;
+    text-decoration: none;
+}
+.category:hover {
+    color: #555;
+}
+/* Styling for the catagories page. Ending. */
+
+/* Styling for the journal page. Beginning. */
+/*
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 1));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+header .logo {
+    height: 50px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+*/
+.container_Journal {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.grid-item {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+.grid-item:hover {
+    transform: scale(1.05);
+}
+.thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.title {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+.description {
+    font-size: 1em;
+    color: #666;
+}
+/*
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+*/
+/* Styling for the journal page. Ending. */
+
+/* Styling for the slideshow. */
+
+.slideshow img {
+    width: 100%;
+    height: auto;
+    transition: ease-in-out;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+  
+.gallery img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+/*the CSS for the portfolio page*/
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.gallery a {
+    margin: 10px;
+    border: 1px solid #ccc;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery img {
+    width: 100%;
+}
+
+.gallery a:hover img {
+    transform: scale(1.1);
+}
+

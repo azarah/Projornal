@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Thumbnails</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 1));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        header .logo {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .grid-item {
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+        .thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .title {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .description {
+            font-size: 1em;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="sign in black.png" alt="Logo" class="logo">
+    </a>
+    <nav>
+        <ul>
+            <li><a href="MuhammadHakeem Resume 2024.pdf" download>Resume</a></li>
+            <li><a href="Page2_FolioLand.html">Portfolio</a></li>
+            <li><a href="Page0_JournalLand.html">Journal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="grid">
+        <div class="grid-item">
+            <img src="thumbnail1.jpg" alt="Article 1" class="thumbnail">
+            <div class="title">Article Title 1</div>
+            <div class="description">This is a short description of the article. It gives a brief overview of the content.</div>
+        </div>
+        <div class="grid-item">
+            <img src="thumbnail2.jpg" alt="Article 2" class="thumbnail">
+            <div class="title">Article Title 2</div>
+            <div class="description">This is a short description of the article. It gives a brief overview of the content.</div>
+        </div>
+        <div class="grid-item">
+            <img src="thumbnail3.jpg" alt="Article 3" class="thumbnail">
+            <div class="title">Article Title 3</div>
+            <div class="description">This is a short description of the article. It gives a brief overview of the content.</div>
+        </div>
+        <!-- Add more grid-items as needed -->
+    </div>
+</div>
+
+</body>
+</html>
