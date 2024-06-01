@@ -80,6 +80,69 @@ nav ul li a:hover {
 .contact-info p, .education p, .skills p, .experience p {
     margin: 5px 0;
 }
+
+/* ----------Begin Styling of Contact Form------------ */
+
+
+div .contactForm {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+form {
+    display: flex;
+    flex-direction:column;
+    gap: 2px;
+    width: 100%;
+    align-content: center;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+p button {
+    width: 100%;
+    background: #bfbfbf;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: center; /* Center the button */
+}
+button:hover {
+    background: #a6a6a6;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+.social-icons img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+/*---------------End Styling of Contact Form ----------------*/
+
+
 footer {
     background: linear-gradient(to top, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
     color: white;
