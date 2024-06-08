@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparing Design Interfaces</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .pros-cons, .performance {
+            margin: 10px 0;
+        }
+        .interactive-section {
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+        }
+        ul li:before {
+            content: "•";
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparing Design Interfaces</h1>
+
+        <div class="section" id="radio-buttons">
+            <h2>Radio Buttons (RB)</h2>
+            <div class="pros-cons">
+                <h3>Pros:</h3>
+                <ul>
+                    <li><strong>Visibility:</strong> All options are visible at once, allowing quick scanning and selection.</li>
+                    <li><strong>Speed:</strong> Faster selection since all options are immediately visible and accessible with a single click.</li>
+                    <li><strong>Simplicity:</strong> Presents a straightforward choice for a small number of options.</li>
+                </ul>
+            </div>
+            <div class="pros-cons">
+                <h3>Cons:</h3>
+                <ul>
+                    <li><strong>Space Usage:</strong> Takes up more space on the interface.</li>
+                    <li><strong>Broken Site Line:</strong> The site line may be broken, affecting selection clarity for some users.</li>
+                </ul>
+            </div>
+            <div class="performance">
+                <h3>Performance:</h3>
+                <p>Users can immediately see all options, allowing for quick recognition and selection with minimal interaction.</p>
+            </div>
+            <h3>Example:</h3>
+            <form>
+                <p>Vote for your favorite candidate:</p>
+                <input type="radio" id="candidate1" name="candidate" value="Candidate 1">
+                <label for="candidate1">Candidate 1</label><br>
+                <input type="radio" id="candidate2" name="candidate" value="Candidate 2">
+                <label for="candidate2">Candidate 2</label><br>
+                <input type="radio" id="candidate3" name="candidate" value="Candidate 3">
+                <label for="candidate3">Candidate 3</label><br>
+                <input type="radio" id="candidate4" name="candidate" value="Candidate 4">
+                <label for="candidate4">Candidate 4</label><br>
+            </form>
+        </div>
+
+        <div class="section" id="combo-box">
+            <h2>Combo-Box (CB)</h2>
+            <div class="pros-cons">
+                <h3>Pros:</h3>
+                <ul>
+                    <li><strong>Space Efficiency:</strong> Saves screen space by showing options in a drop-down menu.</li>
+                    <li><strong>Scalability:</strong> Easier to accommodate a larger number of options without overwhelming the user.</li>
+                </ul>
+            </div>
+            <div class="pros-cons">
+                <h3>Cons:</h3>
+                <ul>
+                    <li><strong>Interaction Required:</strong> Users must click to open the drop-down list, adding an extra step.</li>
+                    <li><strong>Visibility:</strong> Options are not immediately visible, which may delay selection.</li>
+                </ul>
+            </div>
+            <div class="performance">
+                <h3>Performance:</h3>
+                <p>Introduces additional clicks and requires scanning of the drop-down list, adding steps to the selection process.</p>
+            </div>
+            <h3>Example:</h3>
+            <form>
+                <p>Vote for your favorite candidate:</p>
+                <label for="candidates">Choose a candidate:</label>
+                <select id="candidates" name="candidates">
+                    <option value="candidate1">Candidate 1</option>
+                    <option value="candidate2">Candidate 2</option>
+                    <option value="candidate3">Candidate 3</option>
+                    <option value="candidate4">Candidate 4</option>
+                </select>
+            </form>
+        </div>
+
+        <div class="section">
+            <h2>Participatory Design Process</h2>
+            <ul>
+                <li><strong>Identify Participants:</strong> Select a diverse group of elderly users.</li>
+                <li><strong>Initial Workshop:</strong> Introduce the proposed designs and gather first impressions.</li>
+                <li><strong>Education Session:</strong> Offer a brief tutorial on the current designs.</li>
+                <li><strong>Feedback Rounds:</strong> Engage participants in hands-on sessions and collect feedback.</li>
+                <li><strong>Co-Design Sessions:</strong> Invite participants to suggest modifications or alternative designs.</li>
+                <li><strong>Prototype Testing:</strong> Develop a prototype incorporating the feedback.</li>
+                <li><strong>Iterative Feedback and Refinement:</strong> Use iterative cycles to fine-tune the design.</li>
+                <li><strong>Final Review:</strong> Conduct a final review session to ensure all concerns are addressed.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Social Impact Statement Process</h2>
+            <ul>
+                <li><strong>Assessment:</strong> Collect data on potential users' demographics and preferences.</li>
+                <li><strong>Engagement:</strong> Engage with the community for insights on challenges and design context.</li>
+                <li><strong>Drafting the Statement:</strong> Outline the intended benefits of the redesigned interface.</li>
+                <li><strong>Public Review:</strong> Invite feedback from a broader community and experts.</li>
+                <li><strong>Implementation and Monitoring:</strong> Implement design changes and monitor impact over time.</li>
+                <li><strong>Reporting:</strong> Write a final assessment of the design process and observed impacts.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Design an Experiment</h2>
+            <h3>Objective</h3>
+            <p>To evaluate the effectiveness of a larger font size and a numbered list to improve interface usability for elderly and motor-impaired users.</p>
+            <h3>Hypothesis</h3>
+            <p>The new design with larger font size and a numbered list will significantly improve usability for elderly and motor-impaired users.</p>
+            <h3>Participants</h3>
+            <ul>
+                <li>Elderly users aged 65 and above.</li>
+                <li>Users with varying degrees of motor impairment.</li>
+                <li>A control group of users without motor impairments.</li>
+            </ul>
+            <h3>Methodology</h3>
+            <ol>
+                <li><strong>Pre-experiment Survey:</strong> Collect baseline data on demographics and computer proficiency.</li>
+                <li><strong>Training Session:</strong> Provide a brief training session on both designs.</li>
+                <li><strong>Task Design:</strong> Create tasks reflecting real-world scenarios for both designs.</li>
+                <li><strong>Experiment Setup:</strong> Use a within-subjects design with randomization.</li>
+                <li><strong>Data Collection:</strong> Measure task completion time, accuracy, and collect qualitative feedback.</li>
+                <li><strong>Analysis:</strong> Perform statistical analyses to compare performance and satisfaction.</li>
+                <li><strong>Post-Experiment Review:</strong> Conduct a debriefing session to gather additional insights.</li>
+            </ol>
+            <h3>Expected Outcomes</h3>
+            <p>The experiment aims to provide empirical evidence on whether the new design improves usability for elderly and motor-impaired users.</p>
+        </div>
+
+        <div class="section">
+            <h2>Participatory Design</h2>
+            <p>Participatory design involves all stakeholders in the design process to ensure the result meets their needs and is usable.</p>
+            <h3>Benefits</h3>
+            <ul>
+                <li>Enhanced outcomes through diverse perspectives.</li>
+                <li>Increased adoption due to stakeholder involvement.</li>
+                <li>Innovation from diverse ideas.</li>
+                <li>Social equity by addressing underserved groups' needs.</li>
+            </ul>
+            <h3>Challenges</h3>
+            <ul>
+                <li>Resource-intensive process.</li>
+                <li>Managing differing opinions and expectations.</li>
+                <li>Ensuring equal representation of all stakeholder groups.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Contextual Inquiry</h2>
+            <h3>Cleanup and Disposal System for Digital Footprints</h3>
+            <h3>Objectives and Scope</h3>
+            <p>Define objectives focusing on users' experiences with digital footprint management across various platforms.</p>
+            <h3>Identify and Segment Users</h3>
+            <ul>
+                <li>Determine potential users ranging from privacy-conscious individuals to professionals.</li>
+                <li>Segment users based on behaviors, needs, and challenges.</li>
+            </ul>
+            <h3>Develop a Research Plan</h3>
+            <ul>
+                <li>Create hypothetical scenarios and develop questions and tasks for participants.</li>
+            </ul>
+            <h3>Recruit Participants</h3>
+            <ul>
+                <li>Recruit a diverse group from each user segment.</li>
+                <li>Offer incentives for participation.</li>
+            </ul>
+            <h3>Conduct Simulated Contextual Inquiries</h3>
+            <ul>
+                <li>Use role-playing techniques and observe participants' interactions.</li>
+                <li>Conduct interviews to understand thought processes and frustrations.</li>
+            </ul>
+            <h3>Data Collection and Analysis</h3>
+            <ul>
+                <li>Capture detailed notes and analyze data to identify patterns and needs.</li>
+            </ul>
+            <h3>Synthesize Insights and Define Requirements</h3>
+            <ul>
+                <li>Compile insights to understand core user needs.</li>
+                <li>Define functional and user experience requirements.</li>
+            </ul>
+            <h3>Iterate and Validate</h3>
+            <ul>
+                <li>Develop prototypes and validate concepts with users.</li>
+                <li>Use feedback for iterative design improvements.</li>
+            </ul>
+            <h3>Document and Communicate Findings</h3>
+            <ul>
+                <li>Document findings in a comprehensive report.</li>
+                <li>Present findings to stakeholders for alignment.</li>
+            </ul>
+            <h3>Plan for Real-World Contextual Inquiry</h3>
+            <ul>
+                <li>Plan for real-world inquiries once a prototype or MVP is available.</li>
+            </ul>
+        </div>
+
+        <div class="interactive-section">
+            <h2>Interactive Section</h2>
+            <p>Enter your name to see a dynamic greeting:</p>
+            <input type="text" id="name" placeholder="Your name">
+            <button class="btn" onclick="displayGreeting()">Greet Me</button>
+            <p id="greeting"></p>
+        </div>
+    </div>
+
+    <script>
+        function displayGreeting() {
+            var name = document.getElementById('name').value;
+            document.getElementById('greeting').innerText = 'Hello, ' + name + '!';
+        }
+    </script>
+</body>
+</html>

@@ -5,51 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal</title>
     <link rel="stylesheet" href="styles.css">
-
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+        }
+        .article-module {
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #1e1e1e;
+            padding: 0;
+            margin: 15px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .article-module:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+        }
+        .article-image {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+        }
+        .article-content {
+            padding: 20px;
+        }
+        .article-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+        .article-description {
+            margin-top: 10px;
+            color: #cccccc;
+        }
+    </style>
 </head>
 <body>
 
 <header>
     <a href="index.html">
-        <img src="sign in black.png" alt="Logo" class="logo">
+        <img src="sign in white.png" alt="Logo" class="logo">
     </a>
     <nav>
+        <div class="hamburger" >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <ul>
-            <li><a href="MuhammadHakeem Resume 2024.pdf" download>Resume</a></li>
-            <li><a href="Categories.html">Categories</a></li>
+            <li><a href="Muhammad Hakeem 2024 resume.pdf" download>Resume</a></li>
+            <li><a href="Collections.html">Collections</a></li>
             <li><a href="Journal.html">Journal</a></li>
             <li><a href="index.html#contactMe">Contact</a></li>
         </ul>
+     
     </nav>
 </header>
 
-<div class="container_Journal">
-    <div class="grid">
-        <div class="grid-item">
-            <img src="thumbnail1.jpg" alt="Article 1" class="thumbnail">
-            <div class="title">Article Title 1</div>
-            <div class="description">This is a short description of the article. It gives a brief overview of the content.</div>
-        </div>
-        <div class="grid-item">
-            <img src="thumbnail2.jpg" alt="Article 2" class="thumbnail">
-            <div class="title">Article Title 2</div>
-            <div class="description">This is a short description of the article. It gives a brief overview of the content.</div>
-        </div>
-        <div class="grid-item">
-            <img src="thumbnail3.jpg" alt="Article 3" class="thumbnail">
-            <div class="title">Article Title 3</div>
-            <div class="description">This is a short description of the article. It gives a brief overview of the content.</div>
-        </div>
-        <!-- Add more grid-items as needed -->
-    </div>
-</div>
+<div class="container" id="articles-container"></div>
+<script src="HamburgerMenu_FX.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const articles = [
+            {
+                image: "IMGWeb/Our Backyard/04Secret Forest_Our Backyard_Webdisplay.jpg",
+                title: "Exploring CLI and SQL",
+                description: "Their significance lies not just in their technical aspects, but...",
+                url: "JOURNALS/Exploring-CLI-and-Structured-Queries-in-Cybersecurity.html"
+            },
+            {
+                image: "IMGWeb/Urban_Saturation/03PoppinSan-Diego_IllinoisWeb Display.jpg",
+                title: "Navigating the World of SQL",
+                description: "The CLI and SQL encapsulate the blend of...",
+                url: "JOURNALS/Navigating-the-World-of-SQL.html"
+            },
+            {
+                image: "IMGWeb/Glass Suits/02Sky Line_Glass Suits_Webdisplay.jpg",
+                title: "Embracing Cybersecurity",
+                description: "The allure of cybersecurity lies in its vast potential...",
+                url: "JOURNALS/Embracing-Cybersecurity.html"
+            },
+            {
+                image: "https://via.placeholder.com/300",
+                title: "Communicating with Stakeholders",
+                description: "Security stakeholders have roles and responsibilities...",
+                url: "JOURNALS/Communicating-with-Stakeholders.html"
+            },
+            {
+                image: "https://via.placeholder.com/300",
+                title: "Article 5",
+                description: "This is a short description of Article 5.",
+                url: "article5.html"
+            },
+            {
+                image: "https://via.placeholder.com/300",
+                title: "Article 6",
+                description: "This is a short description of Article 6.",
+                url: "article6.html"
+            },      
 
-</body>
+        ];
 
+        const container = document.getElementById('articles-container');
+
+        articles.forEach(article => {
+            const articleModule = document.createElement('div');
+            articleModule.classList.add('article-module');
+            articleModule.innerHTML = `
+                <div class="article-image" style="background-image: url('${article.image}');"></div>
+                <div class="article-content">
+                    <h2 class="article-title">${article.title}</h2>
+                    <p class="article-description">${article.description}</p>
+                </div>
+            `;
+            articleModule.addEventListener('click', () => {
+                window.location.href = article.url;
+            });
+            container.appendChild(articleModule);
+        });
+    });
+</script>
 <footer>
     &copy; 2024 Muhammad Hakeem. All rights reserved.
 </footer>
-
-<script src="StyleSol_Slideshow.js"></script>
-<script src="Contact_Form.js"></script>
 </html>

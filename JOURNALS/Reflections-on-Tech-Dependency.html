@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Article</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .toggle-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+            padding-left: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .content p {
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function toggleContent(sectionId) {
+            var content = document.getElementById(sectionId);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>Reflections on Technology Dependency</h1>
+
+    <div class="section">
+        <button class="toggle-button" onclick="toggleContent('section1')">1. Ignore it.</button>
+        <div id="section1" class="content">
+            <p>So much of it has passed by addiction and become a social, national, and global dependency.</p>
+            <p>
+                <strong>1.1:</strong> Technology is very common place now. Any of us would be hard pressed to define an addiction that doesn't include our technology practices at school or in the work place. Is it an addiction that I can take my time on the crapper and simultaneously move money, accomplish work and school needs, or just have a good healthy laugh. Which, brings up another point. Technology is so personal and unique in the experience it is providing for individuals. How do we know whose on their phone more or who of our family and friends are over invested in a technical toxicology? We are all depending on technology all the time.
+            </p>
+            <p>
+                <strong>1.2:</strong> If its about health and safety, then collectively as a consumer demographic we need to turn to the manufacturers and demand that they consider our mental and physical health more wisely as they create and engineer future technology. The lights on cars have become entirely all to bright. The LED displays on the sides of the highways at night are clear and present danger. I mean, what about the commercial industries addiction to spend billions of dollars, toxically access earth resources, and enslave populations in order to provide the disposable technology industry that has become common place?
+            </p>
+            <p>
+                <strong>1.3:</strong> Where do we draw the line at addiction? Bags under your eyes? Pain in your lumbar? Depression? anxiety? Or maybe slavery? Pollution of the waters? Or maybe pollution of the future minds as tools of technology instead of users? How do we interactively stop it from hurting us and keep assisting it in helping us?
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <button class="toggle-button" onclick="toggleContent('section2')">2. Take it personal. Lead by example and trust the process.</button>
+        <div id="section2" class="content">
+            <p>Try to change the habit in my own life. This is the one I use the most. If I feel I have a problem with what you are doing with technology, I will either put it down or use it in a way that is more conforming to healthy orthodoxies. Its also the only one we have for our relevant consumer and social health. I don't have anyone to approach me when my tech gets out of hand. I have to pay attention to the signs in my own life and my immediate surroundings.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <button class="toggle-button" onclick="toggleContent('section3')">3. Continue to approach that individual in more and more healthy and serviceable manners.</button>
+        <div id="section3" class="content">
+            <p>Stay in touch with them and check on them often. Instill trust in calls to change their habits and insure return of emotional outreach and consideration.</p>
+            <p>
+                <strong>3.1:</strong> This is the one I use the most successfully. I don't use it too often. A good sword dulls with too much dependence. Just as does the mind when too dependent on technological utilities for emotional value. This is the one that I discovered when I saw the ones I couldn't let slip away in to the masses moving all about. Amalgamated into a magnificent social control group for the new technology offspring generational experiment. The data and the algorithms are akin to the new industrial revolution.
+            </p>
+            <p>
+                <strong>3.2:</strong> I remember, I had to really work on my daughters to stop writing school papers on their phone. That is not how its done. There's no typing structure the application and services are limited. Your postures bad. Your eyes are straining. There are alerts constantly popping up from your friends and habitual apps. Its just not a healthy use of technology. I had not been prepared for this level of addiction. My son had begun to buy and sell shoes on the internet. One day a strange and unsettling individual knocked on my door and asked for him. I called my son and watched as he handed the man a Nike box and the man handed him a rather large stack of 100$ bills. My internal alarms were blaring that something wasn't right about this, but at that time the developments of a technology era left me inarticulate about my confidence and concern for what is good and bad for others.
+            </p>
+            <p>
+                <strong>3.3:</strong> Another one was Tiktok. When I first walked on on a strange dance routine in the back corner of a basement room I was appalled and had no idea what was going on. Now, people have made thousands of dollars, connections, and I go there multiple times daily for highly accessible informed content.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

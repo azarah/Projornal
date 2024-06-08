@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eight Golden Rules of Interface Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .rule {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .rule h2 {
+            margin-top: 0;
+        }
+        .example {
+            color: #d9534f;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .tooltip {
+            display: none;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1000;
+            width: 300px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            width: 500px;
+            text-align: left;
+        }
+        .close {
+            float: right;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+        
+        p .subtitle {
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script>
+        function showTooltip(e, text) {
+            let tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = text;
+            tooltip.style.display = 'block';
+            tooltip.style.top = e.pageY + 10 + 'px';
+            tooltip.style.left = e.pageX + 10 + 'px';
+        }
+        function hideTooltip() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+        function showModal(text) {
+            let modal = document.getElementById('modal');
+            modal.style.display = 'flex';
+            document.getElementById('modal-content').innerHTML = text;
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+
+<h1>Eight Golden Rules of Interface Design</h1>
+<p class="subtitle" align-item="center">Click Examples for More Details</p>
+<div id="tooltip" class="tooltip"></div>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-content"></div>
+    </div>
+</div>
+
+<div class="rule">
+    <h2>1. Strive for Consistency</h2>
+    <p>Consistency in design elements and interactions across the interface helps users build mental models and navigate the system more easily.</p>
+    <p class="example" onmouseover="showTooltip(event, 'Inconsistent placement of buttons in different sections of a software application.')" onmouseout="hideTooltip()" onclick="showModal('Example of Violation: In a software application, the Save button is placed at the top of the screen in one section and at the bottom in another section, making it hard for users to predict where to find it.')">Example of Violation</p>
+</div>
+
+<div class="rule">
+    <h2>2. Seek Universal Usability</h2>
+    <p>Universal usability encourages designers to provide alternative means of interaction and content presentation to accommodate all users.</p>
+    <p class="example" onmouseover="showTooltip(event, 'Lack of keyboard shortcuts in graphic design software.')" onmouseout="hideTooltip()" onclick="showModal('Example of Violation: In a graphic design software, there are no keyboard shortcuts for commonly used actions like copy, paste, or undo, making it time-consuming for power users.')">Example of Violation</p>
+</div>
+
+<div class="rule">
+    <h2>3. Offer Informative Feedback</h2>
+    <p>The interface should provide clear and timely feedback to users about the outcome of their actions.</p>
+    <p class="example" onmouseover="showTooltip(event, 'No confirmation message after form submission.')" onmouseout="hideTooltip()" onclick="showModal('Example of Violation: When a user submits a form on a website, and there is no confirmation message or indication of whether the submission was successful or not, leaving users uncertain about the status.')">Example of Violation</p>
+</div>
+
+<div class="rule">
+    <h2>4. Design Dialogs to Yield Closure</h2>
+    <p>Dialog boxes and pop-ups should lead to clear and decisive actions.</p>
+    <p class="example" onmouseover="showTooltip(event, 'Vague message in a software installation wizard.')" onmouseout="hideTooltip()" onclick="showModal('Example of Violation: In a software installation wizard, a dialog box appears with a vague message asking, Do you want to proceed? without providing any context or explanation of the consequences of clicking Yes or No.')">Example of Violation</p>
+</div>
+
+<div class="rule">
+    <h2>5. Offer Simple Error Handling</h2>
+    <p>Error messages should be clear, precise, and suggest how to correct the issue.</p>
+    <p class="example" onmouseover="showTooltip(event, 'Unclear error message on an e-commerce website.')" onmouseout="hideTooltip()" onclick="showModal('Example of Violation: An e-commerce website shows an error message saying, Error code 4041 when a user attempts to make a purchase, without explaining what went wrong or how to resolve the issue.')">Example of Violation</p>
+</div>
+
+<div class="rule">
+    <h2>6. Permit Easy Reversal of Actions</h2>
+    <p>Users should be able to undo their actions and easily recover from mistakes.</p>
+    <p class="example" onmouseover="showTooltip(event, 'No undo option in word processing software.')" onmouseout="hideTooltip()" onclick="showModal('Example of Violation: In a word processing software, there is no option to undo recent edits, making it difficult for users to correct mistakes.')">Example of Violation</p>
+</div>
+
+<div class="rule">
+    <h2>7. Keep Users in Control</h2>
+    <p>Users should feel in control of their interactions with the interface.</p>
+    <p class="example" onmouseover="showTooltip(event, 'Unexpected closure of a mobile app.')" onmouseout="hideTooltip()" onclick="showModal('Example of Violation: A mobile app suddenly closes or restarts itself without warning, disrupting the user\'s workflow and making them feel powerless.')">Example of Violation</p>
+</div>
+
+<div class="rule">
+    <h2>8. Reduce Short-Term Memory Load</h2>
+    <p>Minimize the cognitive load on users by presenting information and choices in a way that doesn't overwhelm their working memory.</p>
+    <p class="example" onmouseover="showTooltip(event, 'Complex registration process on a website.')" onmouseout="hideTooltip()" onclick="showModal('Example of Violation: A website registration process requires users to remember and input multiple pieces of information on different pages, making it hard for users to keep track of their progress and increasing the risk of abandonment.')">Example of Violation</p>
+</div>
+
+</body>
+</html>

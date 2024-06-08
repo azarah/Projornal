@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Catagories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: rgb(0, 0, 0);">
+
+<header>
+    <a href="index.html">
+    <img src="sign in white.png" alt="Logo" class="logo">
+    </a>
+    <nav>
+        <div class="hamburger" >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="Muhammad Hakeem 2024 resume.pdf" download>Resume</a></li>
+            <li><a href="Collections.html">Collections</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="index.html#contactMe">Contact</a></li>
+        </ul>
+     
+    </nav>
+</header>
+
+<div class="slideshow-wrapper">
+    <div class="slideshow"></div>
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        
+    <div class="categories">
+        <a href="#" class="category" onclick="filterSlides('urban-arrival')">Urban Saturation</a>
+        <a href="#" class="category" onclick="filterSlides('glass-suits')">Glass Suits</a>
+        <a href="#" class="category" onclick="filterSlides('midwest-teal')">Midwest Teal</a>
+        <a href="#" class="category" onclick="filterSlides('our-backyard')">Our Backyard</a>
+        <a href="#" class="category" onclick="filterSlides('Fashion Pohotgraphy')">Fashion Photography</a>
+        <a href="#" class="category" onclick="filterSlides('Graphic Design')">Graphic Design</a>
+        <a href="#" class="category" onclick="filterSlides('Web & App Design')">Web & App Design</a>
+    </div>
+
+</div>
+
+
+</body>
+<footer>
+    &copy; 2024 Muhammad Hakeem. All rights reserved.
+</footer>
+
+        <!-- SCRIPT FOR SLIDESHOW -->
+
+<script>
+    let currentSlide = 0;
+let slides = [];
+const categories = {
+    'urban-arrival': [
+        'IMGWeb/Urban_Saturation/01Ley Lines_Gotham on a good day_Web Display.jpg',
+        'IMGWeb/Urban_Saturation/02Electric Cherry Blossom_Gotham on a good day_Web Display_1.jpg',
+        'IMGWeb/Urban_Saturation/03BlackenWhiteGotham on a good day_Web Display.jpg',
+        'IMGWeb/Urban_Saturation/13San Diego Illinois B&W_Urbans Saturation_Webdisplay.jpg',
+        'IMGWeb/Urban_Saturation/12San Diego Illinois_Urbans Saturation_Webdisplay.jpg',
+        'IMGWeb/Urban_Saturation/15Ley Lines B&W_Urbans Saturation_Webdisplay.jpg',
+        'IMGWeb/Urban_Saturation/14Ley Lines_Urbans Saturation_Webdisplay.jpg',
+    ],
+    'glass-suits': [
+        'IMGWeb/Glass Suits/Workflow/01Sky Line B&W_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/Workflow/02Sky Line_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/Workflow/09Golden Hour B&W_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/Workflow/08Golden Hour_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/03Shapes Shadows and Highlights_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/04Shapes Shadows and Highlights B&W_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/18San Diego Illinois_Urbans Saturation_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/19San Diego Illinois B&W_Urbans Saturation_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/Workflow/06Rise High B&W_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/Workflow/05Rise High_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/Workflow/11Reflecting Angles B&W_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/Workflow/10Reflecting Angles_Glass Suits_Webdisplay.jpg',
+        
+    ],
+    'midwest-teal': [
+    'IMGWeb/2024-01-05 14.19.43-2.jpeg',
+        'IMGWeb/2024-01-05 14.18.57-2.jpeg',
+        'IMGWeb/2024-01-05 14.19.43-2.jpeg',
+        'IMGWeb/2024-01-05 14.18.57-2.jpeg',
+        'IMGWeb/2024-01-05 14.19.43-2.jpeg',
+    ],
+    'our-backyard': [
+        'IMGWeb/Our Backyard/04Secret Forest_Our Backyard_Webdisplay.jpg',
+        'IMGWeb/Our Backyard/05Secret Forest B&W_Our Backyard_Webdisplay.jpg',
+        'IMGWeb/Our Backyard/03Our_backyardSaturated VintageWeb Display.jpg',
+        'IMGWeb/Our Backyard/01Our_backyardSaturated VintageWeb Display.jpg',
+        'IMGWeb/Our Backyard/02Our_backyardSaturated VintageWeb Display.jpg',
+    ], 
+    'Fashion Pohotgraphy': [
+        'IMGWeb/Apparel Design/_MG_1276.jpg',
+        'IMGWeb/Apparel Design/_MG_1717.jpg',
+        'IMGWeb/Apparel Design/_MG_1892.jpg',
+        'IMGWeb/Apparel Design/_MG_2016.jpg',
+        'IMGWeb/Apparel Design/_MG_2030.jpg',
+        'IMGWeb/Apparel Design/2022Apparel DesignSaturated VintageWeb Display_1.jpg',
+        'IMGWeb/Apparel Design/2022Apparel DesignSaturated VintageWeb Display.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 04, 2 31 19 PM.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 04, 2 59 56 PM.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 04, 3 26 57 PM.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 04, 3 30 11 PM.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 04, 3 30 19 PM.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 04, 3 49 24 PM.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 06, 10 32 38 AM.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 11, 1 04 42 PM.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 11, 1 10 26 PM.jpg',
+        'IMGWeb/Apparel Design/Photo Jan 11, 1 14 58 PM.jpg',
+        '',
+    ],
+    'Graphic Design': [
+        'IMGWeb/Apparel Design/fRENCH MOVIE MOCKS_Diabolique CR HD.png',
+        'IMGWeb/Apparel Design/fRENCH MOVIE MOCKS_La grand BL HD.png',
+        'IMGWeb/Apparel Design/fRENCH MOVIE MOCKS_La Tete BL HD.png',
+        'IMGWeb/Apparel Design/fRENCH MOVIE MOCKS_La tete CR HD.png',
+        '',
+    ],
+    'Web & App Design': [
+        '',
+    ],
+};
+
+function loadSlides(category) {
+        const slideshowContainer = document.querySelector('.slideshow');
+        slideshowContainer.innerHTML = ''; // Clear current slides
+        slides = categories[category].map(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = category;
+            img.classList.add('slide');
+            img.onload = () => {
+                adjustImageSize(img);
+            };
+            slideshowContainer.appendChild(img);
+            return img;
+        });
+        showSlide(0);
+    }
+
+    function adjustImageSize(img) {
+    if (img.naturalWidth > img.naturalHeight) {
+        // Landscape
+        img.style.objectFit = 'contain';
+        img.style.width = 'auto';
+        img.style.height = 'auto';
+    } else {
+        // Portrait
+        img.style.objectFit = 'contain';
+        img.style.width = 'auto';
+        img.style.height = 'auto';
+    }
+}
+
+function resizeImages() {
+    const images = document.querySelectorAll('.slide');
+    images.forEach(img => {
+        adjustImageSize(img);
+    });
+}
+
+window.addEventListener('resize', resizeImages);
+
+// Existing functions
+function loadSlides(category) {
+    const slideshowContainer = document.querySelector('.slideshow');
+    slideshowContainer.innerHTML = ''; // Clear current slides
+    slides = categories[category].map(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = category;
+        img.classList.add('slide');
+        img.onload = () => {
+            adjustImageSize(img);
+        };
+        slideshowContainer.appendChild(img);
+        return img;
+    });
+    showSlide(0);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Load the default category or the first category
+    const defaultCategory = Object.keys(categories)[0];
+    loadSlides(defaultCategory);
+    resizeImages(); // Adjust the size on initial load
+});
+
+    
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = (i === index) ? 'block' : 'none';
+        });
+    }
+
+    function changeSlide(n) {
+        currentSlide += n;
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        } else if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+        showSlide(currentSlide);
+    }
+
+    function filterSlides(category) {
+        currentSlide = 0;
+        loadSlides(category);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Load the default category or the first category
+        const defaultCategory = Object.keys(categories)[0];
+        loadSlides(defaultCategory);
+    });
+</script>
+<script src="HamburgerMenu_FX.js"></script>
+</html>

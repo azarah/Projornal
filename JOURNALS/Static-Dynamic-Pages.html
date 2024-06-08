@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static vs Dynamic Web Pages and Sites</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .example {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .static-example, .dynamic-example {
+            margin-top: 20px;
+        }
+        .interactive-section {
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Static vs Dynamic Web Pages and Sites</h1>
+
+        <h2>Definitions and Examples</h2>
+        <p>
+            <strong>Static Web Page:</strong> A static web page displays the same content to every visitor. It is written in HTML (Hypertext Markup Language) and the content does not change unless the HTML file is manually updated by the web developer.
+        </p>
+        <div class="example static-example">
+            <h3>Static Web Page Example</h3>
+            <p>A simple HTML page showcasing a restaurant's menu. The menu items, prices, and restaurant hours are fixed and do not change based on user interaction or other factors.</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Restaurant Menu&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to Our Restaurant&lt;/h1&gt;
+    &lt;h2&gt;Menu&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Pizza - $10&lt;/li&gt;
+        &lt;li&gt;Burger - $8&lt;/li&gt;
+        &lt;li&gt;Pasta - $12&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;Open Hours: 10 AM - 10 PM&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <p>
+            <strong>Dynamic Web Page:</strong> A dynamic web page can display different content and provide user interaction, by adapting its content based on the user's interactions, preferences, or real-time changes in data.
+        </p>
+        <div class="example dynamic-example">
+            <h3>Dynamic Web Page Example</h3>
+            <p>A weather forecasting website where users can enter their location to receive the latest weather updates specific to their area. The content changes based on user input and real-time weather data.</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Weather Forecast&lt;/title&gt;
+    &lt;script&gt;
+        function getWeather() {
+            var location = document.getElementById('location').value;
+            document.getElementById('forecast').innerHTML = 'Fetching weather for ' + location + '...';
+            // Simulate a weather API call
+            setTimeout(function() {
+                document.getElementById('forecast').innerHTML = 'Sunny, 25°C';
+            }, 1000);
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Weather Forecast&lt;/h1&gt;
+    &lt;input type="text" id="location" placeholder="Enter your location"&gt;
+    &lt;button onclick="getWeather()"&gt;Get Weather&lt;/button&gt;
+    &lt;p id="forecast"&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <h2>Static vs Dynamic Websites</h2>
+        <p>
+            <strong>Static Website:</strong> A static website consists entirely of static web pages. It is straightforward, with fixed content, and serves the same information to all visitors. These websites are typically faster to load and easier to host. These are the only sites I have made up to now.
+        </p>
+        <div class="example">
+            <h3>Static Website Example</h3>
+            <p>A digital portfolio for an artist, showcasing their work. The portfolio does not require frequent updates and serves as an online brochure.</p>
+        </div>
+
+        <p>
+            <strong>Dynamic Website:</strong> A dynamic website contains web pages that change dynamically. These sites often include a combination of static and dynamic pages and use server-side or client-side programming to update content based on user interaction, context, or time.
+        </p>
+        <div class="example">
+            <h3>Dynamic Website Example</h3>
+            <p>An e-commerce site where the product listings, prices, and availability update in real-time based on inventory changes, user preferences, or promotions. If I had understood this previously there would have been a few projects that would have gone much smoother.</p>
+        </div>
+
+        <h2>Key Differences</h2>
+        <p>
+            <strong>Static vs Dynamic Web Pages:</strong>
+        </p>
+        <ul>
+            <li>Static web pages display the same content to all users, whereas dynamic web pages can display different content based on user interaction, time, or other criteria.</li>
+            <li>Static pages are simpler to create and host, requiring only HTML and CSS. In contrast, dynamic pages require knowledge of programming languages and databases, making them more complex to develop and maintain.</li>
+        </ul>
+
+        <h2>Importance of JavaScript in Dynamic Web Pages</h2>
+        <p>JavaScript is the common scripting language used to make dynamic Web pages. Here are two reasons why we must include JavaScript in an HTML file:</p>
+        <ul>
+            <li>JavaScript enables interactive features such as form validation, dynamic content updates, and user interface enhancements, which are essential for improving user experience.</li>
+            <li>JavaScript allows for asynchronous data loading and real-time updates without requiring a full page reload, leading to more responsive and efficient web applications.</li>
+        </ul>
+
+        <div class="interactive-section">
+            <h2>Interactive Section</h2>
+            <p>Enter your name to see a dynamic greeting:</p>
+            <input type="text" id="name" placeholder="Your name">
+            <button class="btn" onclick="displayGreeting()">Greet Me</button>
+            <p id="greeting"></p>
+        </div>
+
+        <h2>Discussion</h2>
+        <p>Reply to at least two of your classmates' posts and include the sources consulted.</p>
+    </div>
+
+    <script>
+        function displayGreeting() {
+            var name = document.getElementById('name').value;
+            document.getElementById('greeting').innerText = 'Hello, ' + name + '!';
+        }
+    </script>
+</body>
+</html>

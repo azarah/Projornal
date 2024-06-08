@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Encryption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .example-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        .example-input, .example-output {
+            margin: 10px 0;
+        }
+        .interactive-section {
+            margin: 20px 0;
+        }
+        .reference-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .reference-list li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Understanding Encryption</h1>
+
+<p>Encryption is a method of converting information or data into a code to prevent unauthorized access. This process transforms the original representation of the information, known as plaintext, into an alternative form of information, called ciphertext. Only a secret key can decrypt the ciphertext back into plaintext, enabling access to the encrypted information.</p>
+
+<h2>Types of Encryption</h2>
+<ol>
+    <li>
+        <strong>Symmetric Encryption:</strong> This type involves a single key that both the sender and recipient use for encrypting and decrypting messages. Symmetric keys must be shared between the parties who need to read the information. Algorithms like AES (Advanced Encryption Standard) and DES (Data Encryption Standard) are examples of symmetric encryption.
+    </li>
+    <li>
+        <strong>Asymmetric Encryption:</strong> Also known as public-key encryption, involves two keys: a public key and a private key. The public key is shared with anyone who might send you a message, while the private key remains confidential. Information encrypted with the public key can only be decrypted with the private key, and vice versa. This type of encryption is used in many security protocols, including SSL/TLS for securing websites. RSA (Rivest-Shamir-Adleman) is a well-known asymmetric encryption algorithm.
+    </li>
+</ol>
+
+<h2>Why Encryption Matters</h2>
+<ol>
+    <li><strong>Privacy:</strong> Encryption ensures that sensitive information such as personal details, financial data, and confidential communication remain private and inaccessible to unauthorized parties.</li>
+    <li><strong>Security:</strong> It protects data from being intercepted and misused by cybercriminals during transmission over networks, especially in public Wi-Fi networks, like in a coffee shop scenario.</li>
+    <li><strong>Integrity:</strong> Encryption helps in verifying the integrity of the data being communicated or stored, ensuring that it has not been altered or tampered with during transmission.</li>
+    <li><strong>Authentication:</strong> In the context of asymmetric encryption, it can also be used to authenticate the identity of the parties involved in the communication, as only the intended recipient possesses the correct private key to decrypt the message.</li>
+</ol>
+
+<h2>Caesar Cipher Example</h2>
+<div class="example-box">
+    <p>The Caesar Cipher works by shifting the letters in the message a certain number of places forward or backward through the alphabet. Encryption moves forward, and decryption moves backward through the alphabet.</p>
+    <div class="interactive-section">
+        <label for="caesar-input">Enter a message to encrypt: </label>
+        <input type="text" id="caesar-input" class="example-input" value="come and celebrate with us">
+        <label for="shift-key">Enter shift key: </label>
+        <input type="number" id="shift-key" class="example-input" value="3">
+        <button onclick="encryptCaesar()">Encrypt</button>
+        <p><strong>Encrypted Message: </strong><span id="caesar-output" class="example-output"></span></p>
+    </div>
+</div>
+
+<script>
+    function encryptCaesar() {
+        const input = document.getElementById('caesar-input').value;
+        const shift = parseInt(document.getElementById('shift-key').value);
+        let output = '';
+        for (let i = 0; i < input.length; i++) {
+            let char = input[i];
+            if (char.match(/[a-z]/i)) {
+                let code = input.charCodeAt(i);
+                if (code >= 65 && code <= 90) {
+                    char = String.fromCharCode(((code - 65 + shift) % 26) + 65);
+                } else if (code >= 97 && code <= 122) {
+                    char = String.fromCharCode(((code - 97 + shift) % 26) + 97);
+                }
+            }
+            output += char;
+        }
+        document.getElementById('caesar-output').innerText = output;
+    }
+</script>
+
+<h2>References</h2>
+<ul class="reference-list">
+    <li><a href="http://www.cloudflare.com/learning/ssl/what-is-asymmetric-encryption/">Cloudflare: What is Asymmetric Encryption?</a></li>
+    <li><a href="http://www.splunk.com/en_us/blog/learn/rsa-algorithm-cryptography.html">Splunk: RSA Algorithm Cryptography</a></li>
+</ul>
+
+</body>
+</html>

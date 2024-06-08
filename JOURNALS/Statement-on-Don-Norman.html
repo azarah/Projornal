@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive HTML Article</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-left: 4px solid #3498db;
+        }
+        .example {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .interactive-content {
+            border: 1px solid #95a5a6;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #fafafa;
+            margin-top: 10px;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the text */
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Don Norman's Interface Design Principles</h2>
+
+<div class="section">
+    <p>Don Norman suggests organizing screens and menus functionally, designing commands and menu choices to be distinctive, and making it difficult for users to take irreversible actions. Norman also says to provide feedback about the state of the interface (e.g., changing the cursor to show whether a map interface is in zoom-in or select mode) and designing for consistency of actions (e.g., ensuring that Yes/No buttons are always displayed in the same order). State one example you have seen where you know these rules have been violated. Although this is crucial to a user interfaces success, suggest why there may be challenges to implement some of Norman’s guidelines.</p>
+
+    <div class="interactive-content">
+        <h3>Organizing screens and menus functionally:</h3>
+        <div class="example">
+            <p>In some dungeon crawler video games, in the inventory management screen, items are sorted alphabetically by default, regardless of their function or rarity. This makes it challenging for players to quickly find and access important items, such as weapons or healing potions, during game-play. I've spent hours avoiding the disorganized inventory, only to discover later that there's an advanced function enabling more interactive management. While many games offer advanced interactive features, they often assume limited player variations and prefer straightforward menu navigation or object-oriented interactions, particularly catering to casual gamers who may not engage with more complex game mechanics.</p>
+        </div>
+    </div>
+</div>
+
+<h2>Difference Among Guidelines, Principles, and Theories</h2>
+
+<div class="section">
+    <div class="tooltip">Guidelines
+        <span class="tooltiptext">Specific recommendations or instructions for designing interfaces.</span>
+    </div>: Specific recommendations or instructions for designing interfaces. Guidelines provide practical advice on how to achieve certain design goals. For example, a guideline could recommend using clear and concise language in interface text, or to provide advanced usability functions like undo, copy, paste, or duplicate for professional users.
+    <div class="tooltip">Principles
+        <span class="tooltiptext">Fundamental concepts or philosophies that guide design decisions.</span>
+    </div>: Fundamental concepts or philosophies that guide design decisions. They provide paramount themes or ideals that designers should strive to achieve. An example of a principle is "consistency," which suggests that interface elements should behave predictably throughout an application.
+    <div class="tooltip">Theories
+        <span class="tooltiptext">Frameworks or models that explain cognitive, psychological, and behavioral aspects of user interaction.</span>
+    </div>: Frameworks or models that explain the cognitive, psychological, and behavioral aspects of user interaction with technology. They provide a deeper understanding of how users interact with interfaces and can inform design practices. An example of an HCI theory is "Fitts' Law," which describes the relationship between target size, distance, and user interaction time.
+</div>
+
+<h2>Accessibility Guidelines and Progress</h2>
+
+<div class="section">
+    <p>Accessibility guidelines are standards and recommendations aimed at making digital products and services usable by people with disabilities. Organizations such as the Web Content Accessibility Guidelines (WCAG) and the World Wide Web Consortium (W3C) lead efforts in developing and promoting accessibility guidelines.</p>
+
+    <div class="interactive-content">
+        <h3>Examples of Accessibility Guidelines:</h3>
+        <ul>
+            <li>Providing alternative text for images to assist users who are visually impaired.</li>
+            <li>Ensuring keyboard navigation is possible for users who cannot use a mouse.</li>
+            <li>Designing with sufficient color contrast to accommodate users with low vision.</li>
+        </ul>
+    </div>
+
+    <p>Progress in accessibility guidelines includes updates to existing standards, increased awareness and adoption of accessibility practices, and efforts to make digital content more inclusive and accessible to all users.</p>
+</div>
+
+<h2>Difference Between Micro-HCI Theories and Macro-HCI Theories</h2>
+
+<div class="section">
+    <div class="tooltip">Micro-HCI Theories
+        <span class="tooltiptext">Focus on specific elements or aspects of human-computer interaction.</span>
+    </div>: These theories focus on specific elements or aspects of human-computer interaction, such as the design of individual interface components like buttons, icons, or menus. Micro-HCI theories address detailed usability issues and design considerations at object level.
+
+    <div class="tooltip">Macro-HCI Theories
+        <span class="tooltiptext">Examine broader aspects of human-computer interaction.</span>
+    </div>: Macro-HCI theories examine broader aspects of human-computer interaction, such as overall system design, user workflows, and the overall user experience. These theories consider how users interact with entire applications or systems and how design choices impact usability and user satisfaction on a larger scale.
+</div>
+
+</body>
+</html>

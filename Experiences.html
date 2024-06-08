@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Porfessional Web Journal" content="Proessional,Web Journal, Portfolio, Resume, Photographer, Web Developer, Top Photographers, Top Web Developers, Top Online Resume">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfessional Web Journal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+
+    <a href="index.html">
+    <img src="sign in black.png" alt="Muhammad Hakeem Signature Logo" class="logo" > <!--Clean the outer square edges of the logo up in photoshop-->
+    </a>
+    
+    <nav>
+        <div class="hamburger" >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="MuhammadHakeem Resume 2024.pdf" download>Resume</a></li>
+            <li><a href="Collections.html">Collections</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="#contactMe">Contact</a></li>
+        </ul>
+     
+    </nav>
+</header>
+    <title>Experience Grid</title>
+    <style>
+  
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .grid-item {
+            position: relative;
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+       .hover-text {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            white-space: nowrap;
+            animation: liquid-bg 1.5s infinite alternate;
+        }
+        .grid-item:hover .hover-text {
+            display: block;
+        }
+        @keyframes liquid-bg {
+            0% {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            50% {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            100% {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        .experience-details {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 1200px;
+        }
+        .experience-details h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .experience-details p {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .experience-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .experience-details li {
+            font-size: 1em;
+            margin: 5px 0;
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+        .experience-details li::before {
+            content: "• ";
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="grid-container">
+    <div class="grid-item" onclick="showExperience('freelance')">
+        Freelance Experience
+        <div class="hover-text">Freelance</div>
+    </div>
+    <div class="grid-item" onclick="showExperience('creative')">
+        Creative Director
+        <div class="hover-text">Creative</div>
+    </div>
+    <div class="grid-item" onclick="showExperience('development')">
+        Web Development
+        <div class="hover-text">Development</div>
+    </div>
+    <div class="grid-item" onclick="showExperience('photography')">
+        Photography
+        <div class="hover-text">Photography</div>
+    </div>
+    <!-- Add more grid items as needed -->
+</div>
+
+<div id="experience1" class="experience-details" data-keywords="freelance development" data-start-date="2023-07">
+    <h2>Freelance Web Designer/Developer</h2>
+    <p><strong>Intyce Tees LLC - Chicago, IL</strong></p>
+    <p><strong>July 2023 to Present</strong></p>
+    <ul>
+        <li>Actively implement w3c practices and functions in order to maintain registry of 30 domains while coordinating with registrar on server uptime.</li>
+        <li>Prepare proposals towards the development of custom websites and web apps that meet the unique needs of clients.</li>
+        <li>Identify, capture and process rare perspectives of subjects for visual storytelling with Canon and DJI photography and video equipment.</li>
+    </ul>
+</div>
+
+<div id="experience2" class="experience-details" data-keywords="creative photography" data-start-date="2019-08" data-end-date="2023-07">
+    <h2>Creative Director</h2>
+    <p><strong>Intyce Tees LLC - Grand Rapids, MI</strong></p>
+    <p><strong>August 2019 to July 2023</strong></p>
+    <ul>
+        <li>Actively seek out responsible clothing manufacturers and trends in order to develop clothing collection reports for next season.</li>
+        <li>Integrate Adobe Illustrator and Photoshop in order to prototype clothing materials into fashion pieces.</li>
+        <li>Utilize Chroma and Ricoma EM1010 along with Ricoh RI 1000 to develop stylish fashion items.</li>
+        <li>Showcase and Photograph final design on models in relevant and busy locations under the best light.</li>
+    </ul>
+</div>
+
+</body>
+<script src="Experience_Grid.js"></script>
+<footer>
+    &copy; 2024 Muhammad Hakeem. All rights reserved.
+</footer>
+
+<script src="StyleSol_Slideshow.js"></script>
+<script src="Contact_Form.js"></script>
+
+<script src="HamburgerMenu_FX.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const link = document.getElementById('link');
+        const newLabel = document.getElementById('newLabel');
+        const visitedLinks = JSON.parse(localStorage.getItem('visitedLinks')) || [];
+
+        if (visitedLinks.includes(link.href)) {
+            newLabel.classList.add('hidden');
+        }
+
+        link.addEventListener('click', function(event) {
+            visitedLinks.push(link.href);
+            localStorage.setItem('visitedLinks', JSON.stringify(visitedLinks));
+            newLabel.classList.add('hidden');
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communicating with Stakeholders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #FFFFFF;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #1DB954;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #1E1E1E;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .interactive-example {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background: #2C2C2C;
+        }
+        .interactive-example h3 {
+            margin-top: 0;
+        }
+        .accordion {
+            background: #2C2C2C;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.2em;
+            transition: 0.4s;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .active, .accordion:hover {
+            background-color: #3A3A3A;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: #2C2C2C;
+            overflow: hidden;
+            border-radius: 0 0 5px 5px;
+        }
+        .panel p {
+            margin: 10px 0;
+        }
+        .quiz {
+            background: #2C2C2C;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .quiz h3 {
+            color: #1DB954;
+        }
+        .quiz input[type="radio"] {
+            margin: 10px 0;
+        }
+        .quiz button {
+            background: #1DB954;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<div class="nav-buttons">
+    <button onclick="navigateTo('previous')">Previous</button>
+    <button onclick="navigateTo('next')">Next</button>
+</div>
+<body>
+    <div class="container">
+        <h1>Communicating with Stakeholders</h1>
+
+        <h2>Get to the Point</h2>
+        <p>Security stakeholders have roles and responsibilities that are time-sensitive and impact the business. It’s important that any communications they receive, and the actions they need to take, are clear. To get to the point in your communications, ask yourself:</p>
+        <ul>
+            <li>What do I want this person to know?</li>
+            <li>Why is it important for them to know it?</li>
+            <li>When do they need to take action?</li>
+            <li>How do I explain the situation in a nontechnical manner?</li>
+        </ul>
+
+        <h2>Follow the Protocols</h2>
+        <div class="interactive-example">
+            <h3>Understanding Protocols</h3>
+            <button class="accordion">Learn the Protocols</button>
+            <div class="panel">
+                <p>First, learn about the different protocols and procedures in place for communicating with stakeholders and other members of the organization.</p>
+            </div>
+            
+            <button class="accordion">Know the Applications</button>
+            <div class="panel">
+                <p>Know what applications and forms of communications are acceptable before you begin communicating with stakeholders, such as in-person meetings, video conferencing, emails, or company chat applications.</p>
+            </div>
+        </div>
+
+        <h2>Communicate with Impact</h2>
+        <p>When you communicate with an operations manager, make sure you address relevant information that relates to their daily responsibilities, such as anomalies in data logs that you are escalating. Concentrating on a manager’s daily responsibilities will help you communicate the need-to-know information to that individual.</p>
+
+        <h2>Communication Methods</h2>
+        <div class="interactive-example">
+            <h3>Choosing the Right Method</h3>
+            <button class="accordion">Instant Messaging</button>
+            <div class="panel">
+                <p>Use for straightforward messages that need quick responses.</p>
+            </div>
+            
+            <button class="accordion">Emailing</button>
+            <div class="panel">
+                <p>Best for detailed explanations and providing documentation.</p>
+            </div>
+            
+            <button class="accordion">Video Calling</button>
+            <div class="panel">
+                <p>Useful for complex discussions that benefit from visual aids and real-time interaction.</p>
+            </div>
+            
+            <button class="accordion">Phone Calls</button>
+            <div class="panel">
+                <p>Effective for urgent matters that need immediate attention.</p>
+            </div>
+            
+            <button class="accordion">Sharing a Spreadsheet</button>
+            <div class="panel">
+                <p>Ideal for presenting data in an organized manner.</p>
+            </div>
+            
+            <button class="accordion">Sharing a Slideshow</button>
+            <div class="panel">
+                <p>Great for structured presentations that need visual support.</p>
+            </div>
+        </div>
+
+        <h2>Interactive Quiz: Communication Methods</h2>
+        <div class="quiz">
+            <h3>Which method is best for a quick, straightforward message?</h3>
+            <input type="radio" id="q1a1" name="q1" value="1">
+            <label for="q1a1">A. Email</label><br>
+            <input type="radio" id="q1a2" name="q1" value="2">
+            <label for="q1a2">B. Instant Messaging</label><br>
+            <input type="radio" id="q1a3" name="q1" value="3">
+            <label for="q1a3">C. Video Calling</label><br>
+            <input type="radio" id="q1a4" name="q1" value="4">
+            <label for="q1a4">D. Sharing a Slideshow</label><br>
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        function checkAnswer() {
+            var radios = document.getElementsByName('q1');
+            var result = document.getElementById('result');
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    if (radios[i].value === "2") {
+                        result.textContent = "Correct! Instant Messaging is best for quick, straightforward messages.";
+                        result.style.color = "#1DB954";
+                    } else {
+                        result.textContent = "Incorrect. Try again.";
+                        result.style.color = "#FF0000";
+                    }
+                    break;
+                }
+            }
+        }
+
+        function navigateTo(direction) {
+            if (direction === 'previous') {
+                window.location.href = 'Navigating-the-World-of-SQL.html'; // replace with the actual URL
+            } else if (direction === 'next') {
+                window.location.href = 'Exploring-CLI-and-Structured-Queries-in-Cybersecurity.html'; // replace with the actual URL
+            }
+        }
+    </script>
+</body>
+</html>

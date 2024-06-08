@@ -7,16 +7,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-.content-section {
-    padding: 20px;
-    margin: 10px;
+  
 }
 
-footer {
-    padding-bottom: 20px;
-    margin: 10px;
-}
+
 header {
     background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0));
     color: white;
@@ -30,6 +24,12 @@ header {
 }
 header .logo {
     height: 50px;
+    margin-right: auto;/* This pushes the logo to the left */
+}
+
+nav {
+    display: flex;
+    align-items: center;
 }
 nav ul {
     list-style: none;
@@ -50,7 +50,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 .section-title {
-    font-size: 1.5em;
+    font-size: 1.75em;
     border-bottom: 2px solid #333;
     margin-bottom: 10px;
     padding-bottom: 5px;
@@ -71,9 +71,36 @@ nav ul li a:hover {
     min-width: 250px;
     margin: 10px;
     padding: 10px;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
+    background-color: #ffffff; /* Changes Background Colour of Containers for Education, Skills, Experiences and Contact Info */
+    border: 1px solid #ffffff; /* Changes Border Colour of Containers for Education, Skills, Experiences and Contact Info */
 }
+
+/* Coming Soon Buttons */
+.SoonIcons {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  margin: 15px 75px 0px 0px;
+  
+}
+
+.new-Label {
+    color: rgb(165, 165, 165);
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+    position: relative;
+    top: -0.5em;
+    padding: 5px;
+   
+}
+
+.hidden {
+    display: none; /* Hide the label if the link has been visited */
+}
+
+
+/* ----------Begin Styling of CONTACT/EDUCATION/SKILL/EXPERIENCE ------------ */
 .contact-info, .education, .skills, .experience {
     margin-bottom: 20px;
 }
@@ -81,8 +108,7 @@ nav ul li a:hover {
     margin: 5px 0;
 }
 
-/* ----------Begin Styling of Contact Form------------ */
-
+/* ----------Begin Styling of CONTACT FORM ------------ */
 
 div .contactForm {
     background: #fafafa;
@@ -93,6 +119,7 @@ div .contactForm {
     width: 100%;
     text-align: center;
 }
+
 h2 {
     margin-bottom: 15px;
     font-size: 24px;
@@ -117,7 +144,6 @@ input, textarea {
 }
 p button {
     width: 100%;
-    background: #bfbfbf;
     color: white;
     border: none;
     padding: 10px;
@@ -126,9 +152,14 @@ p button {
     font-size: 16px;
     align-self: center; /* Center the button */
 }
+button {
+    background: #838383;
+}
+
 button:hover {
     background: #a6a6a6;
 }
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -140,8 +171,122 @@ button:hover {
     height: 25px;
     cursor: pointer;
 }
-/*---------------End Styling of Contact Form ----------------*/
+/*---------------End Styling of CONTACT FORM ----------------*/
 
+.grid-container {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 20px;
+    padding: 5px;
+    width: 90%;
+    max-width: 1200px;
+}
+.grid-item {
+    position: relative;
+    background-color: #ffffff;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+.hover-text {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    animation: liquid-bg 1.5s infinite alternate;
+}
+.grid-item:hover .hover-text {
+    display: block;
+}
+@keyframes liquid-bg {
+    0% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+.experience-details {
+   /*-- display: none; */
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+}
+.experience-details h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.experience-details p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+.experience-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+.experience-details li {
+    font-size: 1em;
+    margin: 5px 0;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+.experience-details li::before {
+    content: "• ";
+    color: #007bff;
+}
+
+/*---------------Begin Styling of EXPERIENCES GRID ----------------*/
+
+.ex-btn {
+    display: inline-block;
+    padding: 0px 0px 0px 10px;
+   width: 100%;
+    color: #696969;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.ex-btn:hover {
+    background-color: #292929;
+}
+
+.ex-btn:active {
+    background-color: #222222;
+}
+
+
+.content-section {
+    padding: 20px;
+    margin: 10px;
+    flex: 1; /* Ensure content section takes up available space */
+}
+
+/*---------------Begin Styling of FOOTER ----------------*/
 
 footer {
     background: linear-gradient(to top, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
@@ -152,6 +297,149 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/*---------------End Styling of CONTACT FORM ----------------*/
+
+
+/* Styling for the collections page. Beginning./
+
+
+/*SLIDESHOW */
+
+
+
+/*.slideshow-container {
+    position: relative;
+    max-width: 100rem;
+    margin: auto;
+}
+*/
+.slideshow_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align images at the top */
+    height: 100vh; /* Adjust this based on your design */
+    margin-bottom: 20px; /* Adjust this space as needed */
+}
+
+.slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align images at the top */
+    height: 100vh; /* Adjust this based on your design */
+    position: relative;
+    margin-bottom: 5px; /* Adjust this space as needed */
+}
+
+.slide {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: scale-down;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/*--Categories Section--*/
+
+.category { /* Styling of text  */
+    font-size: 2em;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    margin: 5px 0;
+    text-transform: uppercase;
+    color: #333;
+    text-decoration: none;
+}
+.category:hover {
+    color: #555;
+}
+
+.categories {
+    margin-top: 20px; /* Reduce this value to decrease space */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Ensure items wrap if necessary */
+
+}
+.categories a {
+    color: white;
+    cursor: pointer;
+    margin: 5px 10px; /* Control space between items */
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    flex-direction: row;
+    line-height: 1; /* Control space between the height of words */
+}
+
+/*---------------END Styling of COllections page ----------------*/
+
+/* General box-sizing for consistency */
+* {
+    box-sizing: border-box;
+}
+
+/* Hamburger menu styles */
+
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: #333;
+}
+
+
+
+/* Media query for PHONE DEVICES */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Media query for MOBILE DEVICES */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -166,336 +454,4 @@ footer {
         text-align: left;
         margin: 5px 0;
     }
-}
-/* Main Styling for header and navigation, Ending. */
-
-
-
-/* Styling for Current Photos Page, beginning. Needs parsing of styling that impedes or conflicts with main header and navigation styling. */
-/*
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-*/
-/*
-header {
-    background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0));
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-*/
-/*
-header .logo {
-    height: 50px;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-nav ul li {
-    margin: 0 10px;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-}
-nav ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-*/
-
-.slides {
-    display: none;
-    width: 100%;
-}
-.active {
-    display: block;
-}
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-.dots {
-    text-align: center;
-    padding: 20px;
-}
-.dots span {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-.dots .active {
-    background-color: #717171;
-}
-/* Lightbox styles */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 1001;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.9);
-}
-.lightbox-content {
-    position: relative;
-    margin: auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 700px;
-    background-color: white;
-    border-radius: 10px;
-}
-.lightbox img {
-    width: 100%;
-}
-.close {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-.photo-info {
-    margin-top: 10px;
-}
-
-/* Styling for Current Photos Page, ending. */
-
-
-
-/* Styling for the catagories page. Beginning. */
-/*
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
-}
-*/
-
-.container_catagories {
-    text-align: center;
-}
-/*
-header {
-    background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-*/
-header .logo {
-    height: 50px;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-nav ul li {
-    margin: 0 10px;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-}
-nav ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
-*/
-.categories {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.category {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 20px 0;
-    text-transform: uppercase;
-    color: #333;
-    text-decoration: none;
-}
-.category:hover {
-    color: #555;
-}
-/* Styling for the catagories page. Ending. */
-
-/* Styling for the journal page. Beginning. */
-/*
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-header {
-    background: linear-gradient(to bottom, rgba(51, 51, 51, 0), rgba(51, 51, 51, 1));
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-header .logo {
-    height: 50px;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-nav ul li {
-    margin: 0 10px;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-}
-nav ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
-*/
-.container_Journal {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-.grid-item {
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: transform 0.2s;
-}
-.grid-item:hover {
-    transform: scale(1.05);
-}
-.thumbnail {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-.title {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #333;
-}
-.description {
-    font-size: 1em;
-    color: #666;
-}
-/*
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media (max-width: 480px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-}
-*/
-/* Styling for the journal page. Ending. */
-
-/* Styling for the slideshow. */
-
-section .slideshow img {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: ease-in-out;
-}
-
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #555;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #333;
 }
