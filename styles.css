@@ -293,10 +293,13 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    position: sticky;
+    position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
 }
+
+
 /*---------------End Styling of CONTACT FORM ----------------*/
 
 
@@ -313,87 +316,20 @@ footer {
     margin: auto;
 }
 */
-.slideshow_wrapper {
+/*.slideshow_wrapper {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align images at the top */
-    height: 100vh; /* Adjust this based on your design */
-    margin-bottom: 20px; /* Adjust this space as needed */
-}
+    /*height: 100vh; /* Adjust this based on your design */
+    /*margin-bottom: 20px; /* Adjust this space as needed 
+}*/
 
-.slideshow {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align images at the top */
-    height: 100vh; /* Adjust this based on your design */
-    position: relative;
-    margin-bottom: 5px; /* Adjust this space as needed */
-}
 
-.slide {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: scale-down;
-}
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 10;
-}
 
-.prev {
-    left: 0;
-}
 
-.next {
-    right: 0;
-}
-
-/*--Categories Section--*/
-
-.category { /* Styling of text  */
-    font-size: 2em;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    margin: 5px 0;
-    text-transform: uppercase;
-    color: #333;
-    text-decoration: none;
-}
-.category:hover {
-    color: #555;
-}
-
-.categories {
-    margin-top: 20px; /* Reduce this value to decrease space */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center items horizontally */
-    flex-wrap: wrap; /* Ensure items wrap if necessary */
-
-}
-.categories a {
-    color: white;
-    cursor: pointer;
-    margin: 5px 10px; /* Control space between items */
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    padding: 5px;
-    flex-direction: row;
-    line-height: 1; /* Control space between the height of words */
-}
-
-/*---------------END Styling of COllections page ----------------*/
 
 /* General box-sizing for consistency */
-* {
+*{
     box-sizing: border-box;
 }
 

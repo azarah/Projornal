@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Article Template</title>
     <style>
+
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Gill Sans', sans-serif;
             background-color: #121212;
-            color: #f0f0f0;
+            color: #a7c4a5;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #1c1c1c;
-            padding: 20px;
             text-align: center;
         }
-        header h1 {
-            color: #ffffff;
-            margin: 0;
+
+        header h1, h3 {
+            color: #02c453;
         }
+
+     
         .content {
             padding: 20px;
         }
@@ -32,10 +34,21 @@
             padding: 20px;
         }
         article h2 {
-            color: #ffffff;
+            color: #a7c4a5;
         }
+
+        article h4 {
+            color: #cffacd;
+        }
+        
+        article h5 {
+            color: #cffacd;
+            text-decoration: italic;
+            text-align: center;
+        }
+
         .collapsible {
-            background-color: #333333;
+            background-image: radial-gradient(circle, #66a769, #1c1c1c);
             color: #ffffff;
             cursor: pointer;
             padding: 10px;
@@ -44,15 +57,18 @@
             text-align: left;
             outline: none;
             font-size: 15px;
+            
         }
+
         .collapsible:after {
             content: '\002B';
-            color: #ffffff;
+            color: #797979;
             font-weight: bold;
             float: right;
         }
         .collapsible.active:after {
             content: "\2212";
+            color: #181818;
         }
         .collapsible-content {
             max-height: 0;
@@ -60,7 +76,8 @@
             transition: max-height 0.2s ease-out;
             background-color: #1c1c1c;
             padding: 0 18px;
-            color: #ffffff;
+            color: #a7c4a5;
+            word-wrap: break-word;
         }
         .gallery {
             display: flex;
@@ -117,23 +134,68 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        button a {
+            text-decoration: none;
+            padding: 0px 20px 5px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover a {
+            text-decoration: none;
+            padding: 0px 20px 5px;
+            font-size: 16px;
+            background-color: #111111;
+            color: rgb(167, 255, 163);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            text-decoration: none;
+            margin: 5px;
+            padding: 5px 5px;
+            font-size: 16px;
+            background-color: #222222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            text-decoration: none;
+            margin: 5px;
+            padding: 5px 5px;
+            font-size: 16px;
+            background-color: #111111;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+      
     </style>
 </head>
 
-
-
-
-
 <body>
- 
+    <button class="article_btn"><a href="../Journal.html">𝐽𝑜𝑢𝑟𝑛𝑎𝑙</a></button>
+    <button class="article_btn"><a href="Embracing-the-Wild-West-of-Cybersecurity.html" class="ex-btn">❮</a></button>
+    <button class="article_btn"><a href="Mastering-the-Art-of-Audio-Mixing.html" class="ex-btn"> ❯ </a></button>
+    <button class="article_btn"><a href="../index.html"> ⏏ </a></button>
 <header>
     <h1>Navigating the World of SQL</h1>
+    <h3>A Journey Beyond Cybersecurity</h3>
 </header>
 
 <div class="content">
     <article>
-        <h2>A Journey Beyond Cybersecurity</h2>
-        <h3>The Versatile Power of SQL in Everyday Life</h3>
+        
+        <h4>The Versatile Power of SQL in Everyday Life</h4>
         <p>As someone who's not currently in a tech-focused profession, it's fascinating to explore how SQL (Structured Query Language) could streamline my day-to-day tasks. My background in photography and platform mediation offers a unique lens through which to view SQL's potential. While I may not be directly applying SQL in cybersecurity, its capabilities in organizing and managing data are universally applicable.</p>
         <button class="collapsible">Organizing Media Files: A Photographer’s Perspective</button>
         <div class="collapsible-content">
@@ -155,6 +217,8 @@
         <div class="collapsible-content">
             <p>In conclusion, SQL is more than just a language for database management; it's a tool for growth, adaptation, and efficiency across various fields. As I embark on this journey, the adaptability and power of SQL will not only aid in my professional development but also offer new perspectives in managing and securing data, irrespective of the industry. The path ahead is not just about learning a language; it's about embracing a mindset that values precision, efficiency, and security in a data-driven world.</p>
         </div>
+        <br/>
+        <h5>All Rights Reserved 2024 ~ By: Muhammad Hakeem ~ Created: May 9 2024 9:42 AM</h5>
     </article>
 
     <div class="gallery">
