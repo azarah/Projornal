@@ -110,10 +110,12 @@
     <button class="next" onclick="changeSlide(1)">&#10095;</button>
         
     <div class="categories">
-        <a href="#" class="category" onclick="filterSlides('urban-arrival')">Urban Saturation</a>
-        <a href="#" class="category" onclick="filterSlides('glass-suits')">Glass Suits</a>
-        <a href="#" class="category" onclick="filterSlides('midwest-teal')">Midwest Teal</a>
-        <a href="#" class="category" onclick="filterSlides('our-backyard')">Our Backyard</a>
+        <a href="#" class="category" onclick="filterSlides('Chicago Skyline')">Chicago Skyline</a>
+        <a href="#" class="category" onclick="filterSlides('Buildings & Architecture')">Buildings & Architecture</a>
+        <a href="#" class="category" onclick="filterSlides('Lake Michigan')">Lake Michigan</a>
+        <a href="#" class="category" onclick="filterSlides('Nature')">Nature</a>
+        <a href="#" class="category" onclick="filterSlides('Birds & Wild Life')">Birds & Wild Life</a>
+        <a href="#" class="category" onclick="filterSlides('Structures & Engineering')">Structures & Engineering</a>
         <a href="#" class="category" onclick="filterSlides('Fashion Pohotgraphy')">Fashion Photography</a>
         <a href="#" class="category" onclick="filterSlides('Graphic Design')">Graphic Design</a>
         <a href="#" class="category" onclick="filterSlides('Web & App Design')">Web & App Design</a>
@@ -133,7 +135,7 @@
     let currentSlide = 0;
 let slides = [];
 const categories = {
-    'urban-arrival': [
+    'Chicago Skyline': [
         'IMGWeb/Urban_Saturation/01Ley Lines_Gotham on a good day_Web Display.jpg',
         'IMGWeb/Urban_Saturation/02Electric Cherry Blossom_Gotham on a good day_Web Display_1.jpg',
         'IMGWeb/Urban_Saturation/03BlackenWhiteGotham on a good day_Web Display.jpg',
@@ -142,7 +144,7 @@ const categories = {
         'IMGWeb/Urban_Saturation/15Ley Lines B&W_Urbans Saturation_Webdisplay.jpg',
         'IMGWeb/Urban_Saturation/14Ley Lines_Urbans Saturation_Webdisplay.jpg',
     ],
-    'glass-suits': [
+    'Buildings & Architecture': [
         'IMGWeb/Glass Suits/Workflow/01Sky Line B&W_Glass Suits_Webdisplay.jpg',
         'IMGWeb/Glass Suits/Workflow/02Sky Line_Glass Suits_Webdisplay.jpg',
         'IMGWeb/Glass Suits/Workflow/09Golden Hour B&W_Glass Suits_Webdisplay.jpg',
@@ -157,20 +159,28 @@ const categories = {
         'IMGWeb/Glass Suits/Workflow/10Reflecting Angles_Glass Suits_Webdisplay.jpg',
         
     ],
-    'midwest-teal': [
-    'IMGWeb/2024-01-05 14.19.43-2.jpeg',
-        'IMGWeb/2024-01-05 14.18.57-2.jpeg',
-        'IMGWeb/2024-01-05 14.19.43-2.jpeg',
-        'IMGWeb/2024-01-05 14.18.57-2.jpeg',
-        'IMGWeb/2024-01-05 14.19.43-2.jpeg',
+    'Lake Michigan': [
+        'IMGWeb/Lake Michigan/Chicago Skyline 600mm Portrait_Lake Michigan_Promontory Point, Chicago Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Lake Michigan/Chicago Skyline 600mm_Lake Michigan_Promontory Point, Chicago Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Lake Michigan/Chicago Skyline_Lake Michigan_Promontory Point, Chicago Ill_Muhammad Hakeem.jpg',
     ],
-    'our-backyard': [
+    'Nature': [
         'IMGWeb/Our Backyard/04Secret Forest_Our Backyard_Webdisplay.jpg',
-        'IMGWeb/Our Backyard/05Secret Forest B&W_Our Backyard_Webdisplay.jpg',
-        'IMGWeb/Our Backyard/03Our_backyardSaturated VintageWeb Display.jpg',
-        'IMGWeb/Our Backyard/01Our_backyardSaturated VintageWeb Display.jpg',
-        'IMGWeb/Our Backyard/02Our_backyardSaturated VintageWeb Display.jpg',
-    ], 
+        'IMGWeb/Our Backyard/Path around_Willow Tree_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg',
+    ],
+    'Birds & Wild Life': [
+        'IMGWeb/Our Backyard/Grroming Raven_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Our Backyard/Proud  Raven Cropped_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Our Backyard/Sitting Duck_Mallard_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Our Backyard/Tufted Raven_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Our Backyard/Wise Raven_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem_1.jpg',
+        'IMGWeb/Our Backyard/Black Bill_Mallard_Marquette Park Reserve, Chicago Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Our Backyard/Prancing Raven_Black Crested Night Heron_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Our Backyard/Posing Black Bird_Red Winged Black Bird_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Our Backyard/Preparing Black Bird_Red Winged Black Bird_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Our Backyard/Staring Raven_Black Crested Night Heron_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg',
+    ],
+
     'Fashion Pohotgraphy': [
         'IMGWeb/Apparel Design/_MG_1276.jpg',
         'IMGWeb/Apparel Design/_MG_1717.jpg',
@@ -178,25 +188,29 @@ const categories = {
         'IMGWeb/Apparel Design/_MG_2016.jpg',
         'IMGWeb/Apparel Design/_MG_2030.jpg',
         'IMGWeb/Apparel Design/2022Apparel DesignSaturated VintageWeb Display_1.jpg',
-        'IMGWeb/Apparel Design/2022Apparel DesignSaturated VintageWeb Display.jpg',
         'IMGWeb/Apparel Design/Photo Jan 04, 2 31 19 PM.jpg',
         'IMGWeb/Apparel Design/Photo Jan 04, 2 59 56 PM.jpg',
         'IMGWeb/Apparel Design/Photo Jan 04, 3 26 57 PM.jpg',
         'IMGWeb/Apparel Design/Photo Jan 04, 3 30 11 PM.jpg',
-        'IMGWeb/Apparel Design/Photo Jan 04, 3 30 19 PM.jpg',
         'IMGWeb/Apparel Design/Photo Jan 04, 3 49 24 PM.jpg',
         'IMGWeb/Apparel Design/Photo Jan 06, 10 32 38 AM.jpg',
         'IMGWeb/Apparel Design/Photo Jan 11, 1 04 42 PM.jpg',
         'IMGWeb/Apparel Design/Photo Jan 11, 1 10 26 PM.jpg',
         'IMGWeb/Apparel Design/Photo Jan 11, 1 14 58 PM.jpg',
-        '',
     ],
-    'Graphic Design': [
+    'Structures & Engineering': [
+        'IMGWeb/Urban_Saturation/01BlackenWhiteWire Framed_Web Display.jpg',
+        'IMGWeb/Urban_Saturation/02Moving CastleWire Framed_Web Display.jpg',
+        'IMGWeb/Urban_Saturation/17Suspended Animation B&W_Urbans Saturation_Webdisplay.jpg',
+        'IMGWeb/Urban_Saturation/16Suspended Animation_Urbans Saturation_Webdisplay.jpg',
+        'IMGWeb/Urban_Saturation/Life Ring_Urban_18th St. Bridge, Chicago Ill_Muhammad Hakeem.jpg',
+        'IMGWeb/Urban_Saturation/Bridge light_Urban_18th St. Bridge, Chicago Ill_Muhammad Hakeem.jpg',
+    ],
+    'Fashion Design': [
         'IMGWeb/Apparel Design/fRENCH MOVIE MOCKS_Diabolique CR HD.png',
         'IMGWeb/Apparel Design/fRENCH MOVIE MOCKS_La grand BL HD.png',
         'IMGWeb/Apparel Design/fRENCH MOVIE MOCKS_La Tete BL HD.png',
         'IMGWeb/Apparel Design/fRENCH MOVIE MOCKS_La tete CR HD.png',
-        '',
     ],
     'Web & App Design': [
         '',
@@ -226,7 +240,7 @@ function loadSlides(category) {
         img.style.objectFit = 'contain';
         img.style.width = 'auto';
         img.style.height = 'auto';
-    } else {
+    } else (img.naturalWidth < img.naturalHeight); {
         // Portrait
         img.style.objectFit = 'contain';
         img.style.width = 'auto';
