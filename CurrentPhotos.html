@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Photos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+        }
+        .article-module {
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #1e1e1e;
+            padding: 0;
+            margin: 15px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .article-module:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+        }
+        .article-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .article-content {
+            padding: 20px;
+        }
+        .article-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+        .article-description {
+            margin-top: 10px;
+            color: #cccccc;
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .lightbox-content {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+            position: relative;
+        }
+        .lightbox img {
+            width: 100%;
+            height: auto;
+        }
+        .lightbox h2 {
+            color: #ffffff;
+        }
+        .lightbox p {
+            color: #cccccc;
+        }
+        .close-btn, .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+        .close-btn {
+            top: 10px;
+            right: 20px;
+            font-size: 2em;
+        }
+        .prev-btn {
+            left: 10px;
+        }
+        .next-btn {
+            right: 10px;
+        }
+        .info-btn {
+            display: block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .info-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="sign in white.png" alt="Logo" class="logo">
+    </a>
+    <nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="Muhammad Hakeem 2024 resume.pdf" download>Resume</a></li>
+            <li><a href="Collections.html">Collections</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="index.html#contactMe">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<p align="center">EDITOR'S PICKS</p>
+<div class="container" id="articles-container"></div>
+
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-content" id="lightbox-content"></div>
+    <div class="close-btn" id="close-btn">&times;</div>
+    <div class="prev-btn" id="prev-btn">&#10094;</div>
+    <div class="next-btn" id="next-btn">&#10095;</div>
+</div>
+
+<script src="HamburgerMenu_FX.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const articles = [
+            {
+                image: "IMGWeb/Our Backyard/Staring Raven_Black Crested Night Heron_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg",
+                title: "Staring Back",
+                description: "Along the banks of Park Reserve...",
+                url: "Collections.html"
+            },
+            {
+                image: "IMGWeb/Our Backyard/Wise Raven_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem_1.jpg",
+                title: "The Wise",
+                description: "Waiting within the brush...",
+                url: "Collections.html"
+            },
+            {
+                image: "IMGWeb/Our Backyard/Grroming Raven_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg",
+                title: "Groom Stance",
+                description: "Taking the time...",
+                url: "Collections.html"
+            },
+            {
+                image: "IMGWeb/Our Backyard/Proud  Raven Cropped_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg",
+                title: "Proud Crested",
+                description: "Growing up crested...",
+                url: "Collections.html"
+            },
+        ];
+
+        const container = document.getElementById('articles-container');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxContent = document.getElementById('lightbox-content');
+        const closeBtn = document.getElementById('close-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        let currentIndex = 0;
+
+        articles.forEach((article, index) => {
+            const articleModule = document.createElement('div');
+            articleModule.classList.add('article-module');
+            articleModule.innerHTML = `
+                <div class="article-image" style="background-image: url('${article.image}');"></div>
+                <div class="article-content" >
+                    <h2 class="article-title">${article.title}</h2>
+                    <p class="article-description">${article.description}</p>
+                </div>
+            `;
+            articleModule.addEventListener('click', () => {
+                currentIndex = index;
+                showLightboxContent();
+                lightbox.style.display = 'flex';
+            });
+            container.appendChild(articleModule);
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : articles.length - 1;
+            showLightboxContent();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < articles.length - 1) ? currentIndex + 1 : 0;
+            showLightboxContent();
+        });
+
+        function showLightboxContent() {
+            const article = articles[currentIndex];
+            lightboxContent.innerHTML = `
+                <img src="${article.image}" alt="${article.title}">
+                <h2>${article.title}</h2>
+                <button class="info-btn" onclick="toggleInfo()">Show Info</button>
+                <div class="info-content">
+                    <p>${article.description}</p>
+                    <a href="${article.url}" target="_blank" class="seeMore-btn">See More</a>
+                </div>
+            `;
+        }
+    });
+
+    function toggleInfo() {
+        const infoContent = document.querySelector('.info-content');
+        const infoBtn = document.querySelector('.info-btn');
+        if (infoContent.style.display === 'none' || infoContent.style.display === '') {
+            infoContent.style.display = 'block';
+            infoBtn.textContent = 'Hide Info';
+        } else {
+            infoContent.style.display = 'none';
+            infoBtn.textContent = 'Show Info';
+        }
+    }
+</script>
+
+<footer>
+    &copy; 2024 Muhammad Hakeem. All rights reserved.
+</footer>
+
+</body>
+</html>

@@ -7,6 +7,35 @@
     <title>Porfessional Web Journal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            top: 125%; /* Position the tooltip below the text */
+            left: 50%;
+            margin-left: -60px; /* Center the tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+</style>
 <body>
 
 <header>
@@ -22,10 +51,10 @@
             <span></span>
         </div>
         <ul>
-            <li><a href="Muhammad Hakeem 2024 resume.pdf" download>Resume</a></li>
+            <li><a href="Muhammad Hakeem 2024 resume.pdf" download >Resume</a></li>
             <li><a href="Collections.html">Collections</a></li>
-            <li><a href="Journal.html">Journal</a></li>
-            <li><a href="#contactMe">Contact</a></li>
+            <li><a href="Journal.html" >Journal</a></li>
+            <li><a href="index.html#contactMe" >Contact</a></li>
         </ul>
      
     </nav>
@@ -35,9 +64,15 @@
     <div class="content-section">
         <div class="section-title">Current Content Links</div>
          
-        <a href="Collections.html" id="link"> <!--<sup class="new-Label" id="newLabel">New</sup>--><img src="IMGWeb/camera.png" class="SoonIcons" alt="Look Here" ></a>
-        <a href="Journal.html" id="link"><!--<sup class="new-Label" id="newLabel">New</sup>--><img src="IMGWeb/book.png" class="SoonIcons" alt="Read Here"></a>
-        <a href="index.html#contactMe" id="link"> <!--<sup class="new-Label" id="newLabel">New</sup>--><img src="IMGWeb/store.png" class="SoonIcons" alt="Shop Here"></a>
+        <a href="CurrentPhotos.html" id="link"> <!--<sup class="new-Label" id="newLabel">New</sup>--><img src="IMGWeb/camera.png" class="SoonIcons" alt="Look Here" ></a>
+
+
+        <a href="Journal.html" id="link" ><!--<sup class="new-Label" id="newLabel">New</sup>--><img src="IMGWeb/book.png" class="SoonIcons" alt="Read Here"></a>
+
+
+        <a href="#contactMe" id="link" class="tooltip"> <span class="tooltiptext">Coming Soon</span><img src="IMGWeb/store.png" class="SoonIcons" alt="Shop Here"></a>
+
+
      
     </div>
 
@@ -47,9 +82,6 @@
     </div>
 
     <div class="flex-container">
-
-       
-
         <div class="flex-item education">
             <div class="section-title">Education</div>
             <p><h2>Associate's degree in Computer Science</h2></p>
@@ -112,11 +144,8 @@
      <!--BEGIN CONTACT SECTION-->
      <div class="flex-item contact-info">
         <div class="section-title" id="contactMe">Contact Info</div>
-        <!-- Obsolete Contact Code: beginning 6/1/24
-        <p>Chicago, IL 60637</p>
-        <p>Email: abdelaziz.hakeem@gmail.com</p>
-        <p>Phone: +1 231 955 9595</p>
-        -->
+
+
         <form id="contactForm" action="mailto:me@muhammadhakeem.com?subject=Contact%20Form%20Submission&body=Name:%20" method="post" enctype="text/plain">
             <p class="contact-info"><input type="text" id="name" name="name" placeholder="Name:" required onchange="updateMailto()"></p>
             <p class="contact-info"><input type="email" id="email" name="email" placeholder="Email:" required onchange="updateMailto()"></p>
