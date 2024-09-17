@@ -5,17 +5,199 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Navigating the World of SQL" content="Personal, Perspective, Cybersecurity, Embracing-Cybersecurity, SQL, Technology, How do I learn SQL, Photographer, Security Analysts, SQL as  Tool">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Journal.css">
     <title>Navigating the World of</title>
+    <style>
 
+
+        body {
+            font-family: 'Gill Sans', sans-serif;
+            background-color: #121212;
+            color: #a7c4a5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+        }
+
+        header h1, h3 {
+            color: #02c453;
+        }
+
+     
+        .content {
+            padding: 20px;
+        }
+        article {
+            background-color: #1c1c1c;
+            border: 1px solid #333333;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        article h2 {
+            color: #a7c4a5;
+        }
+
+        article h4 {
+            color: #cffacd;
+        }
+        
+        article h5 {
+            color: #cffacd;
+            text-decoration: italic;
+            text-align: center;
+        }
+
+        
+
+        button a {
+            text-decoration: none;
+            padding: 0px 20px 5px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        menu {
+            display: flex;
+            justify-content: left;
+            background-color: #222222;
+            padding: 10px;
+        }
+
+        button:hover a {
+            text-decoration: none;
+            padding: 0px 20px 5px;
+            font-size: 16px;
+            background-color: #111111;
+            color: rgb(167, 255, 163);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            text-decoration: none;
+            margin: 5px;
+            padding: 5px 5px;
+            font-size: 16px;
+            background-color: #222222;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            text-decoration: none;
+            margin: 5px;
+            padding: 5px 5px;
+            font-size: 16px;
+            background-color: #111111;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+      
+        .collapsible {
+            background-image: radial-gradient(circle, #000000, #000000);
+            color: #ffffff;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: #797979;
+            font-weight: bold;
+            float: right;
+        }
+        .collapsible.active:after {
+            content: "\2212";
+            color: #181818;
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #1c1c1c;
+            padding: 0 18px;
+            color: #a7c4a5;
+            word-wrap: break-word;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333333;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .lightbox-caption {
+            text-align: center;
+            color: #f0f0f0;
+            padding: 10px 20px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f0f0f0;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <menu>
-    <button class="menu_btn"><a href="../Journal.html">JOURNAL</a></button>
-    <button class="menu_btn"><a href="Exploring-CLI-and-Structured-Queries-in-Cybersecurity.html" class="ex-btn">❮</a></button>
-    <button class="menu_btn"><a href="Embracing-Cybersecurity.html" class="ex-btn"> ❯ </a></button>
-    <button class="menu_btn" ><a href="../index.html" alt="⏏" class="glyphicon glyphicon-home"> </a></button>
+    <button class="article_btn"><a href="../Journal.html">JOURNAL</a></button>
+    <button class="article_btn"><a href="Exploring-CLI-and-Structured-Queries-in-Cybersecurity.html" class="ex-btn">❮</a></button>
+    <button class="article_btn"><a href="Embracing-Cybersecurity.html" class="ex-btn"> ❯ </a></button>
+    <button class="article_btn" ><a href="../index.html" alt="⏏" class="glyphicon glyphicon-home"> </a></button>
     </menu>
 <header>
     <h1>Navigating the World of SQL</h1>
@@ -48,12 +230,16 @@
             <p>In conclusion, SQL is more than just a language for database management; it's a tool for growth, adaptation, and efficiency across various fields. As I embark on this journey, the adaptability and power of SQL will not only aid in my professional development but also offer new perspectives in managing and securing data, irrespective of the industry. The path ahead is not just about learning a language; it's about embracing a mindset that values precision, efficiency, and security in a data-driven world.</p>
         </div>
         <br/>
+        <h5>All Rights Reserved 2024 ~ By: Muhammad Hakeem ~ Created: May 9 2024 9:42 AM</h5>
     </article>
 </div>
 
-<footer>
-    &copy; 2024 Muhammad Hakeem. All rights reserved.
-</footer>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
 <script>
     const collapsibles = document.querySelectorAll('.collapsible');
     collapsibles.forEach((item) => {
@@ -68,6 +254,15 @@
         });
     });
 
+    function openLightbox(element) {
+        document.getElementById('lightbox').style.display = 'block';
+        document.getElementById('lightbox-img').src = element.src;
+        document.getElementById('lightbox-caption').innerText = element.alt;
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
 
    
 </script>
