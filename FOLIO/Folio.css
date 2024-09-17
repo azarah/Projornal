@@ -1,0 +1,374 @@
+ /* ---------------------------MAIN TAG STYLES---------------------------- */
+body {
+    font-family: 'Gill Sans', sans-serif;
+    background-color: #5f5f5f;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0px;
+}
+
+.content {
+    padding: 50px;
+}
+
+
+header {
+    text-align: center;
+}
+
+h1, h2 {
+    color: #00b7ff;
+}
+
+ h3, h4, h5, h6 {
+    color: #01a3e4;
+}
+
+
+p   {
+    color: #f7f7f7;  
+    margin: 1em;       
+}
+
+li {
+    color: #f7f7f7;
+    margin: 1em;  
+    font-style: italic;      
+}
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.responsive-image {
+    width: 100%; /* Makes the image responsive */
+    height: auto;
+}
+
+img {
+    width: 25%; /* Adjusts the image width to fit the grid item */
+    height: auto; /* Maintains the aspect ratio of the image */
+    margin: 0 auto; /* Centers the image within its grid item */
+    padding-bottom: 1%;
+
+}
+
+.lg-img {
+    width: 100%; /* Example: Makes the image up to 50% of its container's width */
+    padding-bottom: 1%;
+
+}
+
+/* Existing styles */
+.image-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-row img {
+    max-width: 100%;
+    height: auto;
+    margin: 2px; /* Decreased spacing */
+    padding-bottom: 1%;
+}
+
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row; /* Changes layout to horizontal on larger screens */
+        align-items: center; /* Aligns items vertically in the center */
+    }
+    .responsive-image, .text-content {
+        flex: 1; /* Allows the image and text to share the available space equally */
+    }
+    img {
+        max-width: 800px; /* Limits the width of the content container */
+        margin: auto; /* Centers the container horizontally */
+    }
+}
+
+.responsive-image {
+    width: 100%; /* Makes the image responsive */
+    height: auto;
+}
+
+img {
+    width: 25%; /* Adjusts the image width to fit the grid item */
+    height: auto; /* Maintains the aspect ratio of the image */
+    margin: 0 auto; /* Centers the image within its grid item */
+    padding-bottom: 1%;
+}
+
+.lg-img {
+    width: 100%; /* Example: Makes the image up to 50% of its container's width */
+    padding-bottom: 1%;
+}
+
+
+
+/* ARTICLE STYLES */
+article {
+    display: flex;
+    flex-direction: column; /* Stacks flex items (images) vertically */
+    align-items: center; /* Centers items horizontally in the container */
+    justify-content: center; /* Centers items vertically in the container, useful if there's extra space */
+    background-color: #505050;
+    border: 1px solid #636363;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+
+
+ /* ---------------------------MENU STYLES---------------------------- */
+menu {
+    display: flex;
+    justify-content: left;
+    background-color: #181818;
+    margin-top: 1em;
+    height: 6em;
+    position: sticky;
+    top: 0;
+
+}
+
+
+ /* ---------------------------menu button---------------------------- */
+
+
+.menu_btn:hover a {
+    text-decoration: none;
+    padding: 1em;
+    font-size: 16px;
+    background-color: #111111;
+    color: white;
+    border: none;
+    border-radius: 5px;
+   
+}
+
+.menu_btn {
+    text-decoration: none;
+    padding: 1em;
+    font-size: 16px;
+    background-color: #181818;
+    color: rgb(121, 121, 121);
+    border: none;
+    border-radius: 5px;
+    
+}
+
+.menu_btn a {
+    text-decoration: none;
+    padding: 1em;
+    font-size: 16px;
+    background-color: #181818;
+    color: rgb(160, 160, 160);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    
+}
+
+/* ---------------------------ARTICLE BUTTON STYLES---------------------------- */
+
+.collapsible a {
+    text-decoration: none;
+    padding: 0px 20px 5px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.collapsible {
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px 5px;
+    font-size: 15px;
+    background-color: #222222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.collapsible:hover {
+    text-decoration: none;
+    margin: 5px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #111111;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.collapsible {
+    background-image: linear-gradient(circle, #363636, #000000);
+    color: #008bc2;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+     
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: #008bc2;
+    font-weight: bold;
+    float: right;
+}
+
+.collapsible.active:after {
+    content: "\2212";
+    color: #008bc2;
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #1c1c1c;
+    padding: 0 18px;
+    color: #a7c4a5;
+    word-wrap: break-word;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #1E1E1E;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.interactive-example {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #2C2C2C;
+}
+.interactive-example h3 {
+    margin-top: 0;
+}
+.accordion {
+    background: #4e4e4e;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1em;
+    transition: 0.4s;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.active, .accordion:hover {
+    background-color: #003e77;
+}
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #1b4163;
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
+}
+.panel p {
+    margin: 10px 0;
+}
+
+/* ---------------------------INTERACTION STYLES---------------------------- */
+        /* ---------------------------QUIZ---------------------------- */
+.quiz {
+    background: #121212;
+color: #FFFFFF;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.quiz h3 {
+    color: #008bc2;
+}
+.quiz input[type="radio"] {
+    margin: 15px 0;
+    
+    
+}
+.quiz button {
+    background: #008bc2;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.lightbox-caption {
+    text-align: center;
+    color: #f0f0f0;
+    padding: 10px 20px;
+}
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f0f0f0;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ---------------------------FOOTER STYLES---------------------------- */
+footer {
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top:20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+   
+    width: 100%;
+}
+

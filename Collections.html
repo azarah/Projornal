@@ -15,12 +15,12 @@
     display: block;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
    
 }
 
 .category { /* Styling of text  */
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 0.5rem 1rem;
     font-weight: bold;
     margin: 5px 0;
@@ -55,11 +55,15 @@
 .slideshow {
     display: flex;
     justify-content: center;
+    
 }
 
 .slide {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 100vw; /* Limit the width to the viewport width */
+    max-height: 100vh; /* Limit the height to the viewport height */
+    object-fit: contain; /* Maintain the image's aspect ratio */
+    width: auto; /* Allow the width to adjust based on the height */
+    height: auto; /* Allow the height to adjust based on the width */
 }
 .prev, .next {
     position: absolute;
@@ -80,7 +84,18 @@
 .next {
     right: 0;
 }
-
+@media screen and (max-width: 768px) {
+    .categories {
+        margin-bottom: 10%; /* Reduce this value to decrease space */
+    }
+    .category {
+        font-size: 1em;
+    }
+    .categories a {
+        margin: 5px 5px; /* Control space between items */
+    }
+    
+}
 
 
 </style>
@@ -90,7 +105,7 @@
 
 <header>
     <a href="index.html">
-    <img src="sign in white.png" alt="Home" class="logo">
+    <img src="Signature in white.png" alt="Home" class="logo">
     </a>
     <nav>
         <div class="hamburger" >
@@ -120,9 +135,11 @@
         <a href="#" class="category" onclick="filterSlides('Nature')">Nature</a>
         <a href="#" class="category" onclick="filterSlides('Birds & Wild Life')">Birds & Wild Life</a>
         <a href="#" class="category" onclick="filterSlides('Structures & Engineering')">Structures & Engineering</a>
-        <a href="#" class="category" onclick="filterSlides('Fashion Pohotgraphy')">Fashion Photography</a>
+        <a href="#" class="category" onclick="filterSlides('Product Photography')">Product Photography</a>
+        <a href="#" class="category" onclick="filterSlides('Fashion')">Fashion</a> 
         <a href="#" class="category" onclick="filterSlides('Graphic Design')">Graphic Design</a>
-        <a href="#" class="category" onclick="filterSlides('Web & App Design')">Web & App Design</a>
+        <a href="#" class="category" onclick="filterSlides('Web & App Design')">Websites & Apps</a>
+        <a href="#" class="category" onclick="filterSlides('Artistic')">Artistic</a>
         <a href="CurrentPhotos.html" class="category" >Editor's Picks</a>
     </div>
 
@@ -150,19 +167,16 @@ const categories = {
         'IMGWeb/Urban_Saturation/14Ley Lines_Urbans Saturation_Webdisplay.jpg',
     ],
     'Buildings & Architecture': [
-        'IMGWeb/Glass Suits/Workflow/01Sky Line B&W_Glass Suits_Webdisplay.jpg',
-        'IMGWeb/Glass Suits/Workflow/02Sky Line_Glass Suits_Webdisplay.jpg',
-        'IMGWeb/Glass Suits/Workflow/09Golden Hour B&W_Glass Suits_Webdisplay.jpg',
-        'IMGWeb/Glass Suits/Workflow/08Golden Hour_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/01Sky Line B&W_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/02Sky Line_Glass Suits_Webdisplay.jpg',
         'IMGWeb/Glass Suits/03Shapes Shadows and Highlights_Glass Suits_Webdisplay.jpg',
         'IMGWeb/Glass Suits/04Shapes Shadows and Highlights B&W_Glass Suits_Webdisplay.jpg',
-        'IMGWeb/Glass Suits/18San Diego Illinois_Urbans Saturation_Webdisplay.jpg',
-        'IMGWeb/Glass Suits/19San Diego Illinois B&W_Urbans Saturation_Webdisplay.jpg',
-        'IMGWeb/Glass Suits/Workflow/06Rise High B&W_Glass Suits_Webdisplay.jpg',
-        'IMGWeb/Glass Suits/Workflow/05Rise High_Glass Suits_Webdisplay.jpg',
-        'IMGWeb/Glass Suits/Workflow/11Reflecting Angles B&W_Glass Suits_Webdisplay.jpg',
-        'IMGWeb/Glass Suits/Workflow/10Reflecting Angles_Glass Suits_Webdisplay.jpg',
-        
+        'IMGWeb/Glass Suits/05Rise High_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/06Rise High B&W_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/08Golden Hour_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/09Golden Hour B&W_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/10Reflecting Angles_Glass Suits_Webdisplay.jpg',
+        'IMGWeb/Glass Suits/11Reflecting Angles B&W_Glass Suits_Webdisplay.jpg', 
     ],
     'Lake Michigan': [
         'IMGWeb/Lake Michigan/Chicago Skyline 600mm Portrait_Lake Michigan_Promontory Point, Chicago Ill_Muhammad Hakeem.jpg',
@@ -182,39 +196,41 @@ const categories = {
         'IMGWeb/Our Backyard/Bee on a flower_Marquette Park Preserve_Chicago Ill_Muhammad Hakeem.jpg',
     ],
     'Birds & Wild Life': [
+        'IMGWeb/Our Backyard/Geese_20240618Portfolio photos Ex_03.jpg',
         'IMGWeb/Our Backyard/Grroming Raven_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg',
         'IMGWeb/Our Backyard/Proud  Raven Cropped_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg',
         'IMGWeb/Our Backyard/Sitting Duck_Mallard_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg',
         'IMGWeb/Our Backyard/Tufted Raven_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem.jpg',
         'IMGWeb/Our Backyard/Wise Raven_Black Crested Heron_Marqutte Park Preserve, Chicacgon Ill_Muhammad Hakeem_1.jpg',
         'IMGWeb/Our Backyard/Black Bill_Mallard_Marquette Park Reserve, Chicago Ill_Muhammad Hakeem.jpg',
-        'IMGWeb/Our Backyard/Prancing Raven_Black Crested Night Heron_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg',
         'IMGWeb/Our Backyard/Posing Black Bird_Red Winged Black Bird_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg',
-        'IMGWeb/Our Backyard/Preparing Black Bird_Red Winged Black Bird_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg',
-        'IMGWeb/Our Backyard/Staring Raven_Black Crested Night Heron_Marquette Park Preserve, Chicago Ill_Muhammad Hakeem.jpg',
         'IMGWeb/Our Backyard/Crafted Mallard_Marquette Park Preserve_Chicago Ill_Muhammad Hakeem.jpg',
         'IMGWeb/Our Backyard/Robin standing tall_Marquette Park Preserve_Chicago Ill_Muhammad Hakeem.jpg',
     ],
 
-    'Fashion Pohotgraphy': [
-        'IMGWeb/Apparel Design/Blauhaus Fashion_Denim Logo_Intycetees Grand Rapids Mi_Inayah Hakeem.jpg',
-        'IMGWeb/Apparel Design/Blauhaus Fashion_Denim Blauhaus Logo_Intyce Tees, Grand Rapids Mi_Inayah Hakeem_1.jpg',
-        'IMGWeb/Apparel Design/Blauhaus Fashion_Concrete Logo_Intycetees Grand Rapids Mi_Ikhlas Hakeem.jpg',
-        'IMGWeb/Apparel Design/Blauhaus Fashion_Purple Rain Wahsed Blauhaus Logo_Intyce Tees, Grand Rapids Mi_Inayah Hakeem.jpg',
-        'IMGWeb/Apparel Design/Ana Khalifa_Black Embroidered Hoodie_Swing Bridge, Grand Rapids Mi_Inayah Hakeem.jpg',
-        'IMGWeb/Apparel Design/Intyce Tees Fashion_Graphic QR code__Intycetees Grand Rapids Mi_Ikhlas Hakeem.jpg',
-        'IMGWeb/Apparel Design/2022Apparel DesignSaturated VintageWeb Display_1.jpg',
-        'IMGWeb/Apparel Design/06Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
-        'IMGWeb/Apparel Design/05Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
-        'IMGWeb/Apparel Design/Graphic Tees Intycetees_Product Photography_Grand Rapids MI_Muhammad Hakeem_9.jpg',
+    'Product Photography': [
+        'IMGWeb/Apparel Design/01Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem_1.jpg',
         'IMGWeb/Apparel Design/02Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
+        'IMGWeb/Apparel Design/03Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
         'IMGWeb/Apparel Design/04Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
+        'IMGWeb/Apparel Design/05Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
+        'IMGWeb/Apparel Design/06Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
         'IMGWeb/Apparel Design/07Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
         'IMGWeb/Apparel Design/08Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
         'IMGWeb/Apparel Design/09Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
-        'IMGWeb/Apparel Design/04Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
-        'IMGWeb/Apparel Design/03Blauhaus Product photos_Intycetees Grand Rapids Mi_Muhammad Hakeem.jpg',
+        'IMGWeb/Apparel Design/Graphic Intyce Tees_20240612Portfolio photos Ex_01.jpg',
     ],
+    'Fashion': [
+        'IMGWeb/Apparel Design/Graphic Intyce Tees_20240612Portfolio photos Ex_02.jpg',
+        'IMGWeb/Apparel Design/2022Apparel DesignSaturated VintageWeb Display_1.jpg',
+        'IMGWeb/Apparel Design/Blauhaus Fashion_Concrete Asiatic BismiAllah_Boulder Park, Grand Rapids Mi_Baiyan Hakeem.jpg',
+        'IMGWeb/Apparel Design/Blauhaus Fashion_Concrete Asiatic BismiAllah_Intyce Tees, Grand Rapids Mi_Baiyan Hakeem.jpg',
+        'IMGWeb/Apparel Design/Blauhaus Fashion_Concrete Logo_Intycetees Grand Rapids Mi_Ikhlas Hakeem.jpg',
+        'IMGWeb/Apparel Design/Blauhaus Fashion_Denim Blauhaus Logo_Intyce Tees, Grand Rapids Mi_Inayah Hakeem_1.jpg',
+        'IMGWeb/Apparel Design/Blauhaus Fashion_Purple Rain Wahsed Blauhaus Logo_Intyce Tees, Grand Rapids Mi_Inayah Hakeem.jpg',
+        'IMGWeb/Apparel Design/Blauhaus_Concrete DTG Logo_Swing Bridge, Grand Rapids Mi_Ikhlas Hakeem.jpg',
+    ],
+
     'Structures & Engineering': [
         'IMGWeb/Urban_Saturation/01BlackenWhiteWire Framed_Web Display.jpg',
         'IMGWeb/Urban_Saturation/02Moving CastleWire Framed_Web Display.jpg',
@@ -225,10 +241,9 @@ const categories = {
     ],
     'Artistic': [
         'IMGWeb/Artistic/Artistic_American Flag_Grand Rapids Mi_Muhammad Hakeem.jpg',
-        'IMGWeb/Artistic/Broken Dialect_Family Land_Coatopa AL_Charletta Hudson.jpg',
-        'IMGWeb/Artistic/Artistic_One Way_Grand Rapids Mi_Muhammad Hakeem.jpg',
-        'IMGWeb/Artistic/Backyard Nostalgia_Inayahs Bike_Grand Rapids  Mi_Muhammad Hakeem.jpg',
-        'IMGWeb/Artistic/Night time_Walking_Grand Rapids  Mi_Muhammad Hakeem.jpg',
+        'IMGWeb/Urban_Saturation/20161205002503brokenDialect5012503.jpg',
+        'IMGWeb/Urban_Saturation/20161205002505brokenDialect5012503.jpg',
+        'IMGWeb/Urban_Saturation/20161205002507brokenDialect5012503.jpg',
     ],
     'Graphic Design': [
         'IMGWeb/Apparel Design/fRENCH MOVIE MOCKS_Diabolique CR HD.png',

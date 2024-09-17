@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Article</title>
+	<style>
+		body {
+            font-family: 'Gill Sans', sans-serif;
+            background-color: #ffffff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 25px;
+		}
+		.article {
+			max-width: 800px;
+			margin: auto;
+		}
+
+        h1 {
+            font-size: 1em;
+            color: #003e77;
+            text-align: right;
+            border-bottom: #d6d6d6 1px solid;
+        }
+
+        h2 {
+            font-size: .75em;
+            color: #003e77;
+        }
+
+        p {
+            font-size: .75em;
+            color: #00065c;
+        }
+		.columns {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 20px; /* Adjust the space between columns */
+		}
+		.column {
+			flex: 1; /* Each column will take equal width */
+			min-width: 250px; /* Minimum width of a column, adjust as needed */
+		}
+        .column p {
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+       
+     
+        .text-columns {
+            column-gap: 20px; /* Adjust the gap between columns */
+            text-align: justify;
+            border-bottom: #f1f1f1 1px solid;
+            border-top: #f1f1f1 1px solid;
+            margin-bottom: 2%;
+            padding-bottom: 2%;
+            padding-top: 2%;
+            margin-top: 2%;
+            line-height: 1.15em;
+        }
+
+        /* ---------------------------MENU STYLES---------------------------- */
+menu {
+    display: flex;
+    justify-content: left;
+    background-color: #fafafac5;
+    height: 3.5em;
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+}
+
+
+ /* ---------------------------menu button---------------------------- */
+
+
+.menu_btn:hover a {
+    text-decoration: none;
+    padding: 1em;
+    font-size: 16px;
+    background-color: #fafafac5;
+    color: rgb(103, 186, 255);
+    border: none;
+    border-radius: 5px;
+   
+}
+
+.menu_btn {
+    text-decoration: none;
+    padding: 1em;
+    font-size: 16px;
+    background-color: #fafafa;
+    color: rgb(121, 121, 121);
+    border: none;
+    border-radius: 5px;
+    
+}
+
+.menu_btn a {
+    text-decoration: none;
+    padding: 1em;
+    font-size: 16px;
+    background-color: #fafafa;
+    color: rgb(160, 160, 160);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    
+}
+
+        @media (min-width: 992px) { /* Desktop */
+            .article {
+                font-size: 1.25rem;
+            }
+            .text-columns {
+                column-count: 2; /* Divide text into 2 columns */
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) { /* Tablet */
+            .article {
+                font-size: 1rem;
+            }
+            .text-columns {
+                column-count: 2; /* Divide text into 2 columns for tablet as well */
+            }
+            .column {
+			flex: 3; /* Each column will take equal width */
+			min-width: 100px; /* Minimum width of a column, adjust as needed */
+		}
+            
+        }
+        @media (max-width: 767px) { /* Mobile */
+            .article {
+                font-size: 1rem;
+            }
+            .columns {
+                flex-direction: column;
+            }
+            .text-columns {
+                column-count: 1; /* Ensure text is in a single column for mobile */
+            }
+
+        }
+
+    
+    </style>
+</head>
+<body>
+
+    <menu>
+        <button class="menu_btn"><a href="../Journal.html">PORTFOLIO</a></button>
+        <button class="menu_btn"><a href="UAIR.html" class="ex-btn">❮</a></button>
+        <button class="menu_btn"><a href="UAIR.html" class="ex-btn"> ❯ </a></button>
+        <button class="menu_btn" ><a href="../index.html" alt="⏏" class="glyphicon glyphicon-home"> ⏏</a></button>
+    </menu>
+
+
+	<div class="article">
+        <div class="text-columns">
+		<h1>The United American Intellectual Republic Branded Armaments</h1>
+        <div>
+            <h2>Design and Legal Activism: A Journey of Advocacy and Art</h2>
+            <p>
+                As I traveled the land in search of answers to my own challenges, I came to a profound realization: the world extends far beyond my personal struggles. Yet, amid this political division that shadows my American legacy, I also recognized that no one else could secure my place in this landscape. Fueled by this understanding, I sought to stand up and advocate for something meaningful, guided by my interpretation of the Civil Rights Act. Through meticulous research and theoretical translation of American legal codes, I embarked on a journey to blend design and legal activism. This endeavor aims to transform the deeds, actions, and bonds of a people into powerful tools of judicial recall, underscoring the essential civil rights that must be upheld for all. This article chronicles my path, weaving together advocacy and art into a compelling portfolio piece. ☰
+
+            </p>
+        </div>
+    </div>
+	<div class="columns">
+		<div class="column">
+				<img src="../UAIR Primary Insignia/UAIR Primary Insignia/UAIR Primary Insignia-1-UAIR Insignia Color.png" alt="Color UAIR Insignia">
+				<p>Full 17 Colors</p>
+		</div>
+		<div class="column">
+				<img src="../UAIR Primary Insignia/UAIR Primary Insignia/UAIR Primary Insignia-2-UAIR Insignia Gradient.png" alt="Royal Gradient UAIR Insignia">
+				<p>Royal Dawn Gradient</p>
+		</div>
+		<div class="column">
+				<img src="../UAIR Primary Insignia/UAIR Primary Insignia/UAIR Primary Insignia-3-UAIR Insignia Black & White.png" alt="Black & White UAIR Insignia">
+				<p>Black & White</p>
+		</div>
+	</div>
+
+    <div class="article">
+        <div class="text-columns">
+                <h1>The UAIR Symbol</h1>
+                <p>
+                    This image is the UAIR symbol of state independence. It inherits
+                    its design from the Quran Sura 12 Ayat 4. Sura 12 is titled; Joseph and
+                    details a story of prophet Joseph’s vision of 11 stars and the sun and the
+                    moon prostrating themselves to him.
+                <p>
+                     
+                <p>
+                    The stars in Joseph’s vision represent his 11 brothers. In the story
+                    his brothers seem to have various attitudes and yet they conspire against
+                    him in a most atrocious way. Yet one of them at least suggests not to kill
+                    him. regardless of what nafs he was guilty of he still carried enough good
+                    sense to suggest the saving of his brothers life and even more he suggests
+                    the hope that he may be picked up and carried far from them. And further
+                    the brothers were presented to Joseph who enjoyed a most satisfying
+                    prank upon them and to display the reward of his positioning as a keeper
+                    of the stores. And further he fed his family and returned happiness to his
+                    fathers heart completing a most beautiful destiny of so many of Allah’s
+                    chosen people and the completion of Prophet Josephs vision. They were
+                    all chosen people because the story was shared with us masha-Allah and I
+                    would like to further point out that, that is also the good in the movement
+                    of media. Potentially this is an important factor in the age old struggle
+                    of media in Islam and an important argument that may be posed by the
+                    vicegerency in the order of affairs to come.
+                </p> 
+
+                <p>
+                    The sun in Joseph’s vision represents his father Jacob, and Allah
+                    completing his favor upon him in the rising of his son, after bearing
+                    the loss of the same with true Muslim value of faith, perseverance and
+                    gratitude to Allah for the seen and unseen.
+                </p>
+
+                <p>
+                    The moon in Joseph’s vision represents his mother
+                    The stars in the UNS vision represent the generations of mankind
+                    that are the continued children of Abraham and brothers in all that the
+                    light is and touches. It is further in respect of the love and even in the hate that revolved around the sibling relationship of prophet Joseph and how
+                    Allah is the master of all lesson’s learned, rewards gained and rewards
+                    lost. With this in mind I believe it is suitable to state it is better for us in Islam, if we but knew, to let by-gone be by-gone and continue to tend the work of the vicegerency, to the good of all men.
+                </p>
+                <p>
+                    In the UNS vision the sun represents the father of the families
+                    that claim their sovereignty in The One and Only Allah and categorize
+                    themselves as a Muslim nation, ordered not by tradition of similarities or
+                    differences, but by individual commitment to the Umma of mankind as
+                    brother nations in Islam.
+                </p>
+                <p>
+                    The sun is rising over the darkness because of the inevitable return
+                    of Islamic influence over the family inheritance and the deliberate strategy
+                    of the non-believers and polytheists to remove the father from the process
+                    of the household in order to usurp the purpose of the family vicegerency
+                    as secular and state government ordained.
+                </p>
+                <p>
+                    The moon and stars in darkness show how the children and the
+                    women are consumed in the darkness of the dominant space of western
+                    atheistic and polytheistic society. 
+                </p>
+                <p>
+                    The suns light reflecting on the moon in the darkness represents
+                    the rising of the Muslim vicegerent as Oneness and the Muslim male
+                    returning to his rightful place as overseer and advisor, illuminating the
+                    shape and beauty of the Muslim woman’s fellowship. Thus staging an
+                    appropriate balance of family values for the light of the future umma.  
+                </p>
+                <p>
+                    Thus are the stars different colors signifying our will and our
+                    intention to restore the brotherhood of man without racial bias and
+                    according to the spirit of Allah’s Vicegerency as demonstrated by the
+                    caliphs of old as they took the message of Islam to the entire world. ☰
+                </p>
+        </div>
+    </div>
+
+        <div class="columns">
+            <div class="column">
+                        <img src="../UAIR Primary Insignia/UAIR Primary Insignia/UAIR Primary Insignia-4-UAIR Seal Gradient.png" alt="UAIR Armorial Seal">
+                        <p>UAIR Armorial Seal</p>
+            </div>
+            <div class="column">
+                        <img src="../UAIR Primary Insignia/UAIR Primary Insignia/UAIR Primary Insignia-5-UAIR Insignia Token.png" alt="UAIR Insignia Token">
+                        <p>UAIR Insignia Token</p>
+            </div>
+            </div>
+    <div class="article">
+        <div class="text-columns">
+                <h1>Introduction to the UAIR</h1>
+                <p>
+                    Vicegerent Scholar SHIP no. #2503  DEED no. #0202 Release date: 04282016
+                    <br/>
+                 
+                <p>
+                    Law is an application of social design and government is the theoretical evolution of The Law of Allah. The Law of Allah comes through Thee, ordained messengers and the books that were granted as guidance. These books primarily include, The Quran, The Torah, and The Gospel. The Messengers include the few we are made aware of by The Books and many we are not.
+                </p> 
+            
+                <p>
+                    We, The Gillespie Hakeem Sovereign Providence (The GHSP), are a sovereign State of Affairs in The United American Intellectual Republic (The UAIR), and have presumed responsibility for our actions as independent national observers of these United States Governance. We have chosen to do so from our own theoretical supposition of halal law derived from our understanding of Quran and our needs as human beings born and raised in the deception of legal justice substituted for our natural human benefits. The US law as accurately described as; the law of inequality and injustice known as  these United States of theoretical code and government.
+                </p> 
+            
+                <p>
+                    As thus, we have arrived at the authority to declare; the code of The U.S. is not based on The Books or The Messengers of Allah; and is therefor derogatory to our benefits and beliefs as Muslims believing in the Oneness of Allah. As thus, we have chosen to keep our own record of DEED’s, ACTionS, FACT’s and BOND’s, and by Executive Vicegerent, authorize them to constitute our administration of contracts, liability, and remedy to the effect of halal governance. ☰
+                </p> 
+        </div>
+	<div>
+</body>
+</html>

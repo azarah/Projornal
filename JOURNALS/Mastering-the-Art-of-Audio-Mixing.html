@@ -4,100 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Journal.css">
     <title>Mastering the Art of Audio Mixing: Techniques for Layering and Blending Tracks</title>
     <style>
-        body {
-            font-family: 'Gill Sans', sans-serif;
-            background-color: #121212;
-            color: #a7c4a5;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            text-align: center;
-        }
-
-        header h1, h3 {
-            color: #02c453;
-        }
-
-     
-        .content {
-            padding: 20px;
-        }
-        article {
-            background-color: #1c1c1c;
-            border: 1px solid #333333;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            padding: 20px;
-        }
-        article h2 {
-            color: #a7c4a5;
-        }
-
-        article h4 {
-            color: #cffacd;
-        }
         
-        article h5 {
-            color: #cffacd;
-            text-decoration: italic;
-            text-align: center;
-        }
-
-        
-
-        button a {
-            text-decoration: none;
-            padding: 0px 20px 5px;
-            font-size: 16px;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        menu {
-            display: flex;
-            justify-content: left;
-            background-color: #222222;
-            padding: 10px;
-        }
-
-        button:hover a {
-            text-decoration: none;
-            padding: 0px 20px 5px;
-            font-size: 16px;
-            background-color: #111111;
-            color: rgb(167, 255, 163);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button {
-            text-decoration: none;
-            margin: 5px;
-            padding: 5px 5px;
-            font-size: 16px;
-            background-color: #222222;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            text-decoration: none;
-            margin: 5px;
-            padding: 5px 5px;
-            font-size: 16px;
-            background-color: #111111;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
         .interactive-example {
             margin: 20px 0;
             padding: 20px;
@@ -112,6 +22,9 @@
             width: 100%;
             margin-top: 10px;
             border-radius: 5px;
+            background-color: rgb(0, 132, 255);
+            border:1px solid rgb(0, 122, 236);
+            
         }
         input[type=range] {
             width: 100%;
@@ -121,10 +34,10 @@
 </head>
 <body>
     <menu>
-        <button class="article_btn"><a href="../Journal.html">JOURNAL</a></button>
-        <button class="article_btn"><a href="Communicating-with-Stakeholders.html" class="ex-btn">❮</a></button>
-        <button class="article_btn"><a href="Flow-State.html" class="ex-btn"> ❯ </a></button>
-        <button class="article_btn" ><a href="../index.html" alt="⏏" class="glyphicon glyphicon-home"> </a></button>
+        <button class="menu_btn"><a href="../Journal.html">JOURNAL</a></button>
+        <button class="menu_btn"><a href="Communicating-with-Stakeholders.html" class="ex-btn">❮</a></button>
+        <button class="menu_btn"><a href="Flow-State.html" class="ex-btn"> ❯ </a></button>
+        <button class="menu_btn" ><a href="../index.html" alt="⏏" class="glyphicon glyphicon-home"> </a></button>
         </menu>
         <header>
             <h1>Mastering the Art of Audio Mixing</h1>
@@ -144,30 +57,16 @@
         <div class="interactive-example">
             <h3>Interactive Example: Fading and Cross Fading</h3>
             <p>Use the sliders below to control the fade-in and fade-out of two different audio tracks.</p>
-            <audio class="audio-example" id="track1" src="track1.mp3" controls></audio>
-            <audio class="audio-example" id="track2" src="track2.mp3" controls></audio>
-            <label for="fade1">Track 1 Fade:</label>
+            <audio class="audio-example" id="track1" src="Muhammatron.mp3" controls></audio>
+            <audio class="audio-example" id="track2" src="round people mix_Other_mixed.mp3" controls></audio>
+            <label for="fade1"><h5>Track 1 Fade:</h5></label>
             <input type="range" id="fade1" name="fade1" min="0" max="100" oninput="setFade(this.value, 'track1')">
             <br>
-            <label for="fade2">Track 2 Fade:</label>
+            <label for="fade2"><h5>Track 2 Fade:</h5></label>
             <input type="range" id="fade2" name="fade2" min="0" max="100" oninput="setFade(this.value, 'track2')">
         </div>
 
-        <h2>Utilizing the Frequency Spectrum (EQ)</h2>
-        <div class="interactive-example">
-            <h3>Interactive Example: EQ Adjustment</h3>
-            <p>Adjust the EQ settings to hear the impact on the audio track.</p>
-            <audio class="audio-example" id="eqTrack" src="eqTrack.mp3" controls></audio>
-            <br>
-            <label for="bass">Bass:</label>
-            <input type="range" id="bass" name="bass" min="-10" max="10" value="0" oninput="adjustEQ(this.value, 'bass')">
-            <br>
-            <label for="mid">Mid:</label>
-            <input type="range" id="mid" name="mid" min="-10" max="10" value="0" oninput="adjustEQ(this.value, 'mid')">
-            <br>
-            <label for="treble">Treble:</label>
-            <input type="range" id="treble" name="treble" min="-10" max="10" value="0" oninput="adjustEQ(this.value, 'treble')">
-        </div>
+        
 
         <h2>The Importance of the Listener’s Experience</h2>
         <p>The quality of a mix is ultimately determined by how you want the listener to experience the music or sounds. This requires patience and persistence, as well as a deep understanding of the emotional and sensory impact you wish to achieve.</p>

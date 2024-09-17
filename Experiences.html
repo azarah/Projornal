@@ -3,51 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="imagetoolbar" content="no">
-    <meta name="Experiences" content="Professional, Experiences, Portfolio, Resume, Photographer, Web Developer, Top Photographers, Top Web Developers, Top Online Resume, Top Professional, Online Portfolio, Current Web Developer, Chicago Web Developer, Top Professional Resume, Muhammad Hakeem, Space Partz ">
+    <meta name="Experiences" content="Professional, Experiences, Portfolio, Resume, Photographer, Web Developer, Top Photographers, Top Web Developers, Top Online Resume, Top Professional, Online Portfolio, Current Web Developer, Chicago Web Developer, Top Professional Resume, Muhammad Hakeem, Space Partz">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experiences</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<header>
-
-    <a href="index.html">
-    <img src="sign in black.png" alt="Muhammad Hakeem Signature Logo" class="logo" > <!--Clean the outer square edges of the logo up in photoshop-->
-    </a>
     
-    <nav>
-        <div class="hamburger" >
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ul>
-            <li><a href="MuhammadHakeem Resume 2024.pdf" download>Resume</a></li>
-            <li><a href="Collections.html">Collections</a></li>
-            <li><a href="Journal.html">Journal</a></li>
-            <li><a href="index.html#contactMe">Contact</a></li>
-        </ul>
-     
-    </nav>
-</header>
-    <title>Experience Grid</title>
     <style>
-  
+        /* Add your styles here */
+
+        /* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust:none;
+    -webkit-font-smoothing:antialiased
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+header {
+    background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .logo {
+    height: 50px;
+    margin-right: auto;/* This pushes the logo to the left */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+strong {    
+
+    color: #555;
+line-height: 15%;
+}
+
+h2 {
+    margin-bottom: 1px; /* Adjust this value as needed */
+    line-height: normal;
+}
+
+h3 {
+    margin-top: 0px; /* Adjust this value as needed */
+}
+
+h6 {
+    text-align: left;
+}
+    
+p  {
+    text-align: left;
+    font-size: small;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+    
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             grid-gap: 20px;
-            padding: 50px;
+            padding: 30px;
             width: 100%;
-            max-width: 1200px;
+            height: 100%;
+            position: sticky;
+            
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255) 89%, rgba(255, 255, 255, 0) 100%);
         }
+    
+        .exp-container {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 20px;
+            padding-left: 25%;
+            padding-right:40%;
+            width: 100%;
+            height: 100%;
+        }
+    
         .grid-item {
             position: relative;
             background-color: #ffffff;
             padding: 20px;
             text-align: center;
-            cursor: pointer;        
+            cursor: pointer;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
@@ -55,7 +132,7 @@
         .grid-item:hover {
             transform: translateY(-5px);
         }
-       .hover-text {
+        .hover-text {
             display: none;
             position: absolute;
             top: 100%;
@@ -85,109 +162,709 @@
         }
         .experience-details {
             display: none;
-            padding: 20px;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-top: 5px;
             background-color: #ffffff;
-            border: 1px solid #ddd;
+            border: 0px solid #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 1200px;
+             width: 100%;
         }
         .experience-details h2 {
             font-size: 1.5em;
             margin-bottom: 10px;
         }
-        .experience-details p {
+        .experience-details p, .experience-details ul {
             font-size: 1em;
             margin: 5px 0;
         }
-        .experience-details ul {
-            list-style-type: none;
-            padding: 0;
-        }
         .experience-details li {
-            font-size: 1em;
             margin: 5px 0;
             padding-left: 1em;
             text-indent: -1em;
         }
-        .experience-details li::before {
+        .experience-details li {
             content: "• ";
-            color: #3e5874;
+            color: #000000;
         }
+    
+        .experiences-title {
+            font-size: 1em;
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            text-align: center;
+            display: flex;
+        }
+        
+        .objective_p {
+            padding-left: 25%;  
+            padding-right: 15%;
+            padding-top: 5%;
+
+        }
+        footer {
+    background: linear-gradient(to top, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top:20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+   
+    width: 100%;
+}
+
+
+/* General box-sizing for consistency */
+*{
+    box-sizing: border-box;
+}
+
+/* Hamburger menu styles */
+
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: #333;
+}
+
+
+/* Media query for PHONE DEVICES */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+        }
+
+    .info {
+        display: none;
+        /* Additional styling for the info box */
+        position: relative;
+        z-index: 100;
+    }
+
+    .grid-item:hover .info {
+        display: block; /* Show the info box on hover */
+    }
+
+    .exp-container {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 20px;
+            padding-left: 25%;
+            padding-right:5%;
+            width: 100%;
+            height: 100%;
+        }
+}
+
+/* Media query for MOBILE DEVICES */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: left;
+        margin: 5px 0;
+    }
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background-color: white;
+        }
+
+    .info {
+        display: none;
+        /* Additional styling for the info box */
+        position: relative;
+        z-index: 100;
+    }
+
+    .grid-item:hover .info {
+        display: block; /* Show the info box on hover */
+    }
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+/* Style for the navigation pane */
+.navigation-pane {
+    position: fixed; /* Makes the navigation pane stay in the same place on the screen */
+    top: 20%; /* Position from the top */
+    left: 0; /* Position from the left */
+    width: 200px; /* Width of the navigation pane */
+    background-color: #f9f9f9; /* Background color */
+    border-right: 2px solid #ccc; /* Right border */
+    padding: 10px; /* Padding inside the navigation pane */
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+.navigation-pane ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+.navigation-pane a {
+    display: block; /* Makes the links fill the entire width of the navigation pane */
+    padding: 10px; /* Adds some padding for better clickability */
+    text-decoration: none; /* Removes underline from links */
+    color: black; /* Text color */
+}
+
+.navigation-pane a:hover {
+    background-color: #eaeaea; /* Background color on hover */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Place the button 20px from the bottom */
+    right: 30px; /* 30px from the right */
+    z-index: 99; /* Make sure it sits on top of other content */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #333; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#backToTopBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+/* Grid Container Style (example) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    /* Other styling as needed */
+}
+
+/* Search Bar Container Style */
+#searchContainer {
+    display: flex;
+    justify-content: center; /* Centers the child horizontally */
+    align-items: center; /* Centers the child vertically, if needed */
+    width: 100%; /* Takes full width of its parent */
+    margin-top: 20px; /* Adjust as needed to create space between the grid and the search bar */
+    flex-direction: row; /* Ensures the search bar and button are in a single row */
+}
+#keywordInput {
+    background-color: #f0f0f0; /* Light grey background */
+    border: none; /* Removes the default border */
+    padding: 10px 15px; /* Adds some padding inside the search bar */
+    border-radius: 20px; /* Rounded corners */
+    margin-right: 10px; /* Optional: Adds some space between the search bar and the button if they are in the same row */
+}
+
+/* Optional: Style the search button to match */
+#searchButton {
+    background-color: #333; /* Dark background for the button */
+    color: white; /* Text color for the button */
+    border: none; /* Removes the default border */
+    padding: 10px 15px; /* Matches the search bar padding for uniform height */
+    border-radius: 20px; /* Rounded corners to match the search bar */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+#searchButton:hover {
+    background-color: #555; /* Darker background on hover */
+}
     </style>
 </head>
 <body>
 
+<header>
+    <a href="index.html">
+        <img src="Signature in black.png" alt="Muhammad Hakeem Signature Logo" class="logo">
+    </a>
+    <nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="MuhammadHakeem Resume 2024.pdf" download>Resume</a></li>
+            <li><a href="Collections.html">Collections</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="index.html#contactMe">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<h3 class="objective_p" id="objective">I'm a passionate and experienced Product Designer with a proven track record in creating user-centric designs that impact millions of users globally. Skilled in UI/UX design, branding, and multimedia content creation with a strong focus on usability, accessibility, and web standards. 
+    <br/>
+  
+    Adept at working in multi-disciplinary environments, collaborating with visual designers, UX designers, and engineers to bring web projects to life. Committed to continuous learning and improvement, and highly engaged with the latest design research and innovation.</h3>
+
 <div class="grid-container">
-    <div class="grid-item" onclick="showExperience('freelance')">
-        Freelance Experience
-        <div class="hover-text">Freelance</div>
+    <div class="grid-item">
+        <a href="#objective"> <p class="experiences-title">Objective</p>
+        <h6 class="info">My experience in managing web development projects, combined with my proficiency in Adobe Creative Cloud tools such as Photoshop, Illustrator, and InDesign, as well as Figma, to craft compelling and enhanced user experience has equipped me with the skills needed to excel in this role.</h6></a>
     </div>
-    <div class="grid-item" onclick="showExperience('creative')">
-        Creative Director
-        <div class="hover-text">Creative</div>
+    <div class="grid-item">
+        <a href="#skills"><p class="experiences-title">Skills</p>
+        <h6 class="info">My experience in producing high-resolution digital photography and 4K drone videography, combined with my proficiency in Adobe Premiere Pro, After Effects, and Photoshop, has equipped me with the skills needed to excel in this role.</h6></a>
     </div>
-    <div class="grid-item" onclick="showExperience('development')">
-        Web Development
-        <div class="hover-text">Development</div>
+    <div class="grid-item">
+        <a href="#certifications"> <p class="experiences-title">Certifications</p>
+        <h6 class="info">My experience in producing high-resolution digital photography and 4K drone videography, combined with my proficiency in Adobe Premiere Pro, After Effects, and Photoshop, has equipped me with the skills needed to excel in this role.</h6></a>
     </div>
-    <div class="grid-item" onclick="showExperience('photography')">
-        Photography
-        <div class="hover-text">Photography</div>
-    </div>
-    <!-- Add more grid items as needed -->
+    <div class="grid-item">
+        <a href="#projects"> <p class="experiences-title">Projects</p>
+        <h6 class="info">My experience in producing high-resolution digital photography and 4K drone videography, combined with my proficiency in Adobe Premiere Pro, After Effects, and Photoshop, has equipped me with the skills needed to excel in this role.</h6></a>
+</div>
+<div id="searchContainer">
+    <input type="text" id="keywordInput" placeholder="Enter keyword">
+    <button id="searchButton">Search</button>
+</div>
 </div>
 
-<div id="experience1" class="experience-details" data-keywords="freelance development" data-start-date="2023-07">
-    <h2>Freelance Web Designer/Developer</h2>
-    <p><strong>Intyce Tees LLC - Chicago, IL</strong></p>
-    <p><strong>July 2023 to Present</strong></p>
-    <ul>
-        <li>Actively implement w3c practices and functions in order to maintain registry of 30 domains while coordinating with registrar on server uptime.</li>
-        <li>Prepare proposals towards the development of custom websites and web apps that meet the unique needs of clients.</li>
-        <li>Identify, capture and process rare perspectives of subjects for visual storytelling with Canon and DJI photography and video equipment.</li>
-    </ul>
+<div class="exp-container">
+    <div>
+        <h1>Work Experience</h1>
+        <h2>Intyce Media Scholarship for Website Development</h2>
+        <h3>Student, Webmaster, Portfolio Manager</h3>
+        <p><strong>July 2023 - Present</strong></p>
+        <ul>
+            <li>Expertise in fashion design, production quality management, and ecommerce distribution.</li>
+            <li>Managed a small fashion design company, providing niche services for diverse clients.</li>
+        </ul>
+    
+        <h2>Project Manager Intyce Media Website Portfolio</h2>
+        <h3>Project Manager, Web Developer, Photographer, Videographer, Media Specialist</h3>
+        <ul>
+            <li>Maintained a secure domain name registry and ensured compliance with security protocols.</li>
+            <li>Created websites and strategies for iterating profitable website products.</li>
+            <li>Implemented automated security and design processes for continuous integration and deployment.</li>
+        </ul>
+    
+        <h2>Intyce Tees</h2>
+        <h3>Project Manager, Web Developer, Photographer, Media Specialist, Apparel Designer</h3>
+        <p><strong>April 2019 - July 2023</strong></p>
+        <ul>
+            <li>Developed a distinct and impactful brand identity for a contemporary urban apparel company.</li>
+            <li>Designed user-friendly websites and unique apparel that resonated with the target audience.</li>
+            <li>Executed strategic social media campaigns to boost brand visibility and engagement.</li>
+        </ul>
+
+        <h2>Blauhaus</h2>
+        <h3>Project Manager, Web Developer, Photographer, Media Specialist, Apparel Designer</h3>
+        <p><strong>April 2019 - July 2023</strong></p>
+        <ul>
+            <li>Developed a distinctive brand identity for an Islamic multidisciplinary design agency.</li>
+            <li>Created innovative apparel designs merging contemporary fashion with Islamic principles.</li>
+            <li>Crafted and implemented strategic advertising campaigns across multiple platforms.</li>
+        </ul>
+
+        <h2>Custom PC Builds</h2>
+        <h3>Project Manager, Consultant, Technology Support and Installation</h3>
+        <p><strong>July 2019 - January 2020</strong></p>
+        <ul>
+            <li>Oversaw the planning, purchasing and integration of high-performance computer components into a custom studio Windows 10 Professional workstation, formally addressed as Vicegerent Workstation 0.</li>
+            <li>Ensured compatibility and performed tests and optimization for superior performance and efficiency.</li>
+            <li>Documented and promoted PC builds through engaging media content.</li>
+        </ul>
+
+        <h2>Space Partz/Spatial Partizan</h2>
+        <h3>Project Manager, Web Developer, Video Editor, Stream Manager, Media Specialist, Apparel Designer</h3>
+        <p><strong>December 2019 - July 2023</strong></p>
+        <ul>
+            <li>Developed a distinct brand identity for an online streaming personality.</li>
+            <li>Designed and maintained a visually appealing and user-friendly web presence.</li>
+            <li>Created and managed advertising campaigns to increase visibility and reach a broader audience.</li>
+        </ul>
+
+        <h2>Space Juicy</h2>
+        <h3>Project Manager, Web Developer, Photographer, Stream Manager, Media Specialist, Apparel Designer</h3>
+        <p><strong>April 2019 - July 2023</strong></p>
+        <ul>
+            <li>Developed a vibrant brand identity for a joint gamer streaming initiative.</li>
+            <li>Designed an engaging and user-friendly website and cutting-edge apparel.</li>
+            <li>Executed strategic social media campaigns to boost online presence and engagement.</li>
+        </ul>
+
+        <h2>Tha Rock’n Roosta</h2>
+        <h3>Project Manager, Photographer, Art Work Digitization & Embroidery, Media Specialist, Apparel Designer</h3>
+        <p><strong>April 2019 - July 2023</strong></p>
+        <ul>
+            <li>Developed a distinctive brand identity for a new restaurant specializing in chicken cuisine.</li>
+            <li>Designed custom tie-dye apparel and visually appealing menu designs.</li>
+            <li>Oversaw the creative direction for a consistent and engaging visual presence.</li>
+        </ul>
+
+        <h2>Legacy Apparel</h2>
+        <h3>Product Designer Project Manager, Web Developer, Art Work Digitization & Embroidery, Illustrator, Media Specialist, Apparel Designer</h3>
+        <p><strong>April 2019 - July 2023</strong></p>
+        <ul>
+            <li>Developed a compelling brand identity for the Black History Month Campaign Project.</li>
+            <li>Created visually striking sweats and apparel from re-engineered playing card designs by Brent Bailer.</li>
+            <li>Designed and managed an engaging web and social media presence.</li>
+        </ul>
+
+        <h2>Digitizing, Embroidery and DTG Inkjet Professional Training</h2>
+        <h3>Student, Embroidery Design Specialist</h3>
+        <p><strong>April 2019 - July 2023</strong></p>
+        <ul>
+            <li>Trained with Chroma Lux embroidery software to master advanced features.</li>
+            <li>Designed and digitized patterns aligning with the brand's modern and edgy aesthetic.</li>
+            <li>Operated embroidery machines, troubleshoot technical issues, and ensured product quality.</li>
+        </ul>
+
+        <h2>Commercial Truck Driving</h2>
+        <h3>Commercial Truck Driver, Air Brakes, Hazmat</h3>
+        <p><strong>October 2017 - April 2019</strong></p>
+        <ul>
+            <li>Operated commercial semi-trucks for efficient and safe goods transportation.</li>
+            <li>Ensured compliance with transportation regulations and maintained accurate logs.</li>
+            <li>Conducted vehicle inspections and coordinated with dispatchers for timely deliveries.</li>
+        </ul>
+
+        <h2>UAIR</h2>
+        <h3>Brand Identity Development, Artwork Director, Copyright and Trademark Coordinator</h3>
+        <p><strong>October 2013 - October 2017</strong></p>
+        <ul>
+            <li>Developed a cohesive brand identity reflecting UAIR's mission for startup family nations.</li>
+            <li>Designed diplomatic governing documentation and created engaging websites.</li>
+            <li>Crafted media content and persuasive grant proposals for funding and support.</li>
+        </ul>
+
+        <h2>IP Intellectual Property</h2>
+        <h3>Project Manager, Print Editor, Media Specialist, Marketing Designer</h3>
+        <p><strong>October 2013 - January 2017</strong></p>
+        <ul>
+            <li>Developed unique brand identities for film-conscious production projects.</li>
+            <li>Wrote compelling scripts, captured high-quality video content, and created engaging graphic designs.</li>
+        </ul>
+
+        <h2>Cooperative Community News Papers</h2>
+        <h3>Web Designer, Copyright Editor, Graphic Artist, Webmaster, Board Member</h3>
+        <p><strong>October 2015 - October 2019</strong></p>
+        <ul>
+            <li>Developed a strong brand identity and dynamic web presence for a cooperative community newspaper.</li>
+            <li>Crafted compelling copy and produced diverse media content for digital and print platforms.</li>
+        </ul>
+
+        <h2>Spaceport Coatopia Soundtrack</h2>
+        <h3>Music Producer, Pianist, Guitarist, Vocals, Photographer, Album Artwork Design</h3>
+        <p><strong>October 2015 - October 2016</strong></p>
+        <ul>
+            <li>Developed a unique and captivating brand identity for a soundtrack project.</li>
+            <li>Composed and produced the music score and created visually compelling designs.</li>
+            <li>Oversaw artistic direction for a consistent and engaging aesthetic.</li>
+        </ul>
+
+        <h2>USDA Workshops & Grant Training</h2>
+        <h3>Student, Farmer, Grant Applicant</h3>
+        <p><strong>January 2014 - April 2014</strong></p>
+        <ul>
+            <li>Learned best practices for sustainable farming techniques and efficient agricultural management.</li>
+            <li>Participated in hands-on workshops and utilized USDA resources.</li>
+            <li>Developed skills in farm business management, including budgeting and marketing.</li>
+        </ul>
+
+        <h2>Michigreen Shop</h2>
+        <h3>Project Manager, Photographer, Media Specialist, Art Director</h3>
+        <p><strong>June 2012 - October 2013</strong></p>
+        <ul>
+            <li>Developed a distinct and appealing brand identity for a holistic community focused on caregivers and growers.</li>
+            <li>Designed a user-friendly website and contributed to plant cultivation and care.</li>
+            <li>Oversaw artistic direction for a cohesive visual aesthetic.</li>
+        </ul>
+
+        <h2>Breakfast of Champions</h2>
+        <h3>Project Manager, Web Developer, Photographer, Media Specialist, Apparel Designer</h3>
+        <p><strong>June 2012 - October 2013</strong></p>
+        <ul>
+            <li>Developed a strong and appealing brand identity for a cannabis strain brand.</li>
+            <li>Designed eye-catching labels and contributed to cannabis strain cultivation.</li>
+            <li>Oversaw artistic direction for a cohesive visual presence.</li>
+        </ul>
+
+        <h2>GHSP</h2>
+        <h3>Project Manager, Web Developer, Art Director, Media Specialist, Copywriter</h3>
+        <p><strong>June 2012 - October 2013</strong></p>
+        <ul>
+            <li>Developed a cohesive and professional brand identity for a private family establishment.</li>
+            <li>Designed diplomatic governing documentation and created a user-friendly website.</li>
+            <li>Crafted persuasive grant proposals and produced diverse media content.</li>
+        </ul>
+
+        <h2>The One and Only</h2>
+        <h3>Project Manager, Film Director, Martial Arts Choreographer, Media Specialist</h3>
+        <p><strong>June 2012 - October 2013</strong></p>
+        <ul>
+            <li>Developed a compelling brand identity for a film production about local espionage.</li>
+            <li>Created storyboard documentation, wrote scripts, and oversaw filming.</li>
+            <li>Designed visual elements and promotional materials for marketing efforts.</li>
+        </ul>
+
+        <h2>Diplomacy Study & Development</h2>
+        <h3>Student</h3>
+        <p><strong>July 2010 - June 2012</strong></p>
+        <ul>
+            <li>Studied legal frameworks and regulations governing international relations and diplomacy.</li>
+            <li>Participated in seminars and workshops to understand diplomatic protocol and negotiation strategies.</li>
+            <li>Researched and analyzed case studies and engaged in practical exercises.</li>
+        </ul>
+
+        <h2>Michigan SceneSetters</h2>
+        <h3>Copywriter, Media Specialist, Art Director</h3>
+        <p><strong>July 2010 - June 2012</strong></p>
+        <ul>
+            <li>Developed a professional brand identity for an online news reporting company.</li>
+            <li>Designed a visually appealing website and created high-quality content.</li>
+            <li>Oversaw artistic direction and crafted compelling copy.</li>
+        </ul>
+
+        <h2>Giraffe-N-Turtle</h2>
+        <h3>Art Director</h3>
+        <p><strong>July 2010 - June 2012</strong></p>
+        <ul>
+            <li>Developed a whimsical brand identity for an organic craft and jewelry business.</li>
+            <li>Created visually charming branding elements and designed packaging and promotional materials.</li>
+            <li>Oversaw artistic direction and crafted compelling copy.</li>
+        </ul>
+
+        <h2>Gordian Charter Solutions</h2>
+        <h3>Project Manager, Art Director</h3>
+        <p><strong>July 2010 - June 2012</strong></p>
+        <ul>
+            <li>Developed a whimsical brand identity for an organic craft and jewelry business.</li>
+            <li>Designed visually engaging materials and created branding elements.</li>
+        </ul>
+
+        <h2>Treat of the Day</h2>
+        <h3>Project Manager, Film Director, Creative Director, Copywriter</h3>
+        <p><strong>July 2010 - June 2012</strong></p>
+        <ul>
+            <li>Developed a professional brand identity for a coffee company.</li>
+            <li>Designed logos, packaging, and promotional materials.</li>
+            <li>Produced and scripted a compelling movie showcasing the coffee's journey.</li>
+        </ul>
+
+        <h2>No More Sidelines</h2>
+        <h3>Project Manager, Film Director, Creative Director, Copywriter</h3>
+        <p><strong>July 2010 - June 2012</strong></p>
+        <ul>
+            <li>Developed a heartwarming brand identity for a film about supporting special needs individuals.</li>
+            <li>Created storyboard documentation and wrote scripts.</li>
+            <li>Oversaw filming and managed overall direction and production.</li>
+        </ul>
+
+        <h2>The Forgotten</h2>
+        <h3>Project Manager, Film Director, Creative Director, Copywriter</h3>
+        <p><strong>July 2010 - June 2012</strong></p>
+        <ul>
+            <li>Developed a poignant brand identity for a film about child abduction awareness.</li>
+            <li>Created storyboard documentation and wrote scripts.</li>
+            <li>Oversaw filming and managed overall direction and production.</li>
+        </ul>
+
+        <h2>Intyce Media</h2>
+        <h3>Art Director, Photographer, Graphic</h3>
+        <p><strong>July 2009 - June 2010</strong></p>
+        <ul>
+            <li>Developed a compelling brand identity for a photography and document design company.</li>
+            <li>Provided professional senior photography services and managed invoicing.</li>
+            <li>Oversaw artistic direction for consistent visual style.</li>
+        </ul>
+        <br id="skills"/>
+
+   
+        <h2>Skills</h2>
+        <p><strong>March 2014 to Present</strong></p>
+        <ul>
+            <li>UI/UX Design</li>
+            <li>Branding & Visual identities</li>
+            <li>Web Development</li>
+            <li>Typography, Colour & Layout</li>
+            <li>Usability & Accessibility</li>
+            <li>Media Content Creation</li>
+            <li>Graphic Design</li>
+            <li>Social Media Marketing</li>
+            <li>Custom PC Builds</li>
+            <li>Network Architecture</li>
+            <li>Project Management</li>
+            <li>Adobe InDesign, Illustrator, Photoshop</li>
+            <li>Figma</li>
+        </ul>
+    
+        <h2 id="certifications">Certifications</h2>
+        <p><strong>March 2014 to Present</strong></p>
+        <ul>
+            <li>3.8 GPA Development Certification</li>
+            <li>Google Cybersecurity (Coursera) </li>
+            <li>CompTIA Certification</li>
+            <li>CDL-A, Air Brakes Certification</li>
+            <li>Usability & Accessibility</li>
+        </ul>
+   
+        <h2 id="projects">Projects</h2>
+        <h2>Intyce Media Scholarship Projects</h2>
+         <ul>
+            <li>Developed advanced web development and UX/UI design skills.</li>
+            <li>Created secure and high-performing web environments.</li>
+        </ul>
+
+        <h2>Intyce Tees and Blauhaus Projects</h2>
+         <ul>
+            <li>Designed impactful brand identities and user-friendly websites.</li>
+            <li>Executed successful social media and advertising campaigns.</li>
+        </ul>
+
+        <h2>Custom PC Builds</h2>
+         <ul>
+            <li>Managed the integration and optimization of high-performance components.</li>
+            <li>Documented and promoted PC builds through engaging content.</li>
+        </ul>
+    </div>
+
+    <div id="college-info" class="experience-details">
+        <strong>City Colleges of Chicago-Malcolm X College
+            <h6>Web Development Certification, Computer and Information Sciences<br/>
+            January 2024 to May 2025</h6>
+        </strong>
+    
+        <strong>Coursera
+            <h6>Cybersecurity Certification <br/>
+            June 2023 to Jan 2024</h6>
+        </strong>
+    
+        <strong>University of Phoenix
+            <h6>Bachelor of Arts - BA, Business Administration, Management and Operations<br/>
+            September 2003 to May 2005</h6>
+        </strong>
+    
+        <strong>Grand Rapids Community College
+            <h6>Associate of Arts - AA, Music Technology <br/>
+            September 1999 to May 2002</h6>
+        </strong>
+    </div>
 </div>
 
-<div id="experience2" class="experience-details" data-keywords="creative photography" data-start-date="2019-08" data-end-date="2023-07">
-    <h2>Creative Director</h2>
-    <p><strong>Intyce Tees LLC - Grand Rapids, MI</strong></p>
-    <p><strong>August 2019 to July 2023</strong></p>
-    <ul>
-        <li>Actively seek out responsible clothing manufacturers and trends in order to develop clothing collection reports for next season.</li>
-        <li>Integrate Adobe Illustrator and Photoshop in order to prototype clothing materials into fashion pieces.</li>
-        <li>Utilize Chroma and Ricoma EM1010 along with Ricoh RI 1000 to develop stylish fashion items.</li>
-        <li>Showcase and Photograph final design on models in relevant and busy locations under the best light.</li>
-    </ul>
-</div>
-
-</body>
-<script src="Experience_Grid.js"></script>
+<!-- Place this right before the closing </body> tag -->
+<button id="backToTopBtn" title="Go to top">▲</button>
 <footer>
     &copy; 2024 Muhammad Hakeem. All rights reserved.
 </footer>
 
-<script src="StyleSol_Slideshow.js"></script>
-<script src="Contact_Form.js"></script>
+
+
 <script src="IP.js"></script>
 <script src="HamburgerMenu_FX.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const link = document.getElementById('link');
-        const newLabel = document.getElementById('newLabel');
-        const visitedLinks = JSON.parse(localStorage.getItem('visitedLinks')) || [];
-
-        if (visitedLinks.includes(link.href)) {
-            newLabel.classList.add('hidden');
-        }
-
-        link.addEventListener('click', function(event) {
-            visitedLinks.push(link.href);
-            localStorage.setItem('visitedLinks', JSON.stringify(visitedLinks));
-            newLabel.classList.add('hidden');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Existing code to handle visited links...
+    
+            // Assuming there's an input field with an ID of 'keywordInput' and a button to trigger the search
+            document.getElementById('searchButton').addEventListener('click', function() {
+                const keyword = document.getElementById('keywordInput').value;
+                showExperience(keyword);
+            });
         });
-    });
+    
+        function showExperience(keyword) {
+            // Existing code to hide all experiences and gather matched experiences...
+    
+            // Sort matched experiences by start date
+            matchedExperiences.sort((a, b) => {
+                const dateA = new Date(a.getAttribute('data-start-date'));
+                const dateB = new Date(b.getAttribute('data-start-date'));
+                return dateA - dateB;
+            });
+    
+            // Display the matched experiences
+            matchedExperiences.forEach(experience => {
+                experience.style.display = 'block';
+            });
+        }
+   // When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("backToTopBtn").style.display = "block";
+    } else {
+        document.getElementById("backToTopBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+document.getElementById("backToTopBtn").onclick = function() {topFunction()};
+
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+ 
+document.getElementById('searchButton').addEventListener('click', function() {
+    const keyword = document.getElementById('keywordInput').value.toLowerCase(); // Convert to lowercase for case-insensitive matching
+    showExperience(keyword);
+});
 </script>
+</body>
 </html>

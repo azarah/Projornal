@@ -8,12 +8,110 @@
     <title>Skills</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+  
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+        text-align: center;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .graph {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .skill-bar {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        position: relative;
+    }
+    .skill-bar div {
+        width: 100%;
+        background-color: #e0e0e0;
+        height: 25px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+    }
+    .skill-bar span {
+        display: block;
+        height: 100%;
+        background-color: #76c7c0;
+        line-height: 25px;
+        color: #fff;
+        border-radius: 5px;
+        position: relative;
+        z-index: 1;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .skill-label {
+        z-index: 2;
+    }
+    .years-experience {
+        z-index: 2;
+    }
+    @media screen and (max-width: 600px) {
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger span {
+        display: block;
+        height: 3px;
+        background: #333;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+    nav ul {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    nav ul li a {
+        color: #333;
+    }
+    .section h2 {
+        font-size: 24px;
+    }
+    .skill-bar {
+        margin: 20px 0;
+        padding: 5px;
+        height: max-content;
+    }
+    .skill-bar div {
+        display: flex;
+        flex-direction: column;
+    }
+    .skill-label, .years-experience {
+        font-size: 12px;
+    }
+}
+</style>
 <body>
 
 <header>
 
     <a href="index.html">
-    <img src="sign in black.png" alt="Home" class="logo" > <!--Clean the outer square edges of the logo up in photoshop-->
+    <img src="Signature in black.png" alt="Home" class="logo" > <!--Clean the outer square edges of the logo up in photoshop-->
     </a>
     
     <nav>
@@ -31,151 +129,7 @@
      
     </nav>
 </header>
-    <style>
-  
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2, h3 {
-            text-align: center;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .graph {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .skill-bar {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-            position: relative;
-        }
-        .skill-bar div {
-            width: 100%;
-            background-color: #e0e0e0;
-            height: 25px;
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-        }
-        .skill-bar span {
-            display: block;
-            height: 100%;
-            background-color: #76c7c0;
-            line-height: 25px;
-            color: #fff;
-            border-radius: 5px;
-            position: relative;
-            z-index: 1;
-            padding-left: 10px;
-            padding-right: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .skill-label {
-            z-index: 2;
-        }
-        .years-experience {
-            z-index: 2;
-        }
-        @media screen and (max-width: 600px) {
-            .skill-bar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .skill-bar span {
-                width: 100%;
-                padding: 0;
-                justify-content: flex-start;
-            }
-            .skill-label {
-                padding-left: 10px;
-            }
-            .years-experience {
-                padding-right: 10px;
-                text-align: right;
-            }
-        }
-        .timeline {
-            position: relative;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #76c7c0;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-        .timeline-item {
-            padding: 20px;
-            position: relative;
-            width: 50%;
-            left: 50%;
-            margin-bottom: 20px;
-            border-radius: 6px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            background-color: white;
-        }
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: #76c7c0;
-            border: 4px solid #76c7c0;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .timeline-item.left {
-            left: 0;
-        }
-        .timeline-item.left::after {
-            left: -17px;
-        }
-        .timeline-item h3, .timeline-item p {
-            margin: 0;
-        }
-        .timeline-item ul {
-            margin: 10px 0 0;
-            padding: 0 20px;
-        }
-        .timeline-item ul li {
-            list-style: none;
-            margin-bottom: 5px;
-        }
-        @media screen and (max-width: 600px) {
-            .timeline::after {
-                left: 20px;
-            }
-            .timeline-item {
-                width: calc(100% - 40px);
-                left: 20px;
-            }
-            .timeline-item.left {
-                left: 20px;
-            }
-            .timeline-item::after, .timeline-item.left::after {
-                left: -17px;
-            }
-        }
-    </style>
-</head>
-<body>
+
 
         <div class="section">
             <h2>Skills</h2>

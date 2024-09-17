@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Folio.css">
+    <title>UAIR</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+    <menu>
+        <button class="menu_btn"><a href="../Journal.html">PORTFOLIO</a></button>
+        <button class="menu_btn"><a href="UAIR.html" class="ex-btn">❮</a></button>
+        <button class="menu_btn"><a href="UAIR.html" class="ex-btn"> ❯ </a></button>
+        <button class="menu_btn" ><a href="../index.html" alt="⏏" class="glyphicon glyphicon-home"> </a></button>
+        </menu>
+        <header>
+            <h1>UAIR</h1>
+            <h3>United American Intellectual Republic </h3>
+        </header>
+        <div class="content">
+            <img src="../FOLIO/UAIR-art/UAIR-01.png" class="responsive-image">
+            <img src="../FOLIO/UAIR-art/UAIR-02.png" class="responsive-image">
+            <img src="../FOLIO/UAIR-art/UAIR-03.png" class="responsive-image">
+            <img src="../FOLIO/UAIR-art/UAIR-04.png" class="responsive-image">
+            <img src="../FOLIO/UAIR-art/UAIR-05.png" class="responsive-image">
+            <img src="../FOLIO/UAIR-art/UAIR-06.png" class="responsive-image">
+            <img src="../FOLIO/UAIR-art/UAIR-07.png" class="responsive-image">
+            <img src="../FOLIO/UAIR-art/UAIR-08.png" class="responsive-image">
+            <img src="../FOLIO/UAIR-art/UAIR-10.png" class="responsive-image">
+            <img src="../FOLIO/UAIR-art/UAIR-11.png" class="responsive-image">
+        </div>
+
+        <div class="text-content">
+        
+        <h3></h3>
+        <p>The United American Intellectual Republic (UAIR) project represents a bold initiative that combines artistic expression with advanced design security. Collaborating with a skilled graphic designer, we created several intricate logos, emblems, and a unique money design, each requiring a deep understanding of rhetorical intricacies, printing, and pattern design to ensure they are impossible to duplicate.</p>
+
+        <div >
+            <h4>Key aspects of the project include:</h4>
+            <button class="accordion">Orientation and Mathematical Validation:</button>
+            <div class="panel">
+                <p>Each design element requires precise orientation and can be measured mathematically to uphold stringent design standards.</p>
+            </div>
+            
+            <button class="accordion">Advanced Print Security:</button>
+            <div class="panel">
+                <p>To further ensure the designs cannot be replicated, we incorporated minute gradients and intricate line art. These elements remain invisible unless printed in CMYK on high-quality printers, adding an extra layer of security.</p>
+            </div>
+            
+            <button class="accordion">Storytelling Through Design:</button>
+            <div class="panel">
+                <p>Every graphic element within the logos and emblems is detailed and has a narrative, affirming the purpose and thought behind its creation.</p>
+            </div>
+        </div>
+
+        <h3></h3>
+        <p>The UAIR project is more than a design endeavor; it symbolizes our pursuit of liberty and freedom of expression during a time when conventional means of being heard were inaccessible.</p>
+
+</div>
+</div>
+<footer>
+    &copy; 2024 Muhammad Hakeem. All rights reserved.
+</footer>
+</div>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        function checkAnswer() {
+            var radios = document.getElementsByName('q1');
+            var result = document.getElementById('result');
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    if (radios[i].value === "3") {
+                        result.textContent = "Correct! The primary purpose of encryption is to prevent unauthorized access.";
+                        result.style.color = "#1DB954";
+                    } else {
+                        result.textContent = "Incorrect. Try again.";
+                        result.style.color = "#FF0000";
+                    }
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

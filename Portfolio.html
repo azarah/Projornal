@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="Current Photos" content="Current Photos, Chicago Skyline, Buildings & Architecture, Lake Michigan, Nature, Bird & Wild Life, Structures & Engineering, Fashion Photography, Graphic Design, Web & App Design, Editor's Picks, Photo, Chicago Photographer, Photographers Portfolio, Online Photographer, Photos for Sale, Fine Art Photography, Latest Photography, Photos from Chicago," >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            justify-content: center;
+        }
+        .article-module {
+            border: 1px solid #333;
+            border-radius: 8px;
+            background-color: #1e1e1e;
+            padding: 0;
+            margin: 15px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+        .article-module:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+        }
+        .article-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .article-content {
+            padding: 20px;
+        }
+        .article-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+        .article-description {
+            margin-top: 10px;
+            color: #cccccc;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .gallery img {
+            width: 48%;
+            margin: 1%;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .article-module {
+                width: 100%;
+            }
+            .gallery img {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html">
+        <img src="Signature in white.png" alt="Logo" class="logo">
+    </a>
+    <nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="Muhammad Hakeem 2024 resume.pdf" download>Resume</a></li>
+            <li><a href="Collections.html">Collections</a></li>
+            <li><a href="Journal.html">Journal</a></li>
+            <li><a href="index.html#contactMe">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<p align="center">PORTFOLIO</p>
+<div class="container" id="articles-container"></div>
+
+<script src="HamburgerMenu_FX.js"></script>
+<script src="IP.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const articles = [
+            {
+                image: "IMGWeb/Our Backyard/Geese_20240618Portfolio photos Ex_03.jpg",
+                title: "Canada Geese",
+                description: "On the early morning banks of the Marquette Park Reserve marsh two Canadian Geese preen and prepare for the days journey.",
+                url: "Collections.html",
+                additionalImages: [
+                    "IMGWeb/Our Backyard/Black Bill_Mallard_Marquette Park Reserve, Chicago Ill_Muhammad Hakeem.jpg",
+                    "IMGWeb/Our Backyard/Bee on a flower_Marquette Park Preserve_Chicago Ill_Muhammad Hakeem.jpg"
+                ]
+            },
+            {
+                image: "IMGWeb/Urban_Saturation/12San Diego Illinois_Urbans Saturation_Webdisplay.jpg",
+                title: "Staring Back",
+                description: "The banks of Park Reserve...",
+                url: "Collections.html",
+                additionalImages: [
+                    "IMGWeb/Urban_Saturation/12San Diego Illinois_Urbans Saturation_Webdisplay2.jpg",
+                    "IMGWeb/Urban_Saturation/12San Diego Illinois_Urbans Saturation_Webdisplay3.jpg"
+                ]
+            }
+            // Add more articles with additionalImages array
+        ];
+
+        const container = document.getElementById('articles-container');
+
+        articles.forEach(article => {
+            const articleModule = document.createElement('div');
+            articleModule.classList.add('article-module');
+            articleModule.innerHTML = `
+                <div class="article-image" style="background-image: url('${article.image}');"></div>
+                <div class="article-content">
+                    <h2 class="article-title">${article.title}</h2>
+                    <p class="article-description">${article.description}</p>
+                    <div class="gallery">
+                        ${article.additionalImages.map(img => `<img src="${img}" alt="${article.title}">`).join('')}
+                    </div>
+                    <a href="${article.url}" target="_blank" class="seeMore-btn">See More</a>
+                </div>
+            `;
+            container.appendChild(articleModule);
+        });
+    });
+</script>
+
+<footer>
+    &copy; 2024 Muhammad Hakeem. All rights reserved.
+</footer>
+
+</body>
+</html>

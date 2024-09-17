@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyword Query</title>
+</head>
+<body>
+    <h2>Keyword Query</h2>
+    <form id="queryForm">
+        <input type="text" id="keywordInput" placeholder="Enter keyword(s)" />
+        <button type="submit">Query</button>
+    </form>
+    <div id="result"></div>
+
+    <script>document.getElementById('queryForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting in the traditional way
+
+    // Get the keyword(s) from the input field
+    var inputKeywords = document.getElementById('keywordInput').value.trim();
+
+    // Split the keywords if there are multiple, assuming they are separated by commas
+    var keywords = inputKeywords.split(',').map(function(keyword) {
+        return keyword.trim().toLowerCase(); // Trim spaces and convert to lower case for comparison
+    });
+
+    // Predefined list of allowed keywords
+    var allowedKeywords = ['javascript', 'html', 'css'];
+
+    // Check if any of the input keywords match the allowed keywords
+    var result = keywords.some(function(keyword) {
+        return allowedKeywords.includes(keyword);
+    });
+
+    // Display the result
+    var resultText = result ? 'Keyword(s) found.' : 'No matching keyword(s).';
+    document.getElementById('result').textContent = resultText;
+});</script>
+
+    
+</body>
+</html>

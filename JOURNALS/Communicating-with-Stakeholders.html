@@ -4,171 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Journal.css">
     <title>Communicating with Stakeholders: Get to the Point</title>
     <style>
-  body {
-            font-family: 'Gill Sans', sans-serif;
-            background-color: #121212;
-            color: #a7c4a5;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            text-align: center;
-        }
-
-        header h1, h3 {
-            color: #02c453;
-        }
-
-     
-        .content {
-            padding: 20px;
-        }
-        article {
-            background-color: #1c1c1c;
-            border: 1px solid #333333;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            padding: 20px;
-        }
-        article h2 {
-            color: #a7c4a5;
-        }
-
-        article h4 {
-            color: #cffacd;
-        }
-        
-        article h5 {
-            color: #cffacd;
-            text-decoration: italic;
-            text-align: center;
-        }
-
-        
-
-        button a {
-            text-decoration: none;
-            padding: 0px 20px 5px;
-            font-size: 16px;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        menu {
-            display: flex;
-            justify-content: left;
-            background-color: #222222;
-            padding: 10px;
-        }
-
-        button:hover a {
-            text-decoration: none;
-            padding: 0px 20px 5px;
-            font-size: 16px;
-            background-color: #111111;
-            color: rgb(167, 255, 163);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button {
-            text-decoration: none;
-            margin: 5px;
-            padding: 5px 5px;
-            font-size: 16px;
-            background-color: #222222;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            text-decoration: none;
-            margin: 5px;
-            padding: 5px 5px;
-            font-size: 16px;
-            background-color: #111111;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .interactive-example {
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #333;
-            border-radius: 5px;
-            background: #2C2C2C;
-        }
-        .interactive-example h3 {
-            margin-top: 0;
-        }
-        .accordion {
-            background: #2C2C2C;
-            color: #FFFFFF;
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1.2em;
-            transition: 0.4s;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .active, .accordion:hover {
-            background-color: #3A3A3A;
-        }
-        .panel {
-            padding: 0 18px;
-            display: none;
-            background-color: #2C2C2C;
-            overflow: hidden;
-            border-radius: 0 0 5px 5px;
-        }
-        .panel p {
-            margin: 10px 0;
-        }
-        .quiz {
-            background: #2C2C2C;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-        .quiz h3 {
-            color: #1DB954;
-        }
-        .quiz input[type="radio"] {
-            margin: 10px 0;
-        }
-        .quiz button {
-            background: #1DB954;
-            color: #FFFFFF;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1em;
-        }
+  
     </style>
 </head>
 <body>
     <menu>
-        <button class="article_btn"><a href="../Journal.html">JOURNAL</a></button>
-        <button class="article_btn"><a href="Embracing-Cybersecurity.html" class="ex-btn">❮</a></button>
-        <button class="article_btn"><a href="Mastering-the-Art-of-Audio-Mixing.html" class="ex-btn"> ❯ </a></button>
-        <button class="article_btn" ><a href="../index.html" alt="⏏" class="glyphicon glyphicon-home"> </a></button>
+        <button class="menu_btn"><a href="../Journal.html">JOURNAL</a></button>
+        <button class="menu_btn"><a href="Embracing-Cybersecurity.html" class="ex-btn">❮</a></button>
+        <button class="menu_btn"><a href="Mastering-the-Art-of-Audio-Mixing.html" class="ex-btn"> ❯ </a></button>
+        <button class="menu_btn"><a href="../index.html" alt="⏏" class="glyphicon glyphicon-home"> </a></button>
         </menu>
         <header>
             <h1>Communicating With Stakeholders</h1>
             <h3>Get to the Point</h3>
         </header>
+
+
     <div class="content">
        <article>
         <p>Security stakeholders have roles and responsibilities that are time-sensitive and impact the business. It’s important that any communications they receive, and the actions they need to take, are clear. To get to the point in your communications, ask yourself:</p>
@@ -179,60 +33,51 @@
             <li>How do I explain the situation in a nontechnical manner?</li>
         </ul>
 
-        <h2>Follow the Protocols</h2>
+        <h3>Follow the Protocols</h3>
+
         <div class="interactive-example">
             <h3>Understanding Protocols</h3>
-            <button class="accordion">Learn the Protocols</button>
-            <div class="panel">
+          
                 <p>First, learn about the different protocols and procedures in place for communicating with stakeholders and other members of the organization.</p>
-            </div>
-            
-            <button class="accordion">Know the Applications</button>
-            <div class="panel">
                 <p>Know what applications and forms of communications are acceptable before you begin communicating with stakeholders, such as in-person meetings, video conferencing, emails, or company chat applications.</p>
-            </div>
-        </div>
+            
 
-        <h2>Communicate with Impact</h2>
+        <h3>Communicate with Impact</h3>
         <p>When you communicate with an operations manager, make sure you address relevant information that relates to their daily responsibilities, such as anomalies in data logs that you are escalating. Concentrating on a manager’s daily responsibilities will help you communicate the need-to-know information to that individual.</p>
 
         <h2>Communication Methods</h2>
-        <div class="interactive-example">
-            <h3>Choosing the Right Method</h3>
-            <button class="accordion">Instant Messaging</button>
-            <div class="panel">
+        <h4>Choosing the Right Method</h4>
+
+</h4>
+            <button class="accordion"><h4>Instant Messaging</h4>
+           
                 <p>Use for straightforward messages that need quick responses.</p>
-            </div>
-            
-            <button class="accordion">Emailing</button>
-            <div class="panel">
+        
                 <p>Best for detailed explanations and providing documentation.</p>
-            </div>
-            
-            <button class="accordion">Video Calling</button>
-            <div class="panel">
+       
                 <p>Useful for complex discussions that benefit from visual aids and real-time interaction.</p>
-            </div>
+            </button>
             
-            <button class="accordion">Phone Calls</button>
-            <div class="panel">
+            <button class="accordion" ><h4>Phone Calls</h4>
+           
                 <p>Effective for urgent matters that need immediate attention.</p>
-            </div>
+            </button>
             
-            <button class="accordion">Sharing a Spreadsheet</button>
-            <div class="panel">
+            <button class="accordion"><h4>Sharing a Spreadsheet</h4>
+           
                 <p>Ideal for presenting data in an organized manner.</p>
-            </div>
+            </button>
             
-            <button class="accordion">Sharing a Slideshow</button>
-            <div class="panel">
+            <button class="accordion"><h4>Sharing a Slideshow</h4>
+          
                 <p>Great for structured presentations that need visual support.</p>
-            </div>
+            </button>
         </div>
 
-        <h2>Interactive Quiz: Communication Methods</h2>
+       
         <div class="quiz">
-            <h3>Which method is best for a quick, straightforward message?</h3>
+            <h2>Interactive Quiz: Communication Methods</h2>
+            <h4>Which method is best for a quick, straightforward message?</h4>
             <input type="radio" id="q1a1" name="q1" value="1">
             <label for="q1a1">A. Email</label><br>
             <input type="radio" id="q1a2" name="q1" value="2">
@@ -245,6 +90,10 @@
             <p id="result"></p>
         </div>
     </div>
+
+    <footer>
+        &copy; 2024 Muhammad Hakeem. All rights reserved.
+    </footer>
 
     <script>
         var acc = document.getElementsByClassName("accordion");
