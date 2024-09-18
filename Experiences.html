@@ -286,13 +286,15 @@ a {
     }
 
     .exp-container {
-            display: flex;
-            flex-direction: column;
+        display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             grid-gap: 20px;
-            padding-left: 25%;
-            padding-right:5%;
+            padding: 30px;
             width: 100%;
-            height: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
         }
 }
 
@@ -485,6 +487,1028 @@ html {
     margin: 20px 0;
     padding: 10px;
 }
+
+/* New styles for autocomplete */
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="Experiences" content="Professional, Experiences, Portfolio, Resume, Photographer, Web Developer, Top Photographers, Top Web Developers, Top Online Resume, Top Professional, Online Portfolio, Current Web Developer, Chicago Web Developer, Top Professional Resume, Muhammad Hakeem, Space Partz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences</title>
+    
+    <style>
+        /* Add your styles here */
+
+        /* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust:none;
+    -webkit-font-smoothing:antialiased
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+header {
+    background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .logo {
+    height: 50px;
+    margin-right: auto;/* This pushes the logo to the left */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+strong {    
+
+    color: #555;
+line-height: 15%;
+}
+
+h2 {
+    margin-bottom: 1px; /* Adjust this value as needed */
+    line-height: normal;
+}
+
+h3 {
+    margin-top: 0px; /* Adjust this value as needed */
+}
+
+h6 {
+    text-align: left;
+}
+    
+p  {
+    text-align: left;
+    font-size: small;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+    
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 100%;
+            position: sticky;
+            
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255) 89%, rgba(255, 255, 255, 0) 100%);
+        }
+    
+        .exp-container {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 20px;
+            padding-left: 25%;
+            padding-right:40%;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .grid-item {
+            position: relative;
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+        .hover-text {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            white-space: nowrap;
+            animation: liquid-bg 1.5s infinite alternate;
+        }
+        .grid-item:hover .hover-text {
+            display: block;
+        }
+        @keyframes liquid-bg {
+            0% {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            50% {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            100% {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        .experience-details {
+            display: none;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #ffffff;
+            border: 0px solid #ffffff;
+            border-radius: 8px;
+             width: 100%;
+        }
+        .experience-details h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .experience-details p, .experience-details ul {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .experience-details li {
+            margin: 5px 0;
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+        .experience-details li {
+            content: "• ";
+            color: #000000;
+        }
+    
+        .experiences-title {
+            font-size: 1em;
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            text-align: center;
+            display: flex;
+        }
+        
+        .objective_p {
+            padding-left: 25%;  
+            padding-right: 15%;
+            padding-top: 5%;
+
+        }
+        footer {
+    background: linear-gradient(to top, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top:20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+   
+    width: 100%;
+}
+
+
+/* General box-sizing for consistency */
+*{
+    box-sizing: border-box;
+}
+
+/* Hamburger menu styles */
+
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: #333;
+}
+
+
+/* Media query for PHONE DEVICES */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+        }
+
+    .info {
+        display: none;
+        /* Additional styling for the info box */
+        position: relative;
+        z-index: 100;
+    }
+
+    .grid-item:hover .info {
+        display: block; /* Show the info box on hover */
+    }
+
+    .exp-container {
+        display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+        }
+}
+
+/* Media query for MOBILE DEVICES */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: left;
+        margin: 5px 0;
+    }
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background-color: white;
+        }
+
+    .info {
+        display: none;
+        /* Additional styling for the info box */
+        position: relative;
+        z-index: 100;
+    }
+
+    .grid-item:hover .info {
+        display: block; /* Show the info box on hover */
+    }
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+/* Style for the navigation pane */
+.navigation-pane {
+    position: fixed; /* Makes the navigation pane stay in the same place on the screen */
+    top: 20%; /* Position from the top */
+    left: 0; /* Position from the left */
+    width: 200px; /* Width of the navigation pane */
+    background-color: #f9f9f9; /* Background color */
+    border-right: 2px solid #ccc; /* Right border */
+    padding: 10px; /* Padding inside the navigation pane */
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+.navigation-pane ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+.navigation-pane a {
+    display: block; /* Makes the links fill the entire width of the navigation pane */
+    padding: 10px; /* Adds some padding for better clickability */
+    text-decoration: none; /* Removes underline from links */
+    color: black; /* Text color */
+}
+
+.navigation-pane a:hover {
+    background-color: #eaeaea; /* Background color on hover */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Place the button 20px from the bottom */
+    right: 30px; /* 30px from the right */
+    z-index: 99; /* Make sure it sits on top of other content */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #333; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#backToTopBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+/* Grid Container Style (example) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    /* Other styling as needed */
+}
+
+/* Search Bar Container Style */
+#searchContainer {
+    display: flex;
+    justify-content: center; /* Centers the child horizontally */
+    align-items: center; /* Centers the child vertically, if needed */
+    width: 100%; /* Takes full width of its parent */
+    margin-top: 20px; /* Adjust as needed to create space between the grid and the search bar */
+    flex-direction: row; /* Ensures the search bar and button are in a single row */
+}
+#keywordInput {
+    background-color: #f0f0f0; /* Light grey background */
+    border: none; /* Removes the default border */
+    padding: 10px 15px; /* Adds some padding inside the search bar */
+    border-radius: 20px; /* Rounded corners */
+    margin-right: 10px; /* Optional: Adds some space between the search bar and the button if they are in the same row */
+}
+
+/* Optional: Style the search button to match */
+#searchButton {
+    background-color: #333; /* Dark background for the button */
+    color: white; /* Text color for the button */
+    border: none; /* Removes the default border */
+    padding: 10px 15px; /* Matches the search bar padding for uniform height */
+    border-radius: 20px; /* Rounded corners to match the search bar */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+#searchButton:hover {
+    background-color: #555; /* Darker background on hover */
+}
+
+#searchContainer {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#searchResults {
+    margin-bottom: 20px;
+    display: none;
+}
+
+.search-result {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.search-result h2 {
+    margin-top: 0;
+}
+
+#clearButton {
+    margin-left: 10px;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+/* New styles for autocomplete */
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta name="Experiences" content="Professional, Experiences, Portfolio, Resume, Photographer, Web Developer, Top Photographers, Top Web Developers, Top Online Resume, Top Professional, Online Portfolio, Current Web Developer, Chicago Web Developer, Top Professional Resume, Muhammad Hakeem, Space Partz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences</title>
+    
+    <style>
+        /* Add your styles here */
+
+        /* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust:none;
+    -webkit-font-smoothing:antialiased
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+header {
+    background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .logo {
+    height: 50px;
+    margin-right: auto;/* This pushes the logo to the left */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+strong {    
+
+    color: #555;
+line-height: 15%;
+}
+
+h2 {
+    margin-bottom: 1px; /* Adjust this value as needed */
+    line-height: normal;
+}
+
+h3 {
+    margin-top: 0px; /* Adjust this value as needed */
+}
+
+h6 {
+    text-align: left;
+}
+    
+p  {
+    text-align: left;
+    font-size: small;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+    
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 100%;
+            position: sticky;
+            
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255) 89%, rgba(255, 255, 255, 0) 100%);
+        }
+    
+        .exp-container {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 20px;
+            padding-left: 25%;
+            padding-right:40%;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .grid-item {
+            position: relative;
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+        .hover-text {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            white-space: nowrap;
+            animation: liquid-bg 1.5s infinite alternate;
+        }
+        .grid-item:hover .hover-text {
+            display: block;
+        }
+        @keyframes liquid-bg {
+            0% {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            50% {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            100% {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        .experience-details {
+            display: none;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #ffffff;
+            border: 0px solid #ffffff;
+            border-radius: 8px;
+             width: 100%;
+        }
+        .experience-details h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .experience-details p, .experience-details ul {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .experience-details li {
+            margin: 5px 0;
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+        .experience-details li {
+            content: "• ";
+            color: #000000;
+        }
+    
+        .experiences-title {
+            font-size: 1em;
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            text-align: center;
+            display: flex;
+        }
+        
+        .objective_p {
+            padding-left: 25%;  
+            padding-right: 15%;
+            padding-top: 5%;
+
+        }
+        footer {
+    background: linear-gradient(to top, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top:20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+   
+    width: 100%;
+}
+
+
+/* General box-sizing for consistency */
+*{
+    box-sizing: border-box;
+}
+
+/* Hamburger menu styles */
+
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: #333;
+}
+
+
+/* Media query for PHONE DEVICES */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+        }
+
+    .info {
+        display: none;
+        /* Additional styling for the info box */
+        position: relative;
+        z-index: 100;
+    }
+
+    .grid-item:hover .info {
+        display: block; /* Show the info box on hover */
+    }
+
+    .exp-container {
+        display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+        }
+}
+
+/* Media query for MOBILE DEVICES */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: left;
+        margin: 5px 0;
+    }
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background-color: white;
+        }
+
+    .info {
+        display: none;
+        /* Additional styling for the info box */
+        position: relative;
+        z-index: 100;
+    }
+
+    .grid-item:hover .info {
+        display: block; /* Show the info box on hover */
+    }
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+/* Style for the navigation pane */
+.navigation-pane {
+    position: fixed; /* Makes the navigation pane stay in the same place on the screen */
+    top: 20%; /* Position from the top */
+    left: 0; /* Position from the left */
+    width: 200px; /* Width of the navigation pane */
+    background-color: #f9f9f9; /* Background color */
+    border-right: 2px solid #ccc; /* Right border */
+    padding: 10px; /* Padding inside the navigation pane */
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+.navigation-pane ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+.navigation-pane a {
+    display: block; /* Makes the links fill the entire width of the navigation pane */
+    padding: 10px; /* Adds some padding for better clickability */
+    text-decoration: none; /* Removes underline from links */
+    color: black; /* Text color */
+}
+
+.navigation-pane a:hover {
+    background-color: #eaeaea; /* Background color on hover */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Place the button 20px from the bottom */
+    right: 30px; /* 30px from the right */
+    z-index: 99; /* Make sure it sits on top of other content */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #333; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#backToTopBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+/* Grid Container Style (example) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    /* Other styling as needed */
+}
+
+/* Search Bar Container Style */
+#searchContainer {
+    display: flex;
+    justify-content: center; /* Centers the child horizontally */
+    align-items: center; /* Centers the child vertically, if needed */
+    width: 100%; /* Takes full width of its parent */
+    margin-top: 20px; /* Adjust as needed to create space between the grid and the search bar */
+    flex-direction: row; /* Ensures the search bar and button are in a single row */
+}
+#keywordInput {
+    background-color: #f0f0f0; /* Light grey background */
+    border: none; /* Removes the default border */
+    padding: 10px 15px; /* Adds some padding inside the search bar */
+    border-radius: 20px; /* Rounded corners */
+    margin-right: 10px; /* Optional: Adds some space between the search bar and the button if they are in the same row */
+}
+
+/* Optional: Style the search button to match */
+#searchButton {
+    background-color: #333; /* Dark background for the button */
+    color: white; /* Text color for the button */
+    border: none; /* Removes the default border */
+    padding: 10px 15px; /* Matches the search bar padding for uniform height */
+    border-radius: 20px; /* Rounded corners to match the search bar */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+#searchButton:hover {
+    background-color: #555; /* Darker background on hover */
+}
+
+#searchContainer {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#searchResults {
+    margin-bottom: 20px;
+    display: none;
+}
+
+.search-result {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.search-result h2 {
+    margin-top: 0;
+}
+
+#clearButton {
+    margin-left: 10px;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+/* New styles for autocomplete */
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+    background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
     </style>
 </head>
 <body>
@@ -525,7 +1549,7 @@ html {
   
     Adept at working in multi-disciplinary environments, collaborating with visual designers, UX designers, and engineers to bring web projects to life. Committed to continuous learning and improvement, and highly engaged with the latest design research and innovation.</h3>
 
-<div id="searchContainer">
+<div id="searchContainer" class="autocomplete">
     <input type="text" id="keywordInput" placeholder="Search experiences...">
     <button id="searchButton">Search</button>
     <button id="clearButton" style="display: none;">Clear Search</button>
@@ -552,7 +1576,7 @@ html {
 </div>
 </div>
 
-<div class="exp-container">
+<div class="exp-list">
     <div>
         <h1>Work Experience</h1>
         <div class="exp-container">
@@ -620,7 +1644,7 @@ html {
     </div>
 
 
-
+    <div class="exp-container">
         <h2>Space Juicy</h2>
         <h3>Project Manager, Web Developer, Photographer, Stream Manager, Media Specialist, Apparel Designer</h3>
         <p><strong>April 2019 - July 2023</strong></p>
@@ -629,7 +1653,9 @@ html {
             <li>Designed an engaging and user-friendly website and cutting-edge apparel.</li>
             <li>Executed strategic social media campaigns to boost online presence and engagement.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Tha Rock'n Roosta</h2>
         <h3>Project Manager, Photographer, Art Work Digitization & Embroidery, Media Specialist, Apparel Designer</h3>
         <p><strong>April 2019 - July 2023</strong></p>
@@ -638,7 +1664,9 @@ html {
             <li>Designed custom tie-dye apparel and visually appealing menu designs.</li>
             <li>Oversaw the creative direction for a consistent and engaging visual presence.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Legacy Apparel</h2>
         <h3>Product Designer Project Manager, Web Developer, Art Work Digitization & Embroidery, Illustrator, Media Specialist, Apparel Designer</h3>
         <p><strong>April 2019 - July 2023</strong></p>
@@ -647,7 +1675,9 @@ html {
             <li>Created visually striking sweats and apparel from re-engineered playing card designs by Brent Bailer.</li>
             <li>Designed and managed an engaging web and social media presence.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Digitizing, Embroidery and DTG Inkjet Professional Training</h2>
         <h3>Student, Embroidery Design Specialist</h3>
         <p><strong>April 2019 - July 2023</strong></p>
@@ -656,7 +1686,9 @@ html {
             <li>Designed and digitized patterns aligning with the brand's modern and edgy aesthetic.</li>
             <li>Operated embroidery machines, troubleshoot technical issues, and ensured product quality.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Commercial Truck Driving</h2>
         <h3>Commercial Truck Driver, Air Brakes, Hazmat</h3>
         <p><strong>October 2017 - April 2019</strong></p>
@@ -665,7 +1697,9 @@ html {
             <li>Ensured compliance with transportation regulations and maintained accurate logs.</li>
             <li>Conducted vehicle inspections and coordinated with dispatchers for timely deliveries.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>UAIR</h2>
         <h3>Brand Identity Development, Artwork Director, Copyright and Trademark Coordinator</h3>
         <p><strong>October 2013 - October 2017</strong></p>
@@ -674,7 +1708,9 @@ html {
             <li>Designed diplomatic governing documentation and created engaging websites.</li>
             <li>Crafted media content and persuasive grant proposals for funding and support.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>IP Intellectual Property</h2>
         <h3>Project Manager, Print Editor, Media Specialist, Marketing Designer</h3>
         <p><strong>October 2013 - January 2017</strong></p>
@@ -682,15 +1718,19 @@ html {
             <li>Developed unique brand identities for film-conscious production projects.</li>
             <li>Wrote compelling scripts, captured high-quality video content, and created engaging graphic designs.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Cooperative Community News Papers</h2>
         <h3>Web Designer, Copyright Editor, Graphic Artist, Webmaster, Board Member</h3>
         <p><strong>October 2015 - October 2019</strong></p>
         <ul>
             <li>Developed a strong brand identity and dynamic web presence for a cooperative community newspaper.</li>
             <li>Crafted compelling copy and produced diverse media content for digital and print platforms.</li>
-        </ul>
+            </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Spaceport Coatopia Soundtrack</h2>
         <h3>Music Producer, Pianist, Guitarist, Vocals, Photographer, Album Artwork Design</h3>
         <p><strong>October 2015 - October 2016</strong></p>
@@ -699,7 +1739,9 @@ html {
             <li>Composed and produced the music score and created visually compelling designs.</li>
             <li>Oversaw artistic direction for a consistent and engaging aesthetic.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>USDA Workshops & Grant Training</h2>
         <h3>Student, Farmer, Grant Applicant</h3>
         <p><strong>January 2014 - April 2014</strong></p>
@@ -708,7 +1750,9 @@ html {
             <li>Participated in hands-on workshops and utilized USDA resources.</li>
             <li>Developed skills in farm business management, including budgeting and marketing.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Michigreen Shop</h2>
         <h3>Project Manager, Photographer, Media Specialist, Art Director</h3>
         <p><strong>June 2012 - October 2013</strong></p>
@@ -717,7 +1761,9 @@ html {
             <li>Designed a user-friendly website and contributed to plant cultivation and care.</li>
             <li>Oversaw artistic direction for a cohesive visual aesthetic.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Breakfast of Champions</h2>
         <h3>Project Manager, Web Developer, Photographer, Media Specialist, Apparel Designer</h3>
         <p><strong>June 2012 - October 2013</strong></p>
@@ -726,7 +1772,9 @@ html {
             <li>Designed eye-catching labels and contributed to cannabis strain cultivation.</li>
             <li>Oversaw artistic direction for a cohesive visual presence.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>GHSP</h2>
         <h3>Project Manager, Web Developer, Art Director, Media Specialist, Copywriter</h3>
         <p><strong>June 2012 - October 2013</strong></p>
@@ -735,7 +1783,9 @@ html {
             <li>Designed diplomatic governing documentation and created a user-friendly website.</li>
             <li>Crafted persuasive grant proposals and produced diverse media content.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>The One and Only</h2>
         <h3>Project Manager, Film Director, Martial Arts Choreographer, Media Specialist</h3>
         <p><strong>June 2012 - October 2013</strong></p>
@@ -744,7 +1794,9 @@ html {
             <li>Created storyboard documentation, wrote scripts, and oversaw filming.</li>
             <li>Designed visual elements and promotional materials for marketing efforts.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Diplomacy Study & Development</h2>
         <h3>Student</h3>
         <p><strong>July 2010 - June 2012</strong></p>
@@ -753,7 +1805,9 @@ html {
             <li>Participated in seminars and workshops to understand diplomatic protocol and negotiation strategies.</li>
             <li>Researched and analyzed case studies and engaged in practical exercises.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Michigan SceneSetters</h2>
         <h3>Copywriter, Media Specialist, Art Director</h3>
         <p><strong>July 2010 - June 2012</strong></p>
@@ -762,7 +1816,9 @@ html {
             <li>Designed a visually appealing website and created high-quality content.</li>
             <li>Oversaw artistic direction and crafted compelling copy.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Giraffe-N-Turtle</h2>
         <h3>Art Director</h3>
         <p><strong>July 2010 - June 2012</strong></p>
@@ -771,7 +1827,9 @@ html {
             <li>Created visually charming branding elements and designed packaging and promotional materials.</li>
             <li>Oversaw artistic direction and crafted compelling copy.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Gordian Charter Solutions</h2>
         <h3>Project Manager, Art Director</h3>
         <p><strong>July 2010 - June 2012</strong></p>
@@ -779,7 +1837,9 @@ html {
             <li>Developed a whimsical brand identity for an organic craft and jewelry business.</li>
             <li>Designed visually engaging materials and created branding elements.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Treat of the Day</h2>
         <h3>Project Manager, Film Director, Photographer, Media Specialist, Apparel Designer</h3>
         <p><strong>July 2010 - June 2012</strong></p>
@@ -787,8 +1847,10 @@ html {
             <li>Developed a professional brand identity for a coffee company.</li>
             <li>Designed logos, packaging, and promotional materials.</li>
             <li>Produced and scripted a compelling movie showcasing the coffee's journey.</li>
-        </ul>
+            </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>No More Sidelines</h2>
         <h3>Project Manager, Film Director, Creative Director, Copywriter</h3>
         <p><strong>July 2010 - June 2012</strong></p>
@@ -796,8 +1858,9 @@ html {
             <li>Developed a heartwarming brand identity for a film about supporting special needs individuals.</li>
             <li>Created storyboard documentation and wrote scripts.</li>
             <li>Oversaw filming and managed overall direction and production.</li>
-        </ul>
-
+            </ul>
+    </div>
+    <div class="exp-container">
         <h2>The Forgotten</h2>
         <h3>Project Manager, Film Director, Creative Director, Copywriter</h3>
         <p><strong>July 2010 - June 2012</strong></p>
@@ -806,7 +1869,9 @@ html {
             <li>Created storyboard documentation and wrote scripts.</li>
             <li>Oversaw filming and managed overall direction and production.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Intyce Media</h2>
         <h3>Art Director, Photographer, Graphic</h3>
         <p><strong>July 2009 - June 2010</strong></p>
@@ -815,6 +1880,7 @@ html {
             <li>Provided professional senior photography services and managed invoicing.</li>
             <li>Oversaw artistic direction for consistent visual style.</li>
         </ul>
+    </div>
         <br id="skills"/>
 
    
@@ -969,6 +2035,68 @@ html {
         function topFunction() {
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
+
+        // New JavaScript for autocomplete and fuzzy search
+        function autocomplete(inp, arr) {
+            var currentFocus;
+            inp.addEventListener("input", function(e) {
+                var a, b, i, val = this.value;
+                closeAllLists();
+                if (!val) { return false; }
+                currentFocus = -1;
+                a = document.createElement("DIV");
+                a.setAttribute("id", this.id + "autocomplete-list");
+                a.setAttribute("class", "autocomplete-items");
+                this.parentNode.appendChild(a);
+                for (i = 0; i < arr.length; i++) {
+                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                        b = document.createElement("DIV");
+                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                        b.innerHTML += arr[i].substr(val.length);
+                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                        b.addEventListener("click", function(e) {
+                            inp.value = this.getElementsByTagName("input")[0].value;
+                            closeAllLists();
+                            searchExperience(inp.value);
+                        });
+                        a.appendChild(b);
+                    }
+                }
+            });
+            // ... rest of the autocomplete function ...
+        }
+
+        function levenshteinDistance(a, b) {
+            // ... implementation of Levenshtein Distance algorithm ...
+        }
+
+        function fuzzySearch(keyword, arr) {
+            // ... implementation of fuzzy search using Levenshtein Distance ...
+        }
+
+        // Initialize autocomplete with experience keywords
+        var experienceKeywords = ["Web Development", "UI/UX Design", "Project Management", "Branding", "Photography", "Video Editing"];
+        autocomplete(document.getElementById("keywordInput"), experienceKeywords);
+
+        // Update searchExperience function
+        function searchExperience(keyword) {
+            // ... existing search logic ...
+
+            // Add fuzzy search
+            if (!foundMatch) {
+                var fuzzyMatches = fuzzySearch(keyword, experienceKeywords);
+                if (fuzzyMatches.length > 0) {
+                    // Display fuzzy matches
+                    var fuzzyResultsHtml = "<p>Did you mean:</p><ul>";
+                    fuzzyMatches.forEach(function(match) {
+                        fuzzyResultsHtml += "<li>" + match + "</li>";
+                    });
+                    fuzzyResultsHtml += "</ul>";
+                    document.getElementById("searchResults").innerHTML = fuzzyResultsHtml;
+                    document.getElementById("searchResults").style.display = "block";
+                }
+            }
         }
 </script>
 </body>
