@@ -1,4 +1,8 @@
 # README for Portfolio Journal Website
+[![CodePen](https://img.shields.io/badge/CodePen-000000?style=for-the-badge&logo=codepen&logoColor=white)](https://codepen.io/space-partz)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/space-partz)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/space-partz)
+
 
 🌐 **Portfolio Journal Website** 🌐  
 Welcome to my *Portfolio Journal*—a personal space where I share my journey through the constantly evolving world of technology, web development, and entrepreneurship. Here, you’ll find my thoughts, opinions, and experiences, alongside a photography portfolio that captures moments from both my professional and creative pursuits.
@@ -20,7 +24,7 @@ Want to create something similar? Fork this repository, explore my code, and mak
 
 1. **Clone the Repo**  
    ```bash
-   git clone https://github.com/yourusername/portfolio-journal.git
+   git clone https://github.com/space-partz/Muhammadhakeem_dotcom.git
    ```
 
 2. **Customize**  
@@ -62,4 +66,5 @@ I welcome any contributions—whether you have new ideas, improvements, or bug f
 ---
 
 Thank you for visiting, and I hope you enjoy exploring this project. 🌟
+
 
