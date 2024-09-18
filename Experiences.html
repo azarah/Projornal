@@ -432,6 +432,59 @@ html {
 #searchButton:hover {
     background-color: #555; /* Darker background on hover */
 }
+
+#searchContainer {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#searchResults {
+    margin-bottom: 20px;
+    display: none;
+}
+
+.search-result {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.search-result h2 {
+    margin-top: 0;
+}
+
+#clearButton {
+    margin-left: 10px;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 10px;
+}
     </style>
 </head>
 <body>
@@ -446,6 +499,8 @@ html {
             <span></span>
             <span></span>
         </div>
+
+        
         <ul>
             <li><a href="MuhammadHakeem Resume 2024.pdf" download>Resume</a></li>
             <li><a href="Collections.html">Collections</a></li>
@@ -455,10 +510,28 @@ html {
     </nav>
 </header>
 
+
+<div class="mobile-menu">
+    <div class="mobile-menu-content">
+        <a href="Muhammad Hakeem 2024 resume.pdf" download>Resume</a>
+        <a href="Collections.html">Collections</a>
+        <a href="Journal.html">Journal</a>
+        <a href="index.html#contactMe">Contact</a>
+    </div>
+</div>
+
 <h3 class="objective_p" id="objective">I'm a passionate and experienced Product Designer with a proven track record in creating user-centric designs that impact millions of users globally. Skilled in UI/UX design, branding, and multimedia content creation with a strong focus on usability, accessibility, and web standards. 
     <br/>
   
     Adept at working in multi-disciplinary environments, collaborating with visual designers, UX designers, and engineers to bring web projects to life. Committed to continuous learning and improvement, and highly engaged with the latest design research and innovation.</h3>
+
+<div id="searchContainer">
+    <input type="text" id="keywordInput" placeholder="Search experiences...">
+    <button id="searchButton">Search</button>
+    <button id="clearButton" style="display: none;">Clear Search</button>
+</div>
+
+<div id="searchResults"></div>
 
 <div class="grid-container">
     <div class="grid-item">
@@ -477,15 +550,12 @@ html {
         <a href="#projects"> <p class="experiences-title">Projects</p>
         <h6 class="info">My experience in producing high-resolution digital photography and 4K drone videography, combined with my proficiency in Adobe Premiere Pro, After Effects, and Photoshop, has equipped me with the skills needed to excel in this role.</h6></a>
 </div>
-<div id="searchContainer">
-    <input type="text" id="keywordInput" placeholder="Enter keyword">
-    <button id="searchButton">Search</button>
-</div>
 </div>
 
 <div class="exp-container">
     <div>
         <h1>Work Experience</h1>
+        <div class="exp-container">
         <h2>Intyce Media Scholarship for Website Development</h2>
         <h3>Student, Webmaster, Portfolio Manager</h3>
         <p><strong>July 2023 - Present</strong></p>
@@ -493,7 +563,9 @@ html {
             <li>Expertise in fashion design, production quality management, and ecommerce distribution.</li>
             <li>Managed a small fashion design company, providing niche services for diverse clients.</li>
         </ul>
+    </div>
     
+    <div class="exp-container">
         <h2>Project Manager Intyce Media Website Portfolio</h2>
         <h3>Project Manager, Web Developer, Photographer, Videographer, Media Specialist</h3>
         <ul>
@@ -501,7 +573,9 @@ html {
             <li>Created websites and strategies for iterating profitable website products.</li>
             <li>Implemented automated security and design processes for continuous integration and deployment.</li>
         </ul>
+    </div>
     
+    <div class="exp-container">
         <h2>Intyce Tees</h2>
         <h3>Project Manager, Web Developer, Photographer, Media Specialist, Apparel Designer</h3>
         <p><strong>April 2019 - July 2023</strong></p>
@@ -510,7 +584,9 @@ html {
             <li>Designed user-friendly websites and unique apparel that resonated with the target audience.</li>
             <li>Executed strategic social media campaigns to boost brand visibility and engagement.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Blauhaus</h2>
         <h3>Project Manager, Web Developer, Photographer, Media Specialist, Apparel Designer</h3>
         <p><strong>April 2019 - July 2023</strong></p>
@@ -519,7 +595,9 @@ html {
             <li>Created innovative apparel designs merging contemporary fashion with Islamic principles.</li>
             <li>Crafted and implemented strategic advertising campaigns across multiple platforms.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Custom PC Builds</h2>
         <h3>Project Manager, Consultant, Technology Support and Installation</h3>
         <p><strong>July 2019 - January 2020</strong></p>
@@ -528,7 +606,9 @@ html {
             <li>Ensured compatibility and performed tests and optimization for superior performance and efficiency.</li>
             <li>Documented and promoted PC builds through engaging media content.</li>
         </ul>
+    </div>
 
+    <div class="exp-container">
         <h2>Space Partz/Spatial Partizan</h2>
         <h3>Project Manager, Web Developer, Video Editor, Stream Manager, Media Specialist, Apparel Designer</h3>
         <p><strong>December 2019 - July 2023</strong></p>
@@ -536,7 +616,10 @@ html {
             <li>Developed a distinct brand identity for an online streaming personality.</li>
             <li>Designed and maintained a visually appealing and user-friendly web presence.</li>
             <li>Created and managed advertising campaigns to increase visibility and reach a broader audience.</li>
-        </ul>
+        </ul>   
+    </div>
+
+
 
         <h2>Space Juicy</h2>
         <h3>Project Manager, Web Developer, Photographer, Stream Manager, Media Specialist, Apparel Designer</h3>
@@ -547,7 +630,7 @@ html {
             <li>Executed strategic social media campaigns to boost online presence and engagement.</li>
         </ul>
 
-        <h2>Tha Rock’n Roosta</h2>
+        <h2>Tha Rock'n Roosta</h2>
         <h3>Project Manager, Photographer, Art Work Digitization & Embroidery, Media Specialist, Apparel Designer</h3>
         <p><strong>April 2019 - July 2023</strong></p>
         <ul>
@@ -698,7 +781,7 @@ html {
         </ul>
 
         <h2>Treat of the Day</h2>
-        <h3>Project Manager, Film Director, Creative Director, Copywriter</h3>
+        <h3>Project Manager, Film Director, Photographer, Media Specialist, Apparel Designer</h3>
         <p><strong>July 2010 - June 2012</strong></p>
         <ul>
             <li>Developed a professional brand identity for a coffee company.</li>
@@ -823,48 +906,70 @@ html {
             // Assuming there's an input field with an ID of 'keywordInput' and a button to trigger the search
             document.getElementById('searchButton').addEventListener('click', function() {
                 const keyword = document.getElementById('keywordInput').value;
-                showExperience(keyword);
+                searchExperience(keyword);
             });
         });
     
-        function showExperience(keyword) {
-            // Existing code to hide all experiences and gather matched experiences...
-    
-            // Sort matched experiences by start date
-            matchedExperiences.sort((a, b) => {
-                const dateA = new Date(a.getAttribute('data-start-date'));
-                const dateB = new Date(b.getAttribute('data-start-date'));
-                return dateA - dateB;
+        function searchExperience(keyword) {
+            const experienceElements = document.querySelectorAll('.exp-container > div > *');
+            let foundMatch = false;
+
+            experienceElements.forEach(element => {
+                if (element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' || element.tagName === 'P' || element.tagName === 'UL') {
+                    const text = element.textContent.toLowerCase();
+                    if (text.includes(keyword)) {
+                        element.style.display = 'block';
+                        foundMatch = true;
+                        // If it's an H2, also show the next H3 and UL
+                        if (element.tagName === 'H2') {
+                            let nextElement = element.nextElementSibling;
+                            while (nextElement && (nextElement.tagName === 'H3' || nextElement.tagName === 'P' || nextElement.tagName === 'UL')) {
+                                nextElement.style.display = 'block';
+                                nextElement = nextElement.nextElementSibling;
+                            }
+                        }
+                    } else {
+                        element.style.display = 'none';
+                    }
+                }
             });
-    
-            // Display the matched experiences
-            matchedExperiences.forEach(experience => {
-                experience.style.display = 'block';
-            });
+
+            // Show a message if no matches were found
+            const noResultsMessage = document.getElementById('noResultsMessage') || createNoResultsMessage();
+            if (!foundMatch) {
+                noResultsMessage.style.display = 'block';
+            } else {
+                noResultsMessage.style.display = 'none';
+            }
         }
-   // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("backToTopBtn").style.display = "block";
-    } else {
-        document.getElementById("backToTopBtn").style.display = "none";
-    }
-}
+        function createNoResultsMessage() {
+            const message = document.createElement('p');
+            message.id = 'noResultsMessage';
+            message.textContent = 'No results found.';
+            message.style.display = 'none';
+            document.querySelector('.exp-container').appendChild(message);
+            return message;
+        }
 
-// When the user clicks on the button, scroll to the top of the document
-document.getElementById("backToTopBtn").onclick = function() {topFunction()};
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
 
-function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-}
- 
-document.getElementById('searchButton').addEventListener('click', function() {
-    const keyword = document.getElementById('keywordInput').value.toLowerCase(); // Convert to lowercase for case-insensitive matching
-    showExperience(keyword);
-});
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("backToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("backToTopBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        document.getElementById("backToTopBtn").onclick = function() {topFunction()};
+
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
 </script>
 </body>
 </html>
