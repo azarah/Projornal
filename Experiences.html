@@ -482,34 +482,7 @@ html {
 
 .mobile-menu a {
     color: white;
-    text-decoration: none;
-    font-size: 24px;
-    margin: 20px 0;
-    padding: 10px;
 }
-
-/* New styles for autocomplete */
-.autocomplete-items {
-    position: absolute;
-    border: 1px solid #d4d4d4;
-    border-bottom: none;
-    border-top: none;
-    z-index: 99;
-    top: 100%;
-    left: 0;
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="imagetoolbar" content="no">
-    <meta name="Experiences" content="Professional, Experiences, Portfolio, Resume, Photographer, Web Developer, Top Photographers, Top Web Developers, Top Online Resume, Top Professional, Online Portfolio, Current Web Developer, Chicago Web Developer, Top Professional Resume, Muhammad Hakeem, Space Partz">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiences</title>
-    
-    <style>
-        /* Add your styles here */
-
-        /* Add smooth scrolling */
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust:none;
@@ -992,19 +965,494 @@ html {
     position: absolute;
     border: 1px solid #d4d4d4;
     border-bottom: none;
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="imagetoolbar" content="no">
-    <meta name="Experiences" content="Professional, Experiences, Portfolio, Resume, Photographer, Web Developer, Top Photographers, Top Web Developers, Top Online Resume, Top Professional, Online Portfolio, Current Web Developer, Chicago Web Developer, Top Professional Resume, Muhammad Hakeem, Space Partz">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiences</title>
-    
-    <style>
-        /* Add your styles here */
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+}
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust:none;
+    -webkit-font-smoothing:antialiased
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
-        /* Add smooth scrolling */
+}
+
+header {
+    background: linear-gradient(to bottom, rgb(51, 51, 51), rgba(51, 51, 51, 0));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .logo {
+    height: 50px;
+    margin-right: auto;/* This pushes the logo to the left */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 10px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+strong {    
+
+    color: #555;
+line-height: 15%;
+}
+
+h2 {
+    margin-bottom: 1px; /* Adjust this value as needed */
+    line-height: normal;
+}
+
+h3 {
+    margin-top: 0px; /* Adjust this value as needed */
+}
+
+h6 {
+    text-align: left;
+}
+    
+p  {
+    text-align: left;
+    font-size: small;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+    
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 100%;
+            position: sticky;
+            
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255) 89%, rgba(255, 255, 255, 0) 100%);
+        }
+    
+        .exp-container {
+            display: flex;
+            flex-direction: column;
+            grid-gap: 20px;
+            padding-left: 25%;
+            padding-right:40%;
+            width: 100%;
+            height: 100%;
+        }
+    
+        .grid-item {
+            position: relative;
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+        .hover-text {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            white-space: nowrap;
+            animation: liquid-bg 1.5s infinite alternate;
+        }
+        .grid-item:hover .hover-text {
+            display: block;
+        }
+        @keyframes liquid-bg {
+            0% {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            50% {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            100% {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        .experience-details {
+            display: none;
+            flex-wrap: wrap;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #ffffff;
+            border: 0px solid #ffffff;
+            border-radius: 8px;
+             width: 100%;
+        }
+        .experience-details h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .experience-details p, .experience-details ul {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .experience-details li {
+            margin: 5px 0;
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+        .experience-details li {
+            content: "• ";
+            color: #000000;
+        }
+    
+        .experiences-title {
+            font-size: 1em;
+            border-bottom: 1px solid #333;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            text-align: center;
+            display: flex;
+        }
+        
+        .objective_p {
+            padding-left: 25%;  
+            padding-right: 15%;
+            padding-top: 5%;
+
+        }
+        footer {
+    background: linear-gradient(to top, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0));
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top:20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+   
+    width: 100%;
+}
+
+
+/* General box-sizing for consistency */
+*{
+    box-sizing: border-box;
+}
+
+/* Hamburger menu styles */
+
+.hamburger {
+    display: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    background-color: #333;
+}
+
+
+/* Media query for PHONE DEVICES */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+        }
+
+    .info {
+        display: none;
+        /* Additional styling for the info box */
+        position: relative;
+        z-index: 100;
+    }
+
+    .grid-item:hover .info {
+        display: block; /* Show the info box on hover */
+    }
+
+    .exp-container {
+        display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+        }
+}
+
+/* Media query for MOBILE DEVICES */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: left;
+        margin: 5px 0;
+    }
+    .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            padding: 30px;
+            width: 100%;
+            height: 50%;
+            position: relative;
+            top: 0;
+            background-color: white;
+        }
+
+    .info {
+        display: none;
+        /* Additional styling for the info box */
+        position: relative;
+        z-index: 100;
+    }
+
+    .grid-item:hover .info {
+        display: block; /* Show the info box on hover */
+    }
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+}
+
+/* Style for the navigation pane */
+.navigation-pane {
+    position: fixed; /* Makes the navigation pane stay in the same place on the screen */
+    top: 20%; /* Position from the top */
+    left: 0; /* Position from the left */
+    width: 200px; /* Width of the navigation pane */
+    background-color: #f9f9f9; /* Background color */
+    border-right: 2px solid #ccc; /* Right border */
+    padding: 10px; /* Padding inside the navigation pane */
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+.navigation-pane ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margin */
+}
+
+.navigation-pane a {
+    display: block; /* Makes the links fill the entire width of the navigation pane */
+    padding: 10px; /* Adds some padding for better clickability */
+    text-decoration: none; /* Removes underline from links */
+    color: black; /* Text color */
+}
+
+.navigation-pane a:hover {
+    background-color: #eaeaea; /* Background color on hover */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Place the button 20px from the bottom */
+    right: 30px; /* 30px from the right */
+    z-index: 99; /* Make sure it sits on top of other content */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #333; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#backToTopBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+/* Grid Container Style (example) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    /* Other styling as needed */
+}
+
+/* Search Bar Container Style */
+#searchContainer {
+    display: flex;
+    justify-content: center; /* Centers the child horizontally */
+    align-items: center; /* Centers the child vertically, if needed */
+    width: 100%; /* Takes full width of its parent */
+    margin-top: 20px; /* Adjust as needed to create space between the grid and the search bar */
+    flex-direction: row; /* Ensures the search bar and button are in a single row */
+}
+#keywordInput {
+    background-color: #f0f0f0; /* Light grey background */
+    border: none; /* Removes the default border */
+    padding: 10px 15px; /* Adds some padding inside the search bar */
+    border-radius: 20px; /* Rounded corners */
+    margin-right: 10px; /* Optional: Adds some space between the search bar and the button if they are in the same row */
+}
+
+/* Optional: Style the search button to match */
+#searchButton {
+    background-color: #333; /* Dark background for the button */
+    color: white; /* Text color for the button */
+    border: none; /* Removes the default border */
+    padding: 10px 15px; /* Matches the search bar padding for uniform height */
+    border-radius: 20px; /* Rounded corners to match the search bar */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+}
+
+#searchButton:hover {
+    background-color: #555; /* Darker background on hover */
+}
+
+#searchContainer {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#searchResults {
+    margin-bottom: 20px;
+    display: none;
+}
+
+.search-result {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.search-result h2 {
+    margin-top: 0;
+}
+
+#clearButton {
+    margin-left: 10px;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+/* New styles for autocomplete */
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+}
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust:none;
@@ -1966,138 +2414,159 @@ html {
 <script src="IP.js"></script>
 <script src="HamburgerMenu_FX.js"></script>
 <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Existing code to handle visited links...
-    
-            // Assuming there's an input field with an ID of 'keywordInput' and a button to trigger the search
-            document.getElementById('searchButton').addEventListener('click', function() {
-                const keyword = document.getElementById('keywordInput').value;
-                searchExperience(keyword);
-            });
+    // Autocomplete function kept outside DOMContentLoaded as requested
+function autocomplete(inp, arr) {
+    let currentFocus;
+    inp.addEventListener("input", function(e) {
+        let a, b, i, val = this.value;
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        this.parentNode.appendChild(a);
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
+            }
+        }
+    });
+    inp.addEventListener("keydown", function(e) {
+        let x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+            currentFocus++;
+            addActive(x);
+        } else if (e.keyCode == 38) {
+            currentFocus--;
+            addActive(x);
+        } else if (e.keyCode == 13) {
+            e.preventDefault();
+            if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+            }
+        }
+    });
+    function addActive(x) {
+        if (!x) return false;
+        removeActive(x);
+        if (currentFocus >= x.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = (x.length - 1);
+        x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+        for (let i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+        }
+    }
+    function closeAllLists(elmnt) {
+        const items = document.getElementsByClassName("autocomplete-items");
+        for (let i = 0; i < items.length; i++) {
+            if (elmnt != items[i] && elmnt != inp) {
+                items[i].parentNode.removeChild(items[i]);
+            }
+        }
+    }
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add the autocomplete functionality for input
+    const experiencesList = [
+        "Objective", "Skills", "Certifications", "Projects", // Add more titles as needed
+    ];
+    autocomplete(document.getElementById('keywordInput'), experiencesList);
+
+    // Mobile Menu Toggle
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        const navList = document.querySelector('nav ul');
+        navList.classList.toggle('show');
+    });
+
+    // Hide all <h3> tags within .exp-container
+    const h3Tags = document.querySelectorAll('.exp-container h3');
+    h3Tags.forEach(function(h3) {
+        h3.style.display = 'none';  // Hide the h3 tag
+    });
+
+    // Levenshtein Distance Function
+    function levenshteinDistance(a, b) {
+        const matrix = [];
+        for (let i = 0; i <= b.length; i++) {
+            matrix[i] = [i];
+        }
+        for (let j = 0; j <= a.length; j++) {
+            matrix[0][j] = j;
+        }
+        for (let i = 1; i <= b.length; i++) {
+            for (let j = 1; j <= a.length; j++) {
+                if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                    matrix[i][j] = matrix[i - 1][j - 1];
+                } else {
+                    matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j] + 1);
+                }
+            }
+        }
+        return matrix[b.length][a.length];
+    }
+
+    // Fuzzy Search Function
+    function fuzzySearch(keyword, text) {
+        const threshold = 3; // Set your desired threshold for fuzzy matches
+        return levenshteinDistance(keyword, text) <= threshold;
+    }
+
+    // Search Functionality
+    function searchExperience() {
+        const keyword = document.getElementById('keywordInput').value.toLowerCase();
+        const experiences = document.querySelectorAll('.grid-item');
+
+        experiences.forEach(function(item) {
+            const title = item.querySelector('.experiences-title').innerText.toLowerCase();
+            const info = item.querySelector('.info').innerText.toLowerCase();
+
+            // Perform normal match or fuzzy search
+            if (title.includes(keyword) || info.includes(keyword) || fuzzySearch(keyword, title) || fuzzySearch(keyword, info)) {
+                item.style.display = 'block';  // Show matching item
+            } else {
+                item.style.display = 'none';  // Hide non-matching item
+            }
         });
+
+        // Show the "Clear" button if a search is performed
+        document.getElementById('clearButton').style.display = 'inline-block';
+    }
+
+    // Clear Search Functionality
+    function clearSearch() {
+        const experiences = document.querySelectorAll('.grid-item');
+        experiences.forEach(function(item) {
+            item.style.display = 'block'; // Show all items again
+        });
+
+        // Clear input and hide the "Clear" button
+        document.getElementById('keywordInput').value = '';
+        document.getElementById('clearButton').style.display = 'none';
+    }
+
+    // Add event listeners for search and clear buttons
+    document.getElementById('searchButton').addEventListener('click', searchExperience);
+    document.getElementById('clearButton').addEventListener('click', clearSearch);
+});
+
+    </script>
     
-        function searchExperience(keyword) {
-            const experienceElements = document.querySelectorAll('.exp-container > div > *');
-            let foundMatch = false;
-
-            experienceElements.forEach(element => {
-                if (element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' || element.tagName === 'P' || element.tagName === 'UL') {
-                    const text = element.textContent.toLowerCase();
-                    if (text.includes(keyword)) {
-                        element.style.display = 'block';
-                        foundMatch = true;
-                        // If it's an H2, also show the next H3 and UL
-                        if (element.tagName === 'H2') {
-                            let nextElement = element.nextElementSibling;
-                            while (nextElement && (nextElement.tagName === 'H3' || nextElement.tagName === 'P' || nextElement.tagName === 'UL')) {
-                                nextElement.style.display = 'block';
-                                nextElement = nextElement.nextElementSibling;
-                            }
-                        }
-                    } else {
-                        element.style.display = 'none';
-                    }
-                }
-            });
-
-            // Show a message if no matches were found
-            const noResultsMessage = document.getElementById('noResultsMessage') || createNoResultsMessage();
-            if (!foundMatch) {
-                noResultsMessage.style.display = 'block';
-            } else {
-                noResultsMessage.style.display = 'none';
-            }
-        }
-
-        function createNoResultsMessage() {
-            const message = document.createElement('p');
-            message.id = 'noResultsMessage';
-            message.textContent = 'No results found.';
-            message.style.display = 'none';
-            document.querySelector('.exp-container').appendChild(message);
-            return message;
-        }
-
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("backToTopBtn").style.display = "block";
-            } else {
-                document.getElementById("backToTopBtn").style.display = "none";
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        document.getElementById("backToTopBtn").onclick = function() {topFunction()};
-
-        function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-        }
-
-        // New JavaScript for autocomplete and fuzzy search
-        function autocomplete(inp, arr) {
-            var currentFocus;
-            inp.addEventListener("input", function(e) {
-                var a, b, i, val = this.value;
-                closeAllLists();
-                if (!val) { return false; }
-                currentFocus = -1;
-                a = document.createElement("DIV");
-                a.setAttribute("id", this.id + "autocomplete-list");
-                a.setAttribute("class", "autocomplete-items");
-                this.parentNode.appendChild(a);
-                for (i = 0; i < arr.length; i++) {
-                    if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-                        b = document.createElement("DIV");
-                        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-                        b.innerHTML += arr[i].substr(val.length);
-                        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-                        b.addEventListener("click", function(e) {
-                            inp.value = this.getElementsByTagName("input")[0].value;
-                            closeAllLists();
-                            searchExperience(inp.value);
-                        });
-                        a.appendChild(b);
-                    }
-                }
-            });
-            // ... rest of the autocomplete function ...
-        }
-
-        function levenshteinDistance(a, b) {
-            // ... implementation of Levenshtein Distance algorithm ...
-        }
-
-        function fuzzySearch(keyword, arr) {
-            // ... implementation of fuzzy search using Levenshtein Distance ...
-        }
-
-        // Initialize autocomplete with experience keywords
-        var experienceKeywords = ["Web Development", "UI/UX Design", "Project Management", "Branding", "Photography", "Video Editing"];
-        autocomplete(document.getElementById("keywordInput"), experienceKeywords);
-
-        // Update searchExperience function
-        function searchExperience(keyword) {
-            // ... existing search logic ...
-
-            // Add fuzzy search
-            if (!foundMatch) {
-                var fuzzyMatches = fuzzySearch(keyword, experienceKeywords);
-                if (fuzzyMatches.length > 0) {
-                    // Display fuzzy matches
-                    var fuzzyResultsHtml = "<p>Did you mean:</p><ul>";
-                    fuzzyMatches.forEach(function(match) {
-                        fuzzyResultsHtml += "<li>" + match + "</li>";
-                    });
-                    fuzzyResultsHtml += "</ul>";
-                    document.getElementById("searchResults").innerHTML = fuzzyResultsHtml;
-                    document.getElementById("searchResults").style.display = "block";
-                }
-            }
-        }
-</script>
+    
 </body>
 </html>
